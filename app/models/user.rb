@@ -19,6 +19,7 @@ class User < ApplicationRecord
 
   attr_reader :password
   after_initialize :ensure_session_token
+  after_initialize :ensure_img_url
 
   def password=(password)
     @password = password
@@ -37,6 +38,10 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
+  end
+
+  def ensure_img_url
+    self.img_url ||= "something"
   end
 
   def self.find_by_credentials(username, password)

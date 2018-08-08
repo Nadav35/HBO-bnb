@@ -11,13 +11,8 @@ class NavbarComponent extends React.Component {
     addForm(e) {
       e.preventDefault();
       let item = document.getElementById('modal');
-      item.classList.add("is-open");
-
+      item.classList.add("not-open");
     }
-
-
-
-
 
     render() {
       const leftNav = () => (
@@ -52,7 +47,6 @@ class NavbarComponent extends React.Component {
         </div>
       );
     }
-
 
 }
 

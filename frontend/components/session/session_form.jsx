@@ -33,9 +33,8 @@ class Sessionform extends React.Component {
 
   removeView(e) {
     e.preventDefault();
-    // let item = document.getElementById('modal');
     let item = document.getElementById('modal');
-    item.classList.add('is-open');
+    item.classList.add('not-open');
   }
 
   getErrors() {
