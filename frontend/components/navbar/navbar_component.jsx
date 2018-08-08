@@ -5,6 +5,14 @@ import SearchGrid from '../search/search_grid';
 class NavbarComponent extends React.Component {
     constructor(props){
       super(props);
+      this.addForm = this.addForm.bind(this);
+    }
+
+    addForm(e) {
+      e.preventDefault();
+      let item = document.getElementById('modal');
+      item.classList.add("is-open");
+
     }
 
 
@@ -30,8 +38,8 @@ class NavbarComponent extends React.Component {
             <li><Link to="/">Demo</Link></li>
             <li><Link to="/">Become a host</Link></li>
             <li><Link to="/">Earn Credit</Link></li>
-            <li><Link to="/">Sign Up</Link></li>
-            <li><Link to="/">Log In</Link></li>
+            <li><Link to="/signup">Sign Up</Link></li>
+            <li><Link to="/login">Log In</Link></li>
           </ul>
 
         </nav>
