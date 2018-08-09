@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_07_024638) do
+ActiveRecord::Schema.define(version: 2018_08_09_184658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "spots", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.integer "owner_id", null: false
+    t.string "img_url", null: false
+    t.float "lng", null: false
+    t.float "lat", null: false
+    t.string "location", null: false
+    t.float "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["description"], name: "index_spots_on_description"
+    t.index ["img_url"], name: "index_spots_on_img_url"
+    t.index ["lng", "lat"], name: "index_spots_on_lng_and_lat", unique: true
+    t.index ["location"], name: "index_spots_on_location"
+    t.index ["owner_id"], name: "index_spots_on_owner_id"
+    t.index ["price"], name: "index_spots_on_price"
+    t.index ["title"], name: "index_spots_on_title", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false

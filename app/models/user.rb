@@ -21,6 +21,11 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   after_initialize :ensure_img_url
 
+  has_many :spots,
+    primary_key: :id,
+    foreign_key: :owner_id,
+    class_name: :Spot
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
@@ -41,7 +46,7 @@ class User < ApplicationRecord
   end
 
   def ensure_img_url
-    self.img_url ||= "something"
+    self.img_url ||= "assets/img1.jpg"
   end
 
   def self.find_by_credentials(username, password)
