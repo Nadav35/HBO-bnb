@@ -19,7 +19,7 @@ class NavbarComponent extends React.Component {
     render() {
       const leftNav = () => (
         <nav className="left-nav">
-          <Link to="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt4I84agutwgKwfb0AMMW4OrwGvlDibEmaL3hziPndtK1Wk6LwMQ"
+          <Link to="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt4I84agutwgKwfb0AMMW4OrwGvlDibEmaL3hziPndtK1Wk6LwMQ"
             alt="logo" /></Link>
           <div className="geo-search">
             <i className="fas fa-search"></i>
