@@ -5,14 +5,16 @@ import SearchGrid from '../search/search_grid';
 class NavbarComponent extends React.Component {
     constructor(props){
       super(props);
-      this.addForm = this.addForm.bind(this);
+      this.loginDemoUser = this.loginDemoUser.bind(this);
     }
 
-    addForm(e) {
+    loginDemoUser(e){
       e.preventDefault();
-      let item = document.getElementById('modal');
-      item.classList.add("not-open");
+      const user = {username: "Guest", password: "123456"};
+      this.props.loginDemoUser(user);
     }
+
+
 
     render() {
       const leftNav = () => (
@@ -30,19 +32,39 @@ class NavbarComponent extends React.Component {
       const rightNavNotLogged = () => (
         <nav className="right-nav">
           <ul>
-            <li><Link to="/">Demo</Link></li>
-            <li><Link to="/">Become a host</Link></li>
-            <li><Link to="/">Earn Credit</Link></li>
-            <li><Link to="/signup">Sign Up</Link></li>
-            <li><Link to="/login">Log In</Link></li>
+            <li><Link to="/" onClick={this.loginDemoUser}>Demo</Link></li>
+            <li><Link to="/">Do stuff</Link></li>
+            <li><Link onClick={this.props.clearErrors} to="/signup">Sign Up</Link></li>
+            <li><Link onClick={this.props.clearErrors} to="/login">Log In</Link></li>
           </ul>
 
         </nav>
       );
+
+      const rightNavLogged = () => (
+        <nav className="right-nav">
+          <hgroup className="header-group">
+            <h2 className="header-name">Hi, {this.props.currentUser.username}</h2>
+          </hgroup>
+          <ul>
+            <li><Link to="/">My trips</Link></li>
+            <li><Link to="/">Become a host</Link></li>
+            <li><Link to="/">Earn Credit</Link></li>
+            <li><Link to="/" onClick={this.props.logout}>Log Out</Link></li>
+          </ul>
+        </nav>
+      );
+
+      const Greeting = () => (
+        this.props.currentUser ? rightNavLogged() : rightNavNotLogged()
+      );
+
+
       return (
+
         <div className="main-nav">
           {leftNav()}
-          {rightNavNotLogged()}
+          {Greeting()}
 
         </div>
       );

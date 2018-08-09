@@ -33,15 +33,15 @@ class Sessionform extends React.Component {
 
   removeView(e) {
     e.preventDefault();
-    let item = document.getElementById('modal');
-    item.classList.add('not-open');
+    let item = document.getElementById('modal-form-container');
+    item.classList.add('hide');
   }
 
   getErrors() {
     return (
-      <ul>
+      <ul className="session-errors">
         {this.props.errors.map((error, idx ) => (
-          <li key = {`error-${i}`}>
+          <li key = {`error-${idx}`}>
             {error}
           </li>
         ))}
@@ -67,14 +67,14 @@ class Sessionform extends React.Component {
       return (
         <React.Fragment>
           <span>Alread have an Airbnb account?</span>
-          <span className="button-alternative">{this.props.navLink}</span>
+          <span onClick={this.props.clearErrors} className="button-alternative">{this.props.navLink}</span>
         </React.Fragment>
       );
     } else {
       return (
         <React.Fragment>
           <span>Don't have an account?</span>
-          <span className="button-alternative">{this.props.navLink}</span>
+          <span onClick={this.props.clearErrors} className="button-alternative">{this.props.navLink}</span>
         </React.Fragment>
       );
     }
@@ -84,7 +84,7 @@ class Sessionform extends React.Component {
     const emailInp = this.props.formType === 'Sign up' ? this.emailInput() : null;
 
     return (
-      <div className="modal" id="modal">
+      <div className="modal-form-container" id="modal-form-container">
         <form className="modal-form" onSubmit={this.handleSubmit}>
           <i className="fas fa-window-close"
             onClick={this.removeView}>

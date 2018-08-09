@@ -1,9 +1,7 @@
 
 
-.modal {
+.modal-form-container {
   display: block;
-
-
 
   .modal-screen{
     position: fixed;
@@ -69,6 +67,12 @@
     }
   }
 
+  .session-errors li{
+    color: red;
+    padding: 5px;
+
+  }
+
   .fa-window-close{
     font-size: 20px;
     position: absolute;
@@ -82,7 +86,7 @@
   }
 }
 
-.not-open{
+.hide{
   display: none;
 
 }

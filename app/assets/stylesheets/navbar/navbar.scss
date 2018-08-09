@@ -30,17 +30,47 @@
       height: 50px;
     }
 
+    // .right-nav li:first-child{
+    //   font-size: 40px;
+    //   color: green;
+    // }
+
     .right-nav a:hover{
       text-decoration: underline;
     }
 
+
+
     .right-nav ul {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: 20px;
       padding: 0;
+      margin-right: 60px;
 
     }
+
+    .right-nav{
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    .header-group{
+      // background: pink;
+      // justify-items: bottom;
+    }
+
+    
+
+    .header-name{
+      padding: 20px;
+      font-family: $open-sans;
+      font-size: 20px;
+    }
+
+
+
     .fas {
       margin-right: 15px;
     }
