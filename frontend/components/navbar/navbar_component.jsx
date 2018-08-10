@@ -10,7 +10,7 @@ class NavbarComponent extends React.Component {
 
     loginDemoUser(e){
       e.preventDefault();
-      const user = {username: "Guest", password: "123456"};
+      const user = {username: "guest", password: "123456"};
       this.props.loginDemoUser(user);
     }
 
@@ -32,10 +32,10 @@ class NavbarComponent extends React.Component {
       const rightNavNotLogged = () => (
         <nav className="right-nav">
           <ul>
-            <li><Link to="/" onClick={this.loginDemoUser}>Demo</Link></li>
-            <li><Link to="/">Do stuff</Link></li>
-            <li><Link onClick={this.props.clearErrors} to="/signup">Sign Up</Link></li>
-            <li><Link onClick={this.props.clearErrors} to="/login">Log In</Link></li>
+            <li><button onClick={this.loginDemoUser}>Demo</button></li>
+            <li><button>Do stuff</button></li>
+            <li><button onClick={() => this.props.openModal('signup')}>Sign Up</button></li>
+            <li><button onClick={() => this.props.openModal('login')}>Log In</button></li>
           </ul>
 
         </nav>
@@ -47,10 +47,10 @@ class NavbarComponent extends React.Component {
             <h2 className="header-name">Hi, {this.props.currentUser.username}</h2>
           </hgroup>
           <ul>
-            <li><Link to="/">My trips</Link></li>
-            <li><Link to="/">Become a host</Link></li>
-            <li><Link to="/">Earn Credit</Link></li>
-            <li><Link to="/" onClick={this.props.logout}>Log Out</Link></li>
+            <li><button>My trips</button></li>
+            <li><button>Become a host</button></li>
+            <li><button>Earn Credit</button></li>
+            <li><button className="switch-button" onClick={this.props.logout}>Log Out</button></li>
           </ul>
         </nav>
       );

@@ -5,6 +5,7 @@ import merge from 'lodash/merge';
 class Sessionform extends React.Component {
   constructor(props) {
     super(props);
+    // debugger
     if (this.props.formType === 'Sign up') {
       this.state = {
         email: '',
@@ -18,7 +19,7 @@ class Sessionform extends React.Component {
       };
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.removeView = this.removeView.bind(this);
+    // this.removeView = this.removeView.bind(this);
   }
 
   update(property) {
@@ -28,14 +29,14 @@ class Sessionform extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = merge({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then(this.props.closeModal);
   }
 
-  removeView(e) {
-    e.preventDefault();
-    let item = document.getElementById('modal-form-container');
-    item.classList.add('hide');
-  }
+  // removeView(e) {
+  //   e.preventDefault();
+  //   let item = document.getElementById('modal-form-container');
+  //   item.classList.add('hide');
+  // }
 
   getErrors() {
     return (
@@ -67,14 +68,14 @@ class Sessionform extends React.Component {
       return (
         <React.Fragment>
           <span>Alread have an Airbnb account?</span>
-          <span onClick={this.props.clearErrors} className="button-alternative">{this.props.navLink}</span>
+          <span onClick={this.props.clearErrors}>{this.props.otherForm}</span>
         </React.Fragment>
       );
     } else {
       return (
         <React.Fragment>
           <span>Don't have an account?</span>
-          <span onClick={this.props.clearErrors} className="button-alternative">{this.props.navLink}</span>
+          <span onClick={this.props.clearErrors}>{this.props.otherForm}</span>
         </React.Fragment>
       );
     }
@@ -84,10 +85,10 @@ class Sessionform extends React.Component {
     const emailInp = this.props.formType === 'Sign up' ? this.emailInput() : null;
 
     return (
-      <div className="modal-form-container" id="modal-form-container">
-        <form className="modal-form" onSubmit={this.handleSubmit}>
+      <div className="login-form-container">
+        <form className="login-form-box" onSubmit={this.handleSubmit}>
           <i className="fas fa-window-close"
-            onClick={this.removeView}>
+            onClick={this.props.closeModal}>
           </i>
           {this.getErrors()}
           <h1>{this.props.formType} to continue</h1>
@@ -113,17 +114,17 @@ class Sessionform extends React.Component {
           </div>
 
           <div className="form-submit">
-            <button>{this.props.formType}</button>
+            <button className="submit-button">{this.props.formType}</button>
             <div className="form1">
               {this.formFooter()}
             </div>
           </div>
 
         </form>
-        <div
+        {/*<div
           className="modal-screen js-modal-close"
-          onClick={this.removeView}>
-        </div>
+          onClick={this.props.closeModal}>
+        </div>*/}
       </div>
     );
   }

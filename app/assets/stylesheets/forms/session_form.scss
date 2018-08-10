@@ -1,27 +1,28 @@
 
 
-.modal-form-container {
+.login-form-container {
   display: block;
 
-  .modal-screen{
-    position: fixed;
-    background: rgba(0, 0, 0, 0.7);
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-  }
+  // .modal-screen{
+  //   position: fixed;
+  //   background: rgba(0, 0, 0, 0.7);
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   z-index: 2;
+  // }
 
-  .modal-form {
-    position: absolute;
-    top: 100px;
+  .login-form-box {
+    position: relative;
+    top: 150px;
     left: 50%;
-    margin-left: -220px;
-    width: 360px;
+    margin-left: -300px;
+    width: 600px;
+    height: auto;
     padding: 20px;
     background: #fff;
-    z-index: 3;
+    // z-index: 3;
     border-radius: 5px;
     border: 1px solid #000;
 
@@ -40,6 +41,11 @@
       padding: 5px 20px;
     }
 
+    .input:hover,
+    .input:focus{
+      box-shadow: $shadow;
+    }
+
     .input:first-of-type{
       margin-top: 40px;
     }
@@ -48,13 +54,23 @@
     margin: 0 0 30px 0;
   }
 
-  button{
+  .submit-button{
     background: rgb(255, 90, 95);
     color: white;
     width: 100%;
     text-align: center;
     padding: 10px 20px;
     margin-bottom: 30px;
+  }
+
+  .switch-button{
+    // background: lightblue;
+    color: rgb(0, 132, 137);
+    // width: 100%;
+    font: inherit;
+    text-align: left;
+    text-decoration: none;
+
   }
 
   .form1{
@@ -88,5 +104,23 @@
 
 .hide{
   display: none;
+
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
 }

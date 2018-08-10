@@ -9,7 +9,7 @@ User.delete_all
 Spot.delete_all
 
 user = User.create!(
-  username: "Guest",
+  username: "guest",
   email: "guest@guest.com",
   password: "123456"
 )

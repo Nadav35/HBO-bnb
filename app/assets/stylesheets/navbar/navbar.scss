@@ -16,7 +16,7 @@
     //   align-items: center;
     //   justify-items: center;
     // }
-    .right-nav a{
+    .right-nav button{
       display: block;
       padding: 0.1rem;
       width: 100px;
@@ -35,7 +35,7 @@
     //   color: green;
     // }
 
-    .right-nav a:hover{
+    .right-nav button:hover{
       text-decoration: underline;
     }
 
@@ -61,12 +61,13 @@
       // justify-items: bottom;
     }
 
-    
+
 
     .header-name{
-      padding: 20px;
+      padding: 15px;
       font-family: $open-sans;
       font-size: 20px;
+      margin-top: 18px;
     }
 
 
