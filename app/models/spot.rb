@@ -29,6 +29,6 @@ class Spot < ApplicationRecord
   private
 
   def ensure_img_url
-    self.img_url ||= "assets/demo_house.jpg"
+    self.img_url ||= "assets/spots/demo_house.jpg"
   end
 end
