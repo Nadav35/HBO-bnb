@@ -1,5 +1,4 @@
 
-export const findHost = (entities, spotId) => {
-  // debugger
-  return entities.users[entities.spots[spotId].ownerId];
+export const findHost = (entities, spot) => {
+  return spot ? entities.users[entities.spots[spot.id].ownerId] : [];
 };

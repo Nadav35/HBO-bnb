@@ -10,12 +10,9 @@ import {
 import SpotShow from './spot_show';
 
 const msp = (state, ownProps) => {
-  debugger
-  const spotId = parseInt(ownProps.match.params.spotId);
-  const spot = state.entities.spots[spotId];
-  const host = findHost(state.entities, spotId);
+  const spot = state.entities.spots[ownProps.match.params.spotId];
+  const host = findHost(state.entities, spot);
   return {
-    spotId,
     spot,
     host
   };

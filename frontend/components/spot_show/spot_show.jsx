@@ -7,19 +7,14 @@ import { ProtectedRoute } from '../../util/route_util';
 class SpotShow extends React.Component {
   constructor(props) {
     super(props);
-    debugger
-  }
-  componentWillReceiveProps(nextProps){
-    // debugger
   }
 
+
   componentDidMount() {
-    // debugger
-    this.props.fetchSpot(this.props.spotId);
+    this.props.fetchSpot(this.props.match.params.spotId);
   }
 
   render() {
-    debugger
 
     if (!this.props.spot) return null; // put some loading magic
     return (

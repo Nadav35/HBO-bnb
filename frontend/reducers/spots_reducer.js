@@ -6,7 +6,6 @@ import {
 } from '../actions/spot_actions';
 
 const spotsReducer = (state = {}, action) => {
-  debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SPOTS:
