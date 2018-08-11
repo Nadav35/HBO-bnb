@@ -10,7 +10,9 @@ class Sessionform extends React.Component {
       this.state = {
         email: '',
         username: '',
-        password: ''
+        password: '',
+        photoFile: null,
+        photoUrl: null
       };
     } else {
       this.state = {
@@ -19,17 +21,32 @@ class Sessionform extends React.Component {
       };
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.removeView = this.removeView.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   update(property) {
     return e => this.setState({ [property]: e.target.value });
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const user = merge({}, this.state);
-    this.props.processForm(user).then(this.props.closeModal);
+    if (this.props.formType === 'Sign up') {
+      const formData = new FormData();
+      formData.append('user[username]', this.state.username);
+      formData.append('user[email]', this.state.email);
+      formData.append('user[password]', this.state.password);
+      if (this.state.photoFile){
+        formData.append('user[photo]', this.state.photoFile);
+      }
+      this.props.processForm(formData).then(this.props.closeModal);
+    } else {
+      const user = merge({}, this.state);
+      this.props.processForm(user).then(this.props.closeModal);
+    }
   }
 
   // removeView(e) {
@@ -63,6 +80,27 @@ class Sessionform extends React.Component {
     );
   }
 
+  fileInput() {
+    return (
+      <div className="input file">
+        <input type="file"
+          onChange={this.handleFile}>
+        </input>
+      </div>
+    );
+  }
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+
+      this.setState({photoFile: file, photoUrl: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   formFooter(){
     if (this.props.formType === 'Sign up') {
       return (
@@ -82,8 +120,9 @@ class Sessionform extends React.Component {
   }
 
   render() {
-    const emailInp = this.props.formType === 'Sign up' ? this.emailInput() : null;
-
+    const fileInp = this.props.formType === 'Sign up' ? this.emailInput() : null;
+    const emailInp = this.props.formType === 'Sign up' ? this.fileInput() : null;
+    console.log(this.state);
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
@@ -112,6 +151,7 @@ class Sessionform extends React.Component {
             <i className="fas fa-lock"></i>
 
           </div>
+          {fileInp}
 
           <div className="form-submit">
             <button className="submit-button">{this.props.formType}</button>

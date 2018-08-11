@@ -32,7 +32,7 @@ class SpotShow extends React.Component {
               <div className="user-profile">
                 <h1>Your host</h1>
                 <img
-                  src={this.props.host.imgUrl} alt="profile-pic">
+                  src={this.props.host.imageUrl} alt="profile-pic">
                 </img>
                 <h2>{this.props.host.username}</h2>
               </div>

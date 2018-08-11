@@ -16,7 +16,7 @@ class Review < ApplicationRecord
 
   after_initialize :ensure_description
 
-  belongs_to :reviewer
+  belongs_to :reviewer,
     primary_key: :id,
     foreign_key: :reviewer_id,
     class_name: :User

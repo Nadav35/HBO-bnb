@@ -27,6 +27,7 @@ class Spot < ApplicationRecord
     class_name: :User
 
   has_many :reviews
+  has_one_attached :photo
 
   private
 
