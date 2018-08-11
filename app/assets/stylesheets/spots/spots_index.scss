@@ -11,16 +11,26 @@
     flex-direction: column;
     align-items: center;
     padding: 3rem;
+    width: 70%;
+    margin-left: 200px;
 
 
     h1{
-      font-size: 22px;
-      color: red;
+      font-size: 28px;
+      color: rgb(72, 72, 72);
+      margin-bottom: 20px;
+    }
+
+    img{
+      max-width: 90%;
+      height: 500px;
+      margin-top: 20px;
+      margin-bottom: 30px;
     }
 
     h2{
-      font-size: 18px;
-      color: green;
+      font-size: 22px;
+      color: grey;
     }
   }
 
@@ -28,19 +38,22 @@
 
 
     ul {
+      width: 80%;
+      margin: auto;
       display: grid;
       grid-gap: 30px;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin-bottom: 80px;
 
 
 
-
-      li{
+      li a{
         padding: 0.8rem;
         // background: lightgrey;
         display: flex;
         flex-direction: column;
         box-shadow: $shadow;
+        height: 400px;
 
 
 
@@ -48,7 +61,8 @@
         .spot-location{
           font-family: $roboto;
           font-size: 23px;
-          color: rgb(166, 29, 85);
+          // color: rgb(166, 29, 85);
+          color: rgb(57, 87, 106);
           margin-top: 20px;
           margin-bottom: 20px;
           font-weight: 700;
@@ -71,6 +85,12 @@
           font-family: $do_hye;
           color: grey;
         }
+
+      }
+
+      li a:hover{
+        box-shadow: 1px 3px 12px rgba(0,0,0,0.75);
+        transition: all 0.3s ease;
 
       }
 

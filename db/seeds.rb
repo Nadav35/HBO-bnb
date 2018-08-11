@@ -14,7 +14,25 @@ user = User.create!(
   password: "123456"
 )
 
-16.times do
+user1 = User.create!(
+  username: "Erlich",
+  email: "erlich@guest.com",
+  password: "123456"
+)
+
+8.times do
+  Spot.create!(description: Faker::SiliconValley.quote,
+    lng: Faker::Number.normal(50, 80),
+    lat: Faker::Number.normal(50, 80),
+    location: Faker::WorldCup.city,
+    title: Faker::Coffee.notes,
+    price: Faker::Number.between(80,299),
+    owner_id: user1.id)
+  end
+
+
+
+8.times do
   Spot.create!(description: Faker::SiliconValley.quote,
     lng: Faker::Number.normal(50, 80),
     lat: Faker::Number.normal(50, 80),

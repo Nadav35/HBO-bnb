@@ -6,12 +6,13 @@ import {
 } from '../actions/spot_actions';
 
 const spotsReducer = (state = {}, action) => {
+  debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SPOTS:
-      return action.spots;
+      return action.payload.spots;
     case RECEIVE_SPOT:
-      const newSpot = { [action.spot.id]: action.bench };
+      const newSpot = { [action.payload.spot.id]: action.payload.spot };
       return merge({}, state, newSpot);
     default:
       return state;

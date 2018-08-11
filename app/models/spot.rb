@@ -26,9 +26,11 @@ class Spot < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :User
 
+  has_many :reviews
+
   private
 
   def ensure_img_url
-    self.img_url ||= "assets/spots/demo_house.jpg"
+    self.img_url ||= "assets/shows/deadwood/gem.jpg"
   end
 end

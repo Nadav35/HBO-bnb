@@ -5,7 +5,8 @@ import { fetchSpots } from '../../actions/spot_actions';
 
 const mps = ({ entities }) => {
   return {
-    spots: Object.values(entities.spots)
+    spots: Object.values(entities.spots),
+    users: Object.values(entities.users)
   };
 };
 

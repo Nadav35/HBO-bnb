@@ -46,7 +46,7 @@ class User < ApplicationRecord
   end
 
   def ensure_img_url
-    self.img_url ||= "assets/img1.jpg"
+    self.img_url ||= "assets/shows/silicon_valley/erlich.jpg"
   end
 
   def self.find_by_credentials(username, password)
