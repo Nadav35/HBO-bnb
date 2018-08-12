@@ -43,12 +43,9 @@ class NavbarComponent extends React.Component {
 
       const rightNavLogged = () => (
         <nav className="right-nav">
-          <hgroup className="header-group">
-            <h2 className="header-name">Hi, {this.props.currentUser.username}</h2>
-          </hgroup>
           <ul>
             <li><button>My trips</button></li>
-            <li><button>Become a host</button></li>
+            <li><button onClick={() => this.props.openModal('create_listing')}>Become a host</button></li>
             <li><button>Earn Credit</button></li>
             <li><button className="switch-button" onClick={this.props.logout}>Log Out</button></li>
           </ul>

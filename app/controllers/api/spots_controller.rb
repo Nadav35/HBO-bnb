@@ -9,6 +9,7 @@ class Api::SpotsController < ApplicationController
 
   def create
     @spot = Spot.new(spot_params)
+    debugger
     @spot.owner_id = current_user.id
     if @spot.save
       render :show
@@ -33,7 +34,6 @@ class Api::SpotsController < ApplicationController
   end
 
   def destroy
-    debugger
     @spot = Spot.find(params[:id])
     @spot.destroy
 
@@ -45,6 +45,6 @@ class Api::SpotsController < ApplicationController
 
   def spot_params
     params.require(:spot).permit(:title, :description,
-      :img_url, :lng, :lat, :location, :price)
+      :img_url, :lng, :lat, :location, :price, :photo)
   end
 end

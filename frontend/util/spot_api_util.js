@@ -12,10 +12,13 @@ export const fetchSpot = id => {
   });
 };
 
-export const createSpot = spot => {
+export const createSpot = formData => {
   return $.ajax({
       method: 'POST',
-      url: '/api/spots'
+      url: '/api/spots',
+      data: formData,
+      contentType: false,
+      processData: false
   });
 };
 
@@ -28,6 +31,6 @@ export const deleteSpot = id => {
 export const editSpot = spot => {
   return $.ajax({
       method: 'PATCH',
-      url: `/api/spots/${id}`
+      url: `/api/spots/${spot.id}`
   });
 };

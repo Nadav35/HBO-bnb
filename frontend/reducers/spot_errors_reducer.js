@@ -8,7 +8,7 @@ const spotErrorsReducer = (state = [], action) => {
     case CLEAR_ERRORS:
       return [];
     case RECEIVE_SPOT_ERRORS:
-        return action.errors;
+      return action.errors;
     default:
       return state;
   }

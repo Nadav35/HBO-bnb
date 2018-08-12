@@ -1,0 +1,76 @@
+.new-listing-container {
+  display: block;
+  margin-top: 200px;
+
+  .listing-form-box {
+    position: relative;
+    display: grid;
+    // flex-direction: column;
+    // justify-content: space-between;
+    grid-gap: 10px;
+    top: 150px;
+    left: 50%;
+    margin-left: -300px;
+    width: 600px;
+    height: auto;
+    padding: 30px;
+    background: #fff;
+    // z-index: 3;
+    border-radius: 5px;
+    border: 1px solid #000;
+  }
+
+  h1{
+    font-size: 26px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-family: $playfair;
+  }
+
+  .input {
+    // margin-top: 40px;
+    margin: 0 0 30px 0;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+  }
+
+  .input:hover,
+  .input:focus{
+    box-shadow: $shadow;
+  }
+
+  .form-submit{
+    margin: 0 0 30px 0;
+  }
+
+  .submit-button{
+    background: rgb(255, 90, 95);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+  }
+
+  .session-errors li{
+    color: red;
+    padding: 5px;
+
+  }
+
+  .fa-window-close{
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 17px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .fa-window-close:hover{
+    box-shadow: -2px 2px 59px 13px rgba(0,0,0,0.71);
+  }
+}

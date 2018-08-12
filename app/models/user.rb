@@ -17,7 +17,7 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6 , allow_nil: true }
 
-  validate :ensure_photo
+  # validate :ensure_photo
 
   attr_reader :password
   after_initialize :ensure_session_token
@@ -27,6 +27,14 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :owner_id,
     class_name: :Spot
+  has_many :bookings,
+    primary_key: :id,
+    foreign_key: :booker_id,
+    class_name: :Booking
+
+  has_many :booked_spots,
+    through: :bookings,
+    source: :spot
 
   has_one_attached :photo
 
@@ -53,11 +61,11 @@ class User < ApplicationRecord
     self.img_url ||= "assets/shows/silicon_valley/erlich.jpg"
   end
 
-  def ensure_photo
-    unless self.photo.attached?
-      errors[:photo] << "must be attached"
-    end
-  end
+  # def ensure_photo
+  #   unless self.photo.attached?
+  #     errors[:photo] << "must be attached"
+  #   end
+  # end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

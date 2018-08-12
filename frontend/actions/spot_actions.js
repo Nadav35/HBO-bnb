@@ -53,6 +53,6 @@ export const createSpot = spot => dispatch => {
 };
 
 export const deleteSpot = id => dispatch => {
-  return ApiUtil.deleteSpot(spot)
+  return ApiUtil.deleteSpot(id)
     .then(spot => dispatch(receiveSpot(null)));
 };

@@ -3,6 +3,8 @@ import { Link, Route } from 'react-router-dom';
 
 import SpotDetail from './spot_detail';
 import { ProtectedRoute } from '../../util/route_util';
+import BookingFormContainer from './booking_form_container';
+import BookingForm from './booking_form';
 
 class SpotShow extends React.Component {
   constructor(props) {
@@ -32,7 +34,7 @@ class SpotShow extends React.Component {
               <div className="user-profile">
                 <h1>Your host</h1>
                 <img
-                  src={this.props.host.imageUrl} alt="profile-pic">
+                  src={this.props.host.imgUrl} alt="profile-pic">
                 </img>
                 <h2>{this.props.host.username}</h2>
               </div>
@@ -51,7 +53,7 @@ class SpotShow extends React.Component {
 
           </div>
           <div className="booking-form-container">
-            <h1>Bookings coming soon</h1>
+            <BookingForm component={BookingFormContainer} />
 
           </div>
         </div>

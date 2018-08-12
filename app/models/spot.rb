@@ -19,7 +19,8 @@ class Spot < ApplicationRecord
   validates :title, :description, :img_url, :lng,
     :lat, :location, :price, presence: true
 
-    after_initialize :ensure_img_url
+  after_initialize :ensure_img_url
+  # validate :ensure_photo
 
   belongs_to :owner,
     primary_key: :id,
@@ -27,9 +28,15 @@ class Spot < ApplicationRecord
     class_name: :User
 
   has_many :reviews
+  has_many :bookings
   has_one_attached :photo
 
   private
+  # def ensure_photo
+  #   unless self.photo.attached?
+  #     errors[:photo] << "must be attached"
+  #   end
+  # end
 
   def ensure_img_url
     self.img_url ||= "assets/shows/deadwood/gem.jpg"

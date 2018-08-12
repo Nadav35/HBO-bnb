@@ -86,6 +86,7 @@ class Sessionform extends React.Component {
         <input type="file"
           onChange={this.handleFile}>
         </input>
+        <i className="fas fa-camera"></i>
       </div>
     );
   }
@@ -120,9 +121,8 @@ class Sessionform extends React.Component {
   }
 
   render() {
-    const fileInp = this.props.formType === 'Sign up' ? this.emailInput() : null;
-    const emailInp = this.props.formType === 'Sign up' ? this.fileInput() : null;
-    console.log(this.state);
+    const fileInp = this.props.formType === 'Sign up' ? this.fileInput() : null;
+    const emailInp = this.props.formType === 'Sign up' ? this.emailInput() : null;
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
