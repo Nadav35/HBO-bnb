@@ -1,4 +1,4 @@
 
 export const findHost = (entities, spot) => {
-  return spot ? entities.users[entities.spots[spot.id].ownerId] : [];
+  return spot ? entities.users[entities.spots[spot.id].ownerId] : null;
 };

@@ -6,7 +6,7 @@
 #  title       :string           not null
 #  description :text             not null
 #  owner_id    :integer          not null
-#  img_url     :string           not null
+#  img_url     :string
 #  lng         :float            not null
 #  lat         :float            not null
 #  location    :string           not null
@@ -16,11 +16,11 @@
 #
 
 class Spot < ApplicationRecord
-  validates :title, :description, :img_url, :lng,
+  validates :title, :description, :lng,
     :lat, :location, :price, presence: true
 
-  after_initialize :ensure_img_url
-  # validate :ensure_photo
+  after_initialize :ensure_photo
+  # after_initialize :ensure_img_url
 
   belongs_to :owner,
     primary_key: :id,
@@ -32,13 +32,14 @@ class Spot < ApplicationRecord
   has_one_attached :photo
 
   private
-  # def ensure_photo
-  #   unless self.photo.attached?
-  #     errors[:photo] << "must be attached"
-  #   end
-  # end
 
-  def ensure_img_url
-    self.img_url ||= "assets/shows/deadwood/gem.jpg"
+  # if not an object seeded with pic or for user not uploading image, set a deault img 
+  def ensure_photo
+    if !self.photo.attached? && !self.img_url
+      self.photo.attach(io: File.open("/Users/nadavnoy/Desktop/AirBnB1/Airbnb-clone/app/assets/images/shows/silicon_valley/gavin_house.jpg"),
+      filename: "house")
+    end
   end
+
+
 end

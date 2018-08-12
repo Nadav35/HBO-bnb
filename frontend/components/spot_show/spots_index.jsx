@@ -12,6 +12,7 @@ class spotsIndex extends React.Component {
   }
 
   render() {
+
     return (
         <div className="top-container">
           <header className="spots-header">
@@ -23,10 +24,12 @@ class spotsIndex extends React.Component {
           <div className="spots-container">
             <ul>
               {this.props.spots.map((spot, idx) => {
+                const img = spot.imgUrl ?
+                  spot.imgUrl : spot.uploadedImgUrl;
                 return (
                   <li key={idx} className="spots_index_item">
                     <Link to={`/api/spots/${spot.id}`}>
-                      <img src={spot.imgUrl} alt="spot" />
+                      <img src={img} alt="spot" />
                       <span className="spot-location">{spot.location}</span>
                       <span className="spot-title">{spot.title}</span>
                       <span className="spot-price">${spot.price} per night</span>

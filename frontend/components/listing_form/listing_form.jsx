@@ -91,7 +91,7 @@ class ListingForm extends React.Component {
           <div className="input description">
             <textarea
               cols="15"
-              rows="5"
+              rows="2"
               value={this.state.description}
               onChange={this.update('description')}
               placeholder="Give a brief description"
@@ -115,7 +115,7 @@ class ListingForm extends React.Component {
             <i className="fas fa-atlas"></i>
 
           </div>
-          <div className="input loaction">
+          <div className="input location">
             <input value={this.state.location}
               onChange={this.update('location')}
               placeholder="Enter your city">
@@ -153,4 +153,4 @@ class ListingForm extends React.Component {
   }
 }
 
-export default ListingForm;
+export default withRouter(ListingForm);

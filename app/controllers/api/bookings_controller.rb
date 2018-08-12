@@ -10,7 +10,8 @@ class Api::BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.booker_id = current_user.id
-    @booking.spot_id = params[:booking][:spot_id]
+    @booking.spot_id = params[:spot_id]
+    debugger
     if @booking.save
       render 'api/bookings/booking'
     else

@@ -1,0 +1,48 @@
+.booking-form {
+  position:fixed;
+  display: grid;
+  // flex-direction: column;
+  // justify-content: space-between;
+  grid-gap: 0;
+  top: 150px;
+  // left: 50%;
+  right: 10%;
+  // margin-left: -300px;
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  background: #fff;
+  // z-index: 3;
+  border-radius: 5px;
+  border: 1px solid #000;
+
+  h1{
+    font-size: 26px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-family: $playfair;
+  }
+
+  .input {
+    // margin-top: 40px;
+    margin: 0 0 30px 0;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+  }
+
+  .form-submit{
+    margin: 0 0 30px 0;
+  }
+
+  .submit-button{
+    background: rgb(255, 90, 95);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+  }
+}

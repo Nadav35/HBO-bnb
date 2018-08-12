@@ -17,4 +17,4 @@ const mdp = dispatch => {
   };
 };
 
-export default(msp,mdp)(BookingForm);
+export default connect(msp,mdp)(BookingForm);

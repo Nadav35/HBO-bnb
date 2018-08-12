@@ -12,8 +12,10 @@ class Api::SpotsController < ApplicationController
     debugger
     @spot.owner_id = current_user.id
     if @spot.save
+      debugger
       render :show
     else
+      debugger
       render json: @spot.errors.full_messages, status: 422
     end
   end

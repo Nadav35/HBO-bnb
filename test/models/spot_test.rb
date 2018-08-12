@@ -6,7 +6,7 @@
 #  title       :string           not null
 #  description :text             not null
 #  owner_id    :integer          not null
-#  img_url     :string           not null
+#  img_url     :string
 #  lng         :float            not null
 #  lat         :float            not null
 #  location    :string           not null

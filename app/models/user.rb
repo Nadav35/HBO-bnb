@@ -17,11 +17,11 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6 , allow_nil: true }
 
-  # validate :ensure_photo
+  after_initialize :ensure_photo
+  after_initialize :ensure_session_token
+  # after_initialize :ensure_img_url
 
   attr_reader :password
-  after_initialize :ensure_session_token
-  after_initialize :ensure_img_url
 
   has_many :spots,
     primary_key: :id,
@@ -57,8 +57,28 @@ class User < ApplicationRecord
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
 
-  def ensure_img_url
-    self.img_url ||= "assets/shows/silicon_valley/erlich.jpg"
+  # def ensure_img_url
+    # self.img_url ||= "assets/shows/silicon_valley/erlich.jpg"
+    # self.imaeg_url = "assets/shows/silicon_valley/erlich.jpg" if !self.photo.attached?
+    # if self.photo.attached?
+    #   self.img_url = rails_blob_path(self.photo, disposition: "attachment")
+    #   debugger
+    # else
+    #   self.photo.attach(io: File.open("/Users/nadavnoy/Desktop/AirBnB1/Airbnb-clone/app/assets/images/peter.png"),
+    #   filename: "peter")
+    #   self.img_url = rails_blob_path(self.photo, disposition: "attachment")
+    # end
+  # end
+
+
+
+  def ensure_photo
+
+    # if not an object  seeded with pic or for user not uploading image, set a deault img 
+    if !self.photo.attached? && !self.img_url
+      self.photo.attach(io: File.open("/Users/nadavnoy/Desktop/AirBnB1/Airbnb-clone/app/assets/images/peter.png"),
+      filename: "peter")
+    end
   end
 
   # def ensure_photo

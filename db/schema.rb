@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_212552) do
+ActiveRecord::Schema.define(version: 2018_08_12_134632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_212552) do
     t.string "title", null: false
     t.text "description", null: false
     t.integer "owner_id", null: false
-    t.string "img_url", null: false
+    t.string "img_url"
     t.float "lng", null: false
     t.float "lat", null: false
     t.string "location", null: false

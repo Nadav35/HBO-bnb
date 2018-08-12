@@ -5,6 +5,7 @@ export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 export const RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
 
 const receiveBooking = booking => {
+  debugger
   return {
     type: RECEIVE_BOOKING,
     booking
@@ -30,7 +31,7 @@ export const fetchBookings = () => dispatch => {
     .then(payload => dispatch(receiveBookings(payload)));
 };
 
-export const createBooking = (spotId, booking) => {
+export const createBooking = (spotId, booking) => dispatch => {
   return ApiUtil.createBooking(spotId, booking)
     .then(booking => dispatch(receiveBooking(booking)
   ), err => (
@@ -42,7 +43,7 @@ export const editBooking = booking => dispatch => {
   return ApiUtil.editBooking(booking)
     .then(booking => dispatch(receiveBooking(booking)
   ), err => (
-    dispatch(receiveSpotErrors(err.responseJSON))
+    dispatch(receiveBookingErrors(err.responseJSON))
   ));
 };
 

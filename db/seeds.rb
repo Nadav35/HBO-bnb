@@ -11,13 +11,16 @@ Spot.delete_all
 user = User.create!(
   username: "guest",
   email: "guest@guest.com",
-  password: "123456"
+  password: "123456",
+  img_url: "assets/shows/silicon_valley/erlich.jpg"
 )
+
 
 user1 = User.create!(
   username: "Erlich",
   email: "erlich@guest.com",
-  password: "123456"
+  password: "123456",
+  img_url: "assets/shows/silicon_valley/gavin3.jpg"
 )
 
 8.times do

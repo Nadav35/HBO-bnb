@@ -12,17 +12,29 @@ class SpotShow extends React.Component {
   }
 
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.spotId !== nextProps.match.params.spotId) {
+      this.props.fetchSpot(nextProps.match.params.spotId);
+    }
+  }
+
+
   componentDidMount() {
     this.props.fetchSpot(this.props.match.params.spotId);
   }
 
   render() {
+    if (!this.props.spot || !this.props.host) return null; // put some loading magic
 
-    if (!this.props.spot) return null; // put some loading magic
+    const imgUser = this.props.host.imgUrl ?
+      this.props.host.imgUrl : this.props.host.uploadedImgUrl;
+    const imgSpot = this.props.spot.imgUrl ?
+      this.props.spot.imgUrl : this.props.spot.uploadedImgUrl;
+
     return (
       <div className="single-spot-show">
         <div className="single-spot-header">
-          <img src={this.props.spot.imgUrl}></img>
+          <img src={imgSpot}></img>
         </div>
         <div className="main-container">
           <div className="container-spot-show">
@@ -34,7 +46,7 @@ class SpotShow extends React.Component {
               <div className="user-profile">
                 <h1>Your host</h1>
                 <img
-                  src={this.props.host.imgUrl} alt="profile-pic">
+                  src={imgUser} alt="profile-pic">
                 </img>
                 <h2>{this.props.host.username}</h2>
               </div>
@@ -53,7 +65,7 @@ class SpotShow extends React.Component {
 
           </div>
           <div className="booking-form-container">
-            <BookingForm component={BookingFormContainer} />
+            <BookingFormContainer />
 
           </div>
         </div>

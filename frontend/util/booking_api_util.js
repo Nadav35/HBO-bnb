@@ -16,7 +16,7 @@ export const createBooking = (spotId, booking) => {
   return $.ajax({
     method: 'POST',
     url: `/api/spots/${spotId}/bookings`,
-    booking
+    data: {booking}
   });
 };
 
