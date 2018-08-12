@@ -11,12 +11,17 @@ class Api::BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.booker_id = current_user.id
     @booking.spot_id = params[:spot_id]
-    debugger
     if @booking.save
-      render 'api/bookings/booking'
+      render 'api/bookings/show'
     else
       render json: @booking.errors.full_messages, status: 422
     end
+
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    render 'api/bookings/show'
 
   end
 

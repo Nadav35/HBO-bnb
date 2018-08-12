@@ -17,6 +17,7 @@ class NavbarComponent extends React.Component {
 
 
     render() {
+      debugger
       const leftNav = () => (
         <nav className="left-nav">
           <Link to="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt4I84agutwgKwfb0AMMW4OrwGvlDibEmaL3hziPndtK1Wk6LwMQ"
@@ -44,7 +45,9 @@ class NavbarComponent extends React.Component {
       const rightNavLogged = () => (
         <nav className="right-nav">
           <ul>
-            <li><button>My trips</button></li>
+            <Link to={`/api/bookings/${this.props.currentUser.id}`}>
+              <li><button>My trips</button></li>
+            </Link>
             <li><button onClick={() => this.props.openModal('create_listing')}>Become a host</button></li>
             <li><button>Earn Credit</button></li>
             <li><button className="switch-button" onClick={this.props.logout}>Log Out</button></li>

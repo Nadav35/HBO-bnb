@@ -9,13 +9,10 @@ class Api::SpotsController < ApplicationController
 
   def create
     @spot = Spot.new(spot_params)
-    debugger
     @spot.owner_id = current_user.id
     if @spot.save
-      debugger
       render :show
     else
-      debugger
       render json: @spot.errors.full_messages, status: 422
     end
   end
