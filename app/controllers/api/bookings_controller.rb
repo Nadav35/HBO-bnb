@@ -28,7 +28,7 @@ class Api::BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.update_attributes(booking_params)
-      render 'api/bookings/booking'
+      render 'api/bookings/show'
     else
       render json: @booking.errors.full_messages, status: 401
     end
@@ -38,7 +38,7 @@ class Api::BookingsController < ApplicationController
   def destroy
     booking = Booking.find(params[:id])
     booking.destroy
-    
+
   end
 
   private

@@ -17,7 +17,6 @@ class NavbarComponent extends React.Component {
 
     logoutUser(e) {
       e.preventDefault();
-      debugger
       this.props.logout()
         .then(this.props.history.push('/'));
     }

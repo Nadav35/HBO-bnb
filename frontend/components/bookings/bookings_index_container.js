@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import BookingsShow from './bookings_show';
 import { formatBookings } from '../../reducers/selectors';
+import { openModal } from '../../actions/modal_actions';
 
 import {
    fetchBookings,
@@ -20,7 +21,8 @@ const mdp = dispatch => {
   return {
     fetchBookings: () => dispatch(fetchBookings()),
     editBooking: booking => dispatch(editBooking(booking)),
-    deleteBooking: id => dispatch(deleteBooking(id))
+    deleteBooking: id => dispatch(deleteBooking(id)),
+    openModal: (modal, opArg) => dispatch(openModal(modal, opArg))
   };
 };
 

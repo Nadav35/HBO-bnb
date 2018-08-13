@@ -17,9 +17,9 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6 , allow_nil: true }
 
-  after_initialize :ensure_photo
+  # after_initialize :ensure_photo
   after_initialize :ensure_session_token
-  # after_initialize :ensure_img_url
+  after_initialize :ensure_img_url
 
   attr_reader :password
 
@@ -35,6 +35,11 @@ class User < ApplicationRecord
   has_many :booked_spots,
     through: :bookings,
     source: :spot
+
+  has_many :reviews,
+    primary_key: :id,
+    foreign_key: :reviewer_id,
+    class_name: :Review
 
   has_one_attached :photo
 
@@ -70,16 +75,19 @@ class User < ApplicationRecord
     # end
   # end
 
+  def ensure_img_url
+    self.img_url ||= "https://s3-us-west-1.amazonaws.com/hbobnb-dev/3bTxpVWbZZvo1Z1uuPw7jz72"
 
-
-  def ensure_photo
-
-    # if not an object  seeded with pic or for user not uploading image, set a deault img 
-    if !self.photo.attached? && !self.img_url
-      self.photo.attach(io: File.open("/Users/nadavnoy/Desktop/AirBnB1/Airbnb-clone/app/assets/images/peter.png"),
-      filename: "peter")
-    end
   end
+
+  # def ensure_photo
+  #
+  #   # if not an object  seeded with pic or for user not uploading image, set a deault img
+  #   if !self.photo.attached? && !self.img_url
+  #     self.photo.attach(io: File.open("/Users/nadavnoy/Desktop/AirBnB1/Airbnb-clone/app/assets/images/peter.png"),
+  #     filename: "peter")
+  #   end
+  # end
 
   # def ensure_photo
   #   unless self.photo.attached?

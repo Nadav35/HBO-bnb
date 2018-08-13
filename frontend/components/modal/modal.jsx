@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 import ListingFormContainer from '../listing_form/listing_form_container';
-import EditBookingContainer from '../spot_show/edit_booking_container';
+import EditBookingContainer from '../bookings/edit_booking_container';
 
-function Modal({modal, closeModal}) {
-  if (!modal) {
+function Modal({payload, closeModal}) {
+  if (!payload) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (payload.modal) {
     case 'login':
       component = <LoginFormContainer />;
       break;
@@ -23,6 +23,7 @@ function Modal({modal, closeModal}) {
       break;
     case 'edit_booking':
       component = <EditBookingContainer />;
+
       break;
 
     default:
@@ -38,9 +39,9 @@ function Modal({modal, closeModal}) {
   );
 }
 
-const msp = state => {
+const msp = (state) => {
   return {
-    modal: state.ui.modal
+    payload: state.ui.payload
   };
 };
 

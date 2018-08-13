@@ -5,8 +5,14 @@ export const fetchBookings = () => {
   });
 };
 
+export const fetchBooking = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/bookings/${id}`
+  });
+};
+
 export const deleteBooking = (id) => {
-  debugger
   return $.ajax({
     method: 'DELETE',
     url: `/api/bookings/${id}`
@@ -24,6 +30,7 @@ export const createBooking = (spotId, booking) => {
 export const editBooking = (booking) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/bookings/${booking.id}`
+    url: `/api/bookings/${booking.id}`,
+    data: {booking}
   });
 };

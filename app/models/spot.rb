@@ -19,8 +19,8 @@ class Spot < ApplicationRecord
   validates :title, :description, :lng,
     :lat, :location, :price, presence: true
 
-  after_initialize :ensure_photo
-  # after_initialize :ensure_img_url
+  # after_initialize :ensure_photo
+  after_initialize :ensure_img_url
 
   belongs_to :owner,
     primary_key: :id,
@@ -33,13 +33,18 @@ class Spot < ApplicationRecord
 
   private
 
-  # if not an object seeded with pic or for user not uploading image, set a deault img 
-  def ensure_photo
-    if !self.photo.attached? && !self.img_url
-      self.photo.attach(io: File.open("/Users/nadavnoy/Desktop/AirBnB1/Airbnb-clone/app/assets/images/shows/silicon_valley/gavin_house.jpg"),
-      filename: "house")
-    end
+  def ensure_img_url
+    self.img_url ||= "https://s3-us-west-1.amazonaws.com/hbobnb-dev/5gVFEjKoFrUiHh4Qni6qKfUm"
+
   end
+
+  # if not an object seeded with pic or for user not uploading image, set a deault img
+  # def ensure_photo
+  #   if !self.photo.attached? && !self.img_url
+  #     self.photo.attach(io: File.open("/Users/nadavnoy/Desktop/AirBnB1/Airbnb-clone/app/assets/images/shows/silicon_valley/gavin_house.jpg"),
+  #     filename: "house")
+  #   end
+  # end
 
 
 end

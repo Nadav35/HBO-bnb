@@ -13,7 +13,6 @@ const sessionReducer = (state = _defaultState, action) => {
       const currentUser = action.currentUser;
       return merge({}, { currentUser });
     case LOGOUT_USER:
-      debugger
       return _defaultState;
     default:
       return state;

@@ -2,14 +2,17 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import merge from 'lodash/merge';
 
-class BookingForm extends React.Component {
+class EditBookingForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      start_date: '',
-      end_date: '',
-      num_guests: ''
+      start_date: props.booking.startDate,
+      end_date: props.booking.endDate,
+      num_guests: props.booking.numGuests,
+      id: props.booking.id,
+      booker_id: props.booking.bookerId,
+      spot_id: props.booking.spotId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -18,11 +21,18 @@ class BookingForm extends React.Component {
     return e => this.setState({ [property]: e.target.value });
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+
+
+  }
+
   handleSubmit(e) {
     e.preventDefault();
+    debugger
     const booking = merge({}, this.state);
-    const spotId = this.props.match.params.spotId;
-    this.props.createBooking(spotId, booking)
+    this.props.editBooking(booking)
+      .then(this.props.closeModal)
       .then(this.props.history.push('/'));
   }
 
@@ -40,13 +50,15 @@ class BookingForm extends React.Component {
     );
   }
 
-  
-
   render() {
+    if (!this.props.booking) return null;
     return (
-      <form className="booking-form" onSubmit={this.handleSubmit}>
+      <form className="edit-booking-form" onSubmit={this.handleSubmit}>
+        <i className="fas fa-window-close"
+          onClick={this.props.closeModal}>
+        </i>
         {this.getErrors()}
-        <h1>Book this place</h1>
+        <h1>Edit your booking</h1>
         <div className="input start_date">
           <label>Check In Date</label>
           <input type="date"
@@ -76,7 +88,7 @@ class BookingForm extends React.Component {
 
         </div>
         <div className="form-submit">
-          <button className="submit-button">Book It!!</button>
+          <button className="submit-button">edit</button>
 
         </div>
 
@@ -85,4 +97,4 @@ class BookingForm extends React.Component {
   }
 }
 
-export default withRouter(BookingForm);
+export default withRouter(EditBookingForm);

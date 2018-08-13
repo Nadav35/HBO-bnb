@@ -8,6 +8,7 @@
   line-height: 1.4;
   display: grid;
   grid-gap: 20px;
+  width: 80%;
 
 
 
@@ -20,7 +21,8 @@
 
 
     img {
-      max-width: 50%;
+      // max-width: 50%;
+      max-width: 100%;
 
     }
 
@@ -44,8 +46,8 @@
   .bookings-container ul{
     margin-top: 100px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
 
 
@@ -54,9 +56,10 @@
       flex-direction: column;
       text-align: center;
       justify-content: space-between;
-      width: 70%;
+      // width: 70%;
       background: lightgrey;
       padding: 15px;
+      box-shadow: $shadow;
 
       img{
         display: block;

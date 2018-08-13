@@ -27,4 +27,12 @@ class EditBookingForm extends React.Component {
   componentDidMount(){
     this.props.clearErrors();
   }
+
+  render() {
+    return (
+      <h1>hey</h1>
+    );
+  }
 }
+
+export default EditBookingForm;
