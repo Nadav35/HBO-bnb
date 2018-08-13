@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import SearchGrid from '../search/search_grid';
 
 class NavbarComponent extends React.Component {
     constructor(props){
       super(props);
       this.loginDemoUser = this.loginDemoUser.bind(this);
+      this.logoutUser = this.logoutUser.bind(this);
     }
 
     loginDemoUser(e){
@@ -14,10 +15,16 @@ class NavbarComponent extends React.Component {
       this.props.loginDemoUser(user);
     }
 
+    logoutUser(e) {
+      e.preventDefault();
+      debugger
+      this.props.logout()
+        .then(this.props.history.push('/'));
+    }
+
 
 
     render() {
-      debugger
       const leftNav = () => (
         <nav className="left-nav">
           <Link to="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt4I84agutwgKwfb0AMMW4OrwGvlDibEmaL3hziPndtK1Wk6LwMQ"
@@ -50,7 +57,7 @@ class NavbarComponent extends React.Component {
             </Link>
             <li><button onClick={() => this.props.openModal('create_listing')}>Become a host</button></li>
             <li><button>Earn Credit</button></li>
-            <li><button className="switch-button" onClick={this.props.logout}>Log Out</button></li>
+            <li><button className="switch-button" onClick={this.logoutUser}>Log Out</button></li>
           </ul>
         </nav>
       );
@@ -72,4 +79,4 @@ class NavbarComponent extends React.Component {
 
 }
 
-export default NavbarComponent;
+export default withRouter(NavbarComponent);

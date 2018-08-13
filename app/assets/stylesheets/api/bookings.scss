@@ -1,3 +1,116 @@
 // Place all the styles related to the api/bookings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-bookings-container{
+  background: white;
+  margin: 30px 50px;
+  line-height: 1.4;
+  display: grid;
+  grid-gap: 20px;
+
+
+
+  .welcome-header{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 1fr;
+
+
+
+
+    img {
+      max-width: 50%;
+
+    }
+
+    .greet-user{
+      padding: 20px;
+
+
+
+      h1{
+        font-size: 40px;
+
+      }
+
+      h2{
+        font-size: 30px;
+
+      }
+    }
+  }
+
+  .bookings-container ul{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    // grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+
+
+    .booking-box{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-between;
+      width: 70%;
+      background: lightgrey;
+      padding: 15px;
+
+      img{
+        display: block;
+      }
+
+      h2{
+        font-size: 22px;
+        font-family: $open-sans;
+
+      }
+
+      h3{
+        font-size: 18px;
+        color: #AF002A;
+
+      }
+
+      .booking-dates{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+
+        .date-info{
+          font-weight: 700;
+
+        }
+
+
+      }
+
+      a{
+        background: #ddd;
+        display: block;
+        padding: 8px;
+        text-align: center;
+        color: #333;
+        text-transform: uppercase;
+        font-size: 17px;
+        box-shadow: $shadow;
+      }
+
+      .booking-buttons{
+        display: flex;
+        justify-content: space-between;
+        padding: 13px;
+
+        button{
+          padding: 4px 8px;
+          background-color: #333;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+
+}

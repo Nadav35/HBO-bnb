@@ -6,6 +6,7 @@ export const fetchBookings = () => {
 };
 
 export const deleteBooking = (id) => {
+  debugger
   return $.ajax({
     method: 'DELETE',
     url: `/api/bookings/${id}`

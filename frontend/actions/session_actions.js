@@ -1,12 +1,19 @@
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const LOGOUT_USER = 'LOGOUT_USER';
 import * as ApiUtil from '../util/session_api_util';
 
 const receiveCurrentUser = currentUser => {
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser
+  };
+};
+
+const receiveLogoutUser = () => {
+  return {
+    type: LOGOUT_USER
   };
 };
 
@@ -33,7 +40,7 @@ export const login = (user) => dispatch => {
 
 export const logout = () => dispatch => {
   return ApiUtil.logout().then(user => {
-    return dispatch(receiveCurrentUser(null));
+    return dispatch(receiveLogoutUser());
   });
 };
 

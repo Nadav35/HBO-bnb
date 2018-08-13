@@ -35,10 +35,10 @@ class Api::BookingsController < ApplicationController
 
   end
 
-  def delete
-    @booking = Booking.find(params[:id])
-    @spot.destroy
-    render 'api/bookings/booking'
+  def destroy
+    booking = Booking.find(params[:id])
+    booking.destroy
+    
   end
 
   private

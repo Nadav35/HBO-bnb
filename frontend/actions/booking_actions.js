@@ -3,12 +3,18 @@ import * as ApiUtil from '../util/booking_api_util';
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 export const RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
+export const DELETE_BOOKING = 'DELETE_BOOKING';
 
 const receiveBooking = booking => {
-  debugger
   return {
     type: RECEIVE_BOOKING,
     booking
+  };
+};
+
+export const receiveDeleteBooking = () => {
+  return {
+    type: DELETE_BOOKING
   };
 };
 
@@ -49,5 +55,5 @@ export const editBooking = booking => dispatch => {
 
 export const deleteBooking = id => dispatch => {
   return ApiUtil.deleteBooking(id)
-    .then(booking => dispatch(receiveBooking(null)));
+    .then(()=> dispatch(receiveDeleteBooking()));
 };

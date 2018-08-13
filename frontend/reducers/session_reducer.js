@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, LOGOUT_USER } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
 let _defaultState = {
@@ -12,6 +12,9 @@ const sessionReducer = (state = _defaultState, action) => {
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
       return merge({}, { currentUser });
+    case LOGOUT_USER:
+      debugger
+      return _defaultState;
     default:
       return state;
   }
