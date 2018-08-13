@@ -5,6 +5,7 @@ import SpotDetail from './spot_detail';
 import { ProtectedRoute } from '../../util/route_util';
 import BookingFormContainer from './booking_form_container';
 import BookingForm from './booking_form';
+import ReviewFormContainer from '../review_form/review_form_container';
 
 class SpotShow extends React.Component {
   constructor(props) {
@@ -70,6 +71,7 @@ class SpotShow extends React.Component {
 
           </div>
         </div>
+        <ReviewFormContainer />
 
       </div>
     );

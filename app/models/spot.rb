@@ -31,12 +31,18 @@ class Spot < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
 
+  def average_rating
+    reviews.average(:rating)
+  end
+
   private
 
   def ensure_img_url
     self.img_url ||= "https://s3-us-west-1.amazonaws.com/hbobnb-dev/5gVFEjKoFrUiHh4Qni6qKfUm"
 
   end
+
+
 
   # if not an object seeded with pic or for user not uploading image, set a deault img
   # def ensure_photo
