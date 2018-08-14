@@ -4,7 +4,7 @@ export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const DELETE_REVIEW = 'DELETE_REVIEW';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 
-export const receiveReview = payload => {
+const receiveReview = payload => {
   return {
     type: RECEIVE_REVIEW,
     payload
@@ -24,12 +24,19 @@ export const receiveDeleteReview = () => {
   };
 };
 
-export const createReview = (spotId, review) => {
+// export const createReview = (spotId, review) => {
+//   return ApiUtil.createReview(spotId, review)
+//     .then(review => dispatch(receiveReview(review)
+//   ), err => (
+//       dispatch(receiveReviewErrors(err.responseJSON))
+//     ));
+// };
+
+export const createReview = (spotId, review) => dispatch => {
   return ApiUtil.createReview(spotId, review)
-    .then(review => dispatch(receiveReview(review)
-  ), err => (
-      dispatch(receiveReviewErrors(err.responseJSON))
-    ));
+    .then(review => {
+      return dispatch(receiveReview(review));
+    });
 };
 
 export const editReview = review => dispatch => {

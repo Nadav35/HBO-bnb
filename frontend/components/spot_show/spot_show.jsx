@@ -6,10 +6,12 @@ import { ProtectedRoute } from '../../util/route_util';
 import BookingFormContainer from './booking_form_container';
 import BookingForm from './booking_form';
 import ReviewFormContainer from '../review_form/review_form_container';
+import ReviewShow from './review_show';
 
 class SpotShow extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
 
@@ -26,13 +28,13 @@ class SpotShow extends React.Component {
   }
 
   render() {
-    if (!this.props.spot || !this.props.host) return null; // put some loading magic
 
+    if (!this.props.spot || !this.props.host) return null; // put some loading magic
     const imgUser = this.props.host.imgUrl ?
       this.props.host.imgUrl : this.props.host.uploadedImgUrl;
     const imgSpot = this.props.spot.imgUrl ?
       this.props.spot.imgUrl : this.props.spot.uploadedImgUrl;
-
+    debugger
     return (
       <div className="single-spot-show">
         <div className="single-spot-header">
@@ -58,10 +60,22 @@ class SpotShow extends React.Component {
               <h3>HOME HIGHLIGHTS</h3>
               <p>{this.props.spot.description}</p>
             </div>
-            <div className="spot-reviews">
-              <h1>Reviews Coming Soon......</h1>
+            <div className="reviews-showpage">
+              <h1>Reviews</h1>
+              {this.props.reviews.map((review) => {
+                debugger
+                return (<ReviewShow
+                  review={review}
+                  key={review.id}
+                  reviewer={this.props.users[review.reviewerId]}
+                  avgRating={this.props.spot.averageRating}
+
+                  />);
+              })};
+
 
             </div>
+
 
 
 

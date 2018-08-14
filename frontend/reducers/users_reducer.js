@@ -17,6 +17,7 @@ const usersReducer = (state = {}, action) => {
       const users = action.payload.users;
       return merge({}, state, users);
     case RECEIVE_SPOT:
+      debugger
       const user = { [action.payload.user.id]: action.payload.user};
       return merge({}, state, user);
     default:
