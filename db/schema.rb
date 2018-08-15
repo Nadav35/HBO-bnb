@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_12_134632) do
+ActiveRecord::Schema.define(version: 2018_08_14_184840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,15 +64,14 @@ ActiveRecord::Schema.define(version: 2018_08_12_134632) do
     t.string "title", null: false
     t.text "description", null: false
     t.integer "owner_id", null: false
-    t.string "img_url"
     t.float "lng", null: false
     t.float "lat", null: false
     t.string "location", null: false
     t.float "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "host_message"
     t.index ["description"], name: "index_spots_on_description"
-    t.index ["img_url"], name: "index_spots_on_img_url"
     t.index ["lng", "lat"], name: "index_spots_on_lng_and_lat", unique: true
     t.index ["location"], name: "index_spots_on_location"
     t.index ["owner_id"], name: "index_spots_on_owner_id"
@@ -83,7 +82,6 @@ ActiveRecord::Schema.define(version: 2018_08_12_134632) do
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "email", null: false
-    t.string "img_url"
     t.string "password_digest", null: false
     t.string "session_token", null: false
     t.datetime "created_at", null: false

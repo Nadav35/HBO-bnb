@@ -1,18 +1,24 @@
 import { connect } from 'react-redux';
 
 import spotsIndex from './spots_index';
-import { fetchSpots } from '../../actions/spot_actions';
+import { fetchSpots,
+  deleteSpot } from '../../actions/spot_actions';
+import { openModal } from '../../actions/modal_actions';
 
-const msp = ({ entities }) => {
+
+const msp = (state) => {
   return {
-    spots: Object.values(entities.spots),
-    users: Object.values(entities.users)
+    spots: Object.values(state.entities.spots),
+    users: state.entities.users,
+    currentUser: state.session.currentUser
   };
 };
 
 const mdp = dispatch => {
   return {
-    fetchSpots: () => dispatch(fetchSpots())
+    fetchSpots: () => dispatch(fetchSpots()),
+    deleteSpot: id => dispatch(deleteSpot(id)),
+    openModal: (modal, opArg) => dispatch(openModal(modal, opArg))
   };
 };
 

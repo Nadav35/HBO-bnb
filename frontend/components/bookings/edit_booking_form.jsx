@@ -32,8 +32,8 @@ class EditBookingForm extends React.Component {
     debugger
     const booking = merge({}, this.state);
     this.props.editBooking(booking)
-      .then(this.props.closeModal)
-      .then(this.props.history.push('/'));
+      .then(this.props.closeModal);
+
   }
 
 

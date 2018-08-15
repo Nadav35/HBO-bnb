@@ -3,7 +3,8 @@ class Api::BookingsController < ApplicationController
 
   def index
     @spots = current_user.booked_spots
-    render 'api/spots/index'
+    @bookings = current_user.bookings
+    render :index
 
   end
 

@@ -5,6 +5,7 @@ import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 import ListingFormContainer from '../listing_form/listing_form_container';
 import EditBookingContainer from '../bookings/edit_booking_container';
+import EditSpotContainer from '../listing_form/edit_spot_container.js';
 
 function Modal({payload, closeModal}) {
   if (!payload) {
@@ -23,7 +24,9 @@ function Modal({payload, closeModal}) {
       break;
     case 'edit_booking':
       component = <EditBookingContainer />;
-
+      break;
+    case 'edit_spot':
+      component = <EditSpotContainer />;
       break;
 
     default:

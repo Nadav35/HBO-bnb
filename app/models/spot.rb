@@ -2,55 +2,48 @@
 #
 # Table name: spots
 #
-#  id          :bigint(8)        not null, primary key
-#  title       :string           not null
-#  description :text             not null
-#  owner_id    :integer          not null
-#  img_url     :string
-#  lng         :float            not null
-#  lat         :float            not null
-#  location    :string           not null
-#  price       :float            not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id           :bigint(8)        not null, primary key
+#  title        :string           not null
+#  description  :text             not null
+#  owner_id     :integer          not null
+#  lng          :float            not null
+#  lat          :float            not null
+#  location     :string           not null
+#  price        :float            not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  host_message :string
 #
 
 class Spot < ApplicationRecord
   validates :title, :description, :lng,
     :lat, :location, :price, presence: true
+  validates :lng, uniqueness: {scope: :lat, message: "and Lat combo taken" }
 
-  # after_initialize :ensure_photo
-  after_initialize :ensure_img_url
+  after_initialize :ensure_photo
 
   belongs_to :owner,
     primary_key: :id,
     foreign_key: :owner_id,
     class_name: :User
 
-  has_many :reviews
-  has_many :bookings
+  has_many :reviews, dependent: :destroy
+  has_many :bookings, dependent: :destroy
   has_one_attached :photo
+
+  has_many :reviewers,
+    through: :reviews,
+    source: :reviewer
 
   def average_rating
     reviews.average(:rating)
   end
 
-  private
-
-  def ensure_img_url
-    self.img_url ||= "https://s3-us-west-1.amazonaws.com/hbobnb-dev/5gVFEjKoFrUiHh4Qni6qKfUm"
-
+  def ensure_photo
+    if !self.photo.attached?
+      file = File.open('app/assets/images/shows/curb/house.jpg')
+      self.photo.attach(io: file, filename: "house.jpg")
+    end
   end
-
-
-
-  # if not an object seeded with pic or for user not uploading image, set a deault img
-  # def ensure_photo
-  #   if !self.photo.attached? && !self.img_url
-  #     self.photo.attach(io: File.open("/Users/nadavnoy/Desktop/AirBnB1/Airbnb-clone/app/assets/images/shows/silicon_valley/gavin_house.jpg"),
-  #     filename: "house")
-  #   end
-  # end
-
 
 end

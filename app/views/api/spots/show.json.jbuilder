@@ -16,6 +16,14 @@ json.set! :reviews do
   end
 end
 
+json.set! :reviewers do
+  @spot.reviewers.each do |reviewer|
+    json.set! reviewer.id do
+      json.partial! '/api/users/user', user: reviewer
+    end
+  end
+end
+
 
 
 

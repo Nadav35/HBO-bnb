@@ -14,11 +14,13 @@ const msp = (state, ownProps) => {
   const host = findHost(state.entities, spot);
   const reviews = Object.values(state.entities.reviews);
   const users = state.entities.users;
+  const currentUser = state.session.currentUser;
   return {
     spot,
     host,
     reviews,
-    users
+    users,
+    currentUser
   };
 };
 

@@ -5,17 +5,30 @@ import merge from 'lodash/merge';
 class ListingForm extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      title: '',
-      description: '',
-      lng: '',
-      lat: '',
-      location: '',
-      price: '',
-      photoFile: null,
-      photoUrl: null
-    };
+    if (props.spot) {
+      this.state = {
+        title: '',
+        description: '',
+        lng: '',
+        lat: '',
+        location: '',
+        photoFile: null,
+        photoUrl: null,
+        owner_id: props.spot.ownerId,
+        price: ''
+      };
+    } else {
+        this.state = {
+          title: '',
+          description: '',
+          lng: '',
+          lat: '',
+          location: '',
+          price: '',
+          photoFile: null,
+          photoUrl: null
+        };
+      }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
@@ -43,7 +56,11 @@ class ListingForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('spot[photo]', this.state.photoFile);
     }
-    this.props.createSpot(formData).then(this.props.closeModal);
+    if (this.props.spotId) {
+      this.props.processForm(this.props.spotId, formData).then(this.props.closeModal);
+    } else {
+      this.props.processForm(formData).then(this.props.closeModal);
+    }
   }
 
   handleFile(e) {
@@ -79,7 +96,7 @@ class ListingForm extends React.Component {
             onClick={this.props.closeModal}>
           </i>
           {this.getErrors()}
-          <h1>Create a new listing</h1>
+          <h1>{this.props.formType} Listing</h1>
           <div className="input title">
             <input value={this.state.title}
               onChange={this.update('title')}
@@ -141,7 +158,7 @@ class ListingForm extends React.Component {
           </div>
 
           <div className="form-submit">
-            <button className="submit-button">Create Listing</button>
+            <button className="submit-button">submit</button>
 
           </div>
 

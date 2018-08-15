@@ -83,11 +83,11 @@
     }
   }
 
-  .session-errors li{
-    color: red;
-    padding: 5px;
-
-  }
+  // .session-errors li{
+  //   color: red;
+  //   padding: 5px;
+  //
+  // }
 
   .fa-window-close{
     font-size: 20px;
@@ -122,5 +122,10 @@
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+}
+.session-errors li{
+  color: red;
+  padding: 5px;
 
 }

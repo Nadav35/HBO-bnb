@@ -22,8 +22,7 @@ class BookingForm extends React.Component {
     e.preventDefault();
     const booking = merge({}, this.state);
     const spotId = this.props.match.params.spotId;
-    this.props.createBooking(spotId, booking)
-      .then(this.props.history.push('/'));
+    this.props.createBooking(spotId, booking);
   }
 
 
@@ -40,7 +39,7 @@ class BookingForm extends React.Component {
     );
   }
 
-  
+
 
   render() {
     return (

@@ -28,9 +28,12 @@ export const deleteSpot = id => {
       url: `/api/spots/${id}`
   });
 };
-export const editSpot = spot => {
+export const editSpot = (spotId, formData) => {
   return $.ajax({
       method: 'PATCH',
-      url: `/api/spots/${spot.id}`
+      url: `/api/spots/${spotId}`,
+      data: formData,
+      contentType: false,
+      processData: false
   });
 };

@@ -7,7 +7,7 @@ import { openModal } from '../../actions/modal_actions';
 
 const msp = ({ errors }) => {
   return {
-      errors: errors.session
+      errors: errors.booking
   };
 };
 

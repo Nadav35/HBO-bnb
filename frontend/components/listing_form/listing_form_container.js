@@ -8,14 +8,16 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 
 
 const msp = ({ errors }) => {
+  debugger
   return {
-    errors: errors.session
+    errors: errors.spot,
+    formType: 'New'
   };
 };
 
 const mdp = dispatch => {
   return {
-    createSpot: spot => dispatch(createSpot(spot)),
+    processForm: spot => dispatch(createSpot(spot)),
     closeModal: () => dispatch(closeModal()),
     clearErrors: () => dispatch(clearErrors())
 

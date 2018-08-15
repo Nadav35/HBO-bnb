@@ -25,6 +25,7 @@ class Api::SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:id])
     if @spot.update_attributes(spot_params)
+      debugger
       render :show
     else
       render json: @spot.errors.full_messages, status: 401
@@ -36,7 +37,7 @@ class Api::SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     @spot.destroy
 
-    render :show
+
 
   end
 

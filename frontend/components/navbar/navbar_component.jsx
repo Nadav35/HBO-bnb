@@ -11,7 +11,7 @@ class NavbarComponent extends React.Component {
 
     loginDemoUser(e){
       e.preventDefault();
-      const user = {username: "guest", password: "123456"};
+      const user = {username: "Al Swearengen", password: "123456"};
       this.props.loginDemoUser(user);
     }
 
@@ -26,7 +26,7 @@ class NavbarComponent extends React.Component {
     render() {
       const leftNav = () => (
         <nav className="left-nav">
-          <Link to="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt4I84agutwgKwfb0AMMW4OrwGvlDibEmaL3hziPndtK1Wk6LwMQ"
+          <Link to="/"><img src={window.logo}
             alt="logo" /></Link>
           <div className="geo-search">
             <i className="fas fa-search"></i>
@@ -57,6 +57,7 @@ class NavbarComponent extends React.Component {
             <li><button onClick={() => this.props.openModal('create_listing')}>Become a host</button></li>
             <li><button>Earn Credit</button></li>
             <li><button className="switch-button" onClick={this.logoutUser}>Log Out</button></li>
+            <img src={this.props.currentUser.imgUrl}></img>
           </ul>
         </nav>
       );
