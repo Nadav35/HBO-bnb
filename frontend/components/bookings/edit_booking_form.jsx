@@ -29,7 +29,7 @@ class EditBookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
+    
     const booking = merge({}, this.state);
     this.props.editBooking(booking)
       .then(this.props.closeModal);

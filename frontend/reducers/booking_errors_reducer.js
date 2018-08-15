@@ -2,7 +2,7 @@ import { RECEIVE_BOOKING_ERRORS, RECEIVE_BOOKING } from '../actions/booking_acti
 import { CLEAR_ERRORS } from '../actions/session_actions';
 
 const bookingErrorsReducer = (state = [], action) => {
-  // debugger
+  // 
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_BOOKING:

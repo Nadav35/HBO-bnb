@@ -39,6 +39,14 @@ class Spot < ApplicationRecord
     reviews.average(:rating)
   end
 
+  def self.in_bounds(bounds)
+    debugger
+    self.where("lat < ?", bounds[:northEast][:lat])
+      .where("lat > ?", bounds[:southWest][:lat])
+      .where("lng < ? ", bounds[:northEast][:lng])
+      .where("lng > ?", bounds[:southWest][:lng])
+  end
+
   def ensure_photo
     if !self.photo.attached?
       file = File.open('app/assets/images/shows/curb/house.jpg')

@@ -1,8 +1,10 @@
 class Api::SpotsController < ApplicationController
   skip_before_action :verify_authenticity_token, raise: false
   def index
-    @spots = Spot.all
+    # @spots = Spot.all
     # @spots = spots.includes(:owner)
+    debugger
+    @spots = bounds ? Spot.in_bounds(bounds) : Spot.all
     render :index
 
   end
@@ -25,7 +27,7 @@ class Api::SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:id])
     if @spot.update_attributes(spot_params)
-      debugger
+
       render :show
     else
       render json: @spot.errors.full_messages, status: 401
@@ -46,5 +48,10 @@ class Api::SpotsController < ApplicationController
   def spot_params
     params.require(:spot).permit(:title, :description,
       :img_url, :lng, :lat, :location, :price, :photo)
+  end
+
+  def bounds
+    params[:bounds]
+
   end
 end

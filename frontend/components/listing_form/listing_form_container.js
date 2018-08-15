@@ -8,7 +8,7 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 
 
 const msp = ({ errors }) => {
-  debugger
+  
   return {
     errors: errors.spot,
     formType: 'New'

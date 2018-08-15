@@ -5,7 +5,7 @@ import merge from 'lodash/merge';
 class Sessionform extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
+    // 
     if (this.props.formType === 'Sign up') {
       this.state = {
         email: '',

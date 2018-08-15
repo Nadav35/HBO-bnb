@@ -2,10 +2,12 @@ import React from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
 // import spotsDetail from './spot_detail';
 import { openModal } from '../../actions/modal_actions';
+import SpotsHeader from './spots_header';
 
-class spotsIndex extends React.Component {
+class SpotsIndex extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   componentDidMount() {
@@ -46,7 +48,8 @@ class spotsIndex extends React.Component {
 
     return (
         <div className="top-container">
-          <header className="spots-header">
+          {/*<SpotsHeader />*/}
+          {/*}<header className="spots-header">
 
             <div className="photo left-photo">
               <img src={window.tv} />;
@@ -67,10 +70,10 @@ class spotsIndex extends React.Component {
               <h2>shows locations</h2>
             </div>
 
-          </div>
+          </div>*/}
+
 
           <div className="spots-container">
-            <h1>Book unique homes and experiences around the world</h1>
             <ul>
               {this.props.spots.map((spot, idx) => {
                 return (
@@ -105,4 +108,4 @@ class spotsIndex extends React.Component {
   }
 }
 
-export default withRouter(spotsIndex);
+export default withRouter(SpotsIndex);

@@ -75,7 +75,7 @@ user7.photo.attach(io: file7, filename: "erlich.jpg")
 file8 = File.open('app/assets/images/shows/big_love/house1.jpg')
 spot = Spot.create!(
   lat: 40.7608,
-  lng: 111.8910,
+  lng: -111.8910,
   location: "Salt Lake City, Utah",
   price: 150,
   description: "Come and visit the-sometimes sunny Utah and get into the
@@ -96,7 +96,7 @@ spot.photo.attach(io: file8, filename: "house1.jpg")
 file9 = File.open('app/assets/images/shows/boardwalk/ritz1.jpg')
 spot1 = Spot.create!(
   lat: 39.3643,
-  lng: 74.4229,
+  lng: -74.4229,
   location: "Atlantic City, New Jersey",
   price: 1450,
   description: "Go back in time and come enjoy the lavishing lifestyle of
@@ -117,7 +117,7 @@ spot1.photo.attach(io: file9, filename: "ritz1.jpg")
 file10 = File.open('app/assets/images/shows/curb/house.jpg')
 spot2 = Spot.create!(
   lat: 34.0736,
-  lng: 118.4004,
+  lng: -118.4004,
   location: "Beverly Hills, California",
   price: 5000,
   description: "He may be rich, he may be obnoxious, he may be annoying as hell,
@@ -137,7 +137,7 @@ spot2.photo.attach(io: file10, filename: "house.jpg")
 file11 = File.open('app/assets/images/shows/curb/funkhouse.jpg')
 spot3 = Spot.create!(
   lat: 34.1490,
-  lng: 118.4514,
+  lng: -118.4514,
   location: "Sherman Oaks, California",
   price: 75,
   description: "who can turn down a visit to greater Los Angeles, to
@@ -160,7 +160,7 @@ spot3.photo.attach(io: file11, filename: "funkhouse.jpg")
 file12 = File.open('app/assets/images/shows/deadwood/gem.jpg')
 spot4 = Spot.create!(
   lat: 44.3767,
-  lng: 103.7296,
+  lng: -103.7296,
   location: "Deadwood, South Dakota",
   price: 9.99,
   description: "The year is 1876. The civil war has just ended, and camp
@@ -180,7 +180,7 @@ spot4.photo.attach(io: file12, filename: "gem.jpg")
 file13 = File.open('app/assets/images/shows/deadwood/bella.jpg')
 spot5 = Spot.create!(
   lat: 44.3550,
-  lng: 103.7211,
+  lng: -103.7211,
   location: "Deadwood, South Dakota",
   price: 14.99,
   description: "Come and experience Deadwood with me and my lovely “assistant”,
@@ -198,7 +198,7 @@ spot5.photo.attach(io: file13, filename: "bella.jpg")
 file14 = File.open('app/assets/images/shows/six_feet/house.jpg')
 spot6 = Spot.create!(
   lat: 34.0521,
-  lng: 118.2431,
+  lng: -118.2431,
   location: "Los Angeles, California",
   price: 90,
   description: "Only with us you are absolutely guaranteed not to be bothered
@@ -217,7 +217,7 @@ spot6.photo.attach(io: file14, filename: "house.jpg")
 file15 = File.open('app/assets/images/shows/silicon_valley/svhouse2.jpg')
 spot7 = Spot.create!(
   lat: 37.3866,
-  lng: 122.0832,
+  lng: -122.0832,
   location: "Mountain view, California",
   price: 40,
   description: "Our place lies in the middle of beautiful Mountain View.

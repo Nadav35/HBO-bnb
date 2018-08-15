@@ -12,6 +12,8 @@ import SpotShowContainer from './spot_show/spot_show_container';
 import BookingsIndexContainer from './bookings/bookings_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import spotsIndexContainer from './spot_show/spots_index_container';
+import SearchContainer from './search/search_container';
+
 import Modal from './modal/modal';
 
 const App = () => (
@@ -23,8 +25,9 @@ const App = () => (
     <Switch>
       <Route path="/api/spots/:spotId" component={SpotShowContainer} />
       <Route path="/api/bookings/:userId" component={BookingsIndexContainer} />
-      
-      <Route exact path ="/" component={ spotsIndexContainer } />
+
+      {/*<Route exact path ="/" component={ spotsIndexContainer } />*/}
+      <Route exact path ="/" component={SearchContainer} />
 
     </Switch>
   </div>

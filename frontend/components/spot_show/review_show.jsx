@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ReviewShow = ({ avgRating, review, reviewer }) => {
-  debugger
+  
   return (
     <div className="review">
       <div className="reviewer-info">

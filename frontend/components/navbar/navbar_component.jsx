@@ -30,7 +30,7 @@ class NavbarComponent extends React.Component {
             alt="logo" /></Link>
           <div className="geo-search">
             <i className="fas fa-search"></i>
-            <SearchGrid />
+            
           </div>
 
         </nav>
