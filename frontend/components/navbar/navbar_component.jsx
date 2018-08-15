@@ -58,6 +58,7 @@ class NavbarComponent extends React.Component {
             <li><button>Earn Credit</button></li>
             <li><button className="switch-button" onClick={this.logoutUser}>Log Out</button></li>
             <img src={this.props.currentUser.imgUrl}></img>
+            <p>Hello, {this.props.currentUser.username}</p>
           </ul>
         </nav>
       );
