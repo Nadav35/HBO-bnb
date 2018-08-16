@@ -33,8 +33,8 @@ const receiveSpotErrors = errors => {
   };
 };
 
-export const fetchSpots = () => dispatch => {
-  return ApiUtil.fetchSpots()
+export const fetchSpots = (filters) => dispatch => {
+  return ApiUtil.fetchSpots(filters)
     .then(payload => dispatch(receiveSpots(payload)));
 };
 

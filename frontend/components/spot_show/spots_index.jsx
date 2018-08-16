@@ -11,9 +11,14 @@ class SpotsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchSpots();
+
+    if (this.props.fetchSpots) {
+      this.props.fetchSpots();
+    }
     window.scrollTo(0,0);
   }
+
+
 
   getDeleteButton(ownerId, spotId) {
     if (this.props.currentUser &&
@@ -45,33 +50,12 @@ class SpotsIndex extends React.Component {
   }
 
   render() {
+    if (!this.props.spots) return (
+      <h1>Sorry, no spots were found!!</h1>
+    );
 
     return (
         <div className="top-container">
-          {/*<SpotsHeader />*/}
-          {/*}<header className="spots-header">
-
-            <div className="photo left-photo">
-              <img src={window.tv} />;
-            </div>
-
-            <div className="photo right-photo">
-              <img src={window.vacation}></img>
-            </div>
-          </header>
-          <div className="mid-trans">
-            <div className="left-trans">
-              <h1>Do you love TV shows?</h1>
-              <h2>Do you also need a vaction?</h2>
-            </div>
-            <div className="right-trans">
-              <h1>Welcome to HBO-BnB</h1>
-              <h2>Vacation at your favorite HBO</h2><br/>
-              <h2>shows locations</h2>
-            </div>
-
-          </div>*/}
-
 
           <div className="spots-container">
             <ul>
@@ -97,12 +81,7 @@ class SpotsIndex extends React.Component {
                 );
               })}
             </ul>
-
-
           </div>
-
-
-
         </div>
     );
   }

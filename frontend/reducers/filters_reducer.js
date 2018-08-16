@@ -3,7 +3,7 @@ import  merge  from 'lodash/merge';
 import { UPDATE_FILTER } from '../actions/filter_actions';
 
 const filtersReducer = (state = {}, action) => {
-  debugger
+
   Object.freeze(state);
   if (action.type === UPDATE_FILTER) {
     const newFilter = {

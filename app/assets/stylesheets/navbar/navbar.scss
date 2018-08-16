@@ -6,9 +6,17 @@
 
     .left-nav {
       display: flex;
-      grid-template-columns: 1fr 1fr 1fr;
-      width: 100%;
-      align-items: center;
+      // grid-template-columns: 1fr 1fr;
+      // grid-gap: 10px;
+      // width: 100%;
+      // justify-content: center;
+      justify-content: flex-start;
+
+      .search_grid{
+        // margin-left: 50px;
+        width: 100%;
+      }
+
 
 
       img{
@@ -16,6 +24,7 @@
         width: 70px;
         height: 70px;
         padding: 8px;
+        margin-right: 30px;
       }
 
 

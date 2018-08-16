@@ -9,7 +9,7 @@ const mapOptions = {
     lat: 37.7758,
     lng: -122.435
   },
-  zoom: 13
+  zoom: 8
 };
 
 class PlacesMap extends React.Component {
@@ -18,15 +18,49 @@ class PlacesMap extends React.Component {
   }
 
   componentDidMount() {
-    this.map = new google.maps.Map(this.mapNode, mapOptions);
+    if (this.props.lat) {
+      this.map = new google.maps.Map(this.mapNode,
+      {
+        center: {
+          lat: parseInt(this.props.lat),
+          lng: parseInt(this.props.lng)
+        },
+        zoom: 8
+      });
+      const bounds = this.getBounds();
+      this.props.updateFilter('bounds', bounds);
+    } else {
+      this.map = new google.maps.Map(this.mapNode, mapOptions);
+    }
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.spots);
     this.registerListeners();
 
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.lat !== nextProps.lat || this.props.lng !== nextProps.lng){
+      this.map.setCenter(new google.maps.LatLng(nextProps.lat, nextProps.lng));
+      const bounds = this.getBounds();
+      this.props.updateFilter('bounds', bounds);
+
+    }
+  }
+
+  getBounds() {
+    let bounds;
+    if (this.map.getBounds()) {
+      const {north, south, east, west } = this.map.getBounds().toJSON();
+      bounds = {
+        northEast: { lat: north, lng: east},
+        southWest: {lat: south, lng: west}
+      };
+    }
+    return bounds;
+  }
+
   registerListeners() {
-    google.maps.event.addListener(this.map, 'idle', () => {
+    google.maps.event.addListener(this.map, 'drag', () => {
       const {north, south, east, west } = this.map.getBounds().toJSON();
       const bounds = {
         northEast: { lat: north, lng: east},
@@ -45,7 +79,7 @@ class PlacesMap extends React.Component {
   }
 
   handleClick(coords) {
-    debugger
+
   }
 
   componentDidUpdate() {

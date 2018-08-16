@@ -1,11 +1,30 @@
 import React from 'react';
 import Geosuggest from 'react-geosuggest';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 
 class SearchGrid extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      spot: ''
+    };
+    this.onSuggestSelect = this.onSuggestSelect.bind(this);
   }
+
+  update(property) {
+    return e => this.setState({ [property]: e });
+  }
+
+  onSuggestSelect(suggest) {
+    if (suggest && suggest.placeId) {
+      this.props.history.replace({
+        pathname: '/search',
+        search: `lat=${suggest.location.lat}&lng=${suggest.location.lng}`
+      });
+    }
+  }
+
+
 
   render() {
     return (
@@ -14,7 +33,8 @@ class SearchGrid extends React.Component {
           className="search-input"
           placeholder="try Afghanistan"
           id="top-bar"
-          autocomplete="off"
+          onSuggestSelect={this.onSuggestSelect}
+          onChange={this.update('spot')}
         />
 
       </span>
@@ -23,4 +43,4 @@ class SearchGrid extends React.Component {
   }
 }
 
-export default SearchGrid;
+export default withRouter(SearchGrid);

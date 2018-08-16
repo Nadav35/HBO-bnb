@@ -9,14 +9,15 @@ import { RECEIVE_BOOKINGS } from '../actions/booking_actions';
 import { RECEIVE_REVIEW } from '../actions/review_actions';
 
 const spotsReducer = (state = {}, action) => {
+
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SPOTS:
     case RECEIVE_BOOKINGS:
-      if (action.payload.spots) {
-        return action.payload.spots;
+      if (!action.payload.spots) {
+        return {};
       } else {
-        return state;
+        return action.payload.spots;
       }
     break;
     case RECEIVE_SPOT:

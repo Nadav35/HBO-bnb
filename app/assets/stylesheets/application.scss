@@ -19,6 +19,7 @@
 
  @import "base/layout.scss";
  @import "navbar/navbar.scss";
+ @import "navbar/geo_suggest.scss";
 
  @import 'forms/session_form.scss';
  @import 'forms/listing_form.scss';
@@ -27,6 +28,7 @@
  @import 'forms/review_form.scss';
 
  @import 'spots/spots_index.scss';
+ @import 'spots/filtered_spots.scss';
  @import 'spots/spot_show.scss';
   @import 'spots/search.scss';
  @import 'api/bookings.scss';

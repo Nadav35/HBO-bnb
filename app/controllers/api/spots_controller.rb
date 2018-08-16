@@ -3,8 +3,10 @@ class Api::SpotsController < ApplicationController
   def index
     # @spots = Spot.all
     # @spots = spots.includes(:owner)
-    debugger
+
+
     @spots = bounds ? Spot.in_bounds(bounds) : Spot.all
+    #
     render :index
 
   end

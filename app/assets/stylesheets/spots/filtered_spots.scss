@@ -1,0 +1,50 @@
+.filtered-spots-container{
+
+  display: grid;
+  grid-column: 20px;
+  grid-template-areas:
+    'filtered-top'
+    'container-filters';
+
+  .filtered-top{
+    grid-area: filtered-top;
+    width: 50%;
+    text-align: center;
+    line-height: 2;
+
+    .top-filter{
+      
+    }
+
+
+
+    h1{
+      font-size: 50px;
+      font-family: $kirang;
+      font-weight: 900;
+
+    }
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .container-filters{
+    grid-area: container-filters;
+    display: flex;
+    justify-content: space-between;
+
+    .right-filtered{
+
+      .map-container{
+        width: 500px;
+        height: 500px;
+      }
+    }
+  }
+
+
+
+}

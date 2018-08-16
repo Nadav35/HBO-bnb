@@ -27,12 +27,11 @@ class NavbarComponent extends React.Component {
       const leftNav = () => (
         <nav className="left-nav">
           <Link to="/"><img src={window.logo}
-            alt="logo" /></Link>
-          <div className="geo-search">
-            <i className="fas fa-search"></i>
-            
+            alt="logo" />
+          </Link>
+          <div className="search-grid">
+            <SearchGrid />
           </div>
-
         </nav>
       );
 
