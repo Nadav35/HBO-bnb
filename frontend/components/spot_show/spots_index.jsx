@@ -3,6 +3,7 @@ import { Link, Route, withRouter } from 'react-router-dom';
 // import spotsDetail from './spot_detail';
 import { openModal } from '../../actions/modal_actions';
 import SpotsHeader from './spots_header';
+import LoadingIcon from './loading_icon';
 
 class SpotsIndex extends React.Component {
   constructor(props) {
@@ -50,12 +51,26 @@ class SpotsIndex extends React.Component {
   }
 
   render() {
+
+
+    {/*if (this.props.loading) { return <LoadingIcon />; }*/}
     if (!this.props.spots) return (
       <h1>Sorry, no spots were found!!</h1>
     );
+    let users;
+    if (this.props.users.users) {
+      users = this.props.users.users;
+    } else {
+      users = this.props.users;
+    }
+
+
+
+
 
     return (
         <div className="top-container">
+
 
           <div className="spots-container">
             <ul>
@@ -66,7 +81,7 @@ class SpotsIndex extends React.Component {
                       <img src={spot.imgUrl} alt="spot" />
                     </Link>
                     <span className="host-img">
-                      <img src={this.props.users[spot.ownerId].imgUrl}></img>
+                      <img src={users[spot.ownerId].imgUrl}></img>
                     </span>
                     <span className="spot-location">{spot.location}</span>
                     <span className="spot-title">{spot.title}</span>

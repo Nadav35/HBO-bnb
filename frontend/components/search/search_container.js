@@ -7,11 +7,11 @@ import Search from './search';
 import { updateFilter } from '../../actions/filter_actions';
 
 const msp = (state) => {
-
   return {
     spots: Object.values(state.entities.spots),
     users: state.entities.users,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    loading: state.ui.loading
   };
 };
 

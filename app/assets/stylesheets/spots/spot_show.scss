@@ -19,20 +19,12 @@
     width: 60%;
     min-height: 700px;
     height: 70%;
-    // padding: 2rem;
     margin-top: 50px;
     box-shadow: $shadow;
     margin-bottom: 20px;
 
-
-
-
-
     img {
-      // display: block;
       max-width: 100%;
-      // max-height: 50%;
-
     }
   }
 
@@ -43,7 +35,6 @@
     justify-content: space-between;
     flex-direction: column;
     box-shadow: $shadow;
-
 
     .detail-container {
       display: flex;
@@ -61,7 +52,6 @@
       .user-profile {
         width: 40%;
         text-align: center;
-
 
         h1{
           font-size: 24px;
@@ -81,9 +71,8 @@
           color: black;
         }
       }
-
-
     }
+
     .home-highlights{
       padding: 2rem;
       box-shadow: $shadow;
@@ -101,27 +90,6 @@
         font-size: 16px;
         font-size: 24px;
       }
-
-
     }
-
-    .spot-reviews{
-      margin-top: 20px;
-      box-shadow: $shadow;
-
-      h1{
-        color: $dark;
-        font-size: 30px;
-        font-weight: 900;
-      }
-    }
-
-
-
   }
-
-  
-
-
-
 }

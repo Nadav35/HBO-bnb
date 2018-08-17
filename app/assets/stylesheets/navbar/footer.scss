@@ -1,0 +1,29 @@
+.footer{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  // margin-top: 30px;
+  width: 100%;
+  background: grey;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+
+  .footer-info{
+    display: grid;
+    // padding: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+    h1{
+      font-size: 30px;
+      color: white;
+      font-family: $kirang;
+      font-weight: 900;
+    }
+
+    a{
+      font-size: 40px;
+    }
+  }
+}

@@ -4,11 +4,18 @@ export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 export const RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
 export const DELETE_BOOKING = 'DELETE_BOOKING';
+export const START_LOADING_ALL_SPOTS = 'START_LOADING_ALL_SPOTS';
 
 const receiveBooking = booking => {
   return {
     type: RECEIVE_BOOKING,
     booking
+  };
+};
+
+export const startLoadingAllSpots = () => {
+  return {
+    type: START_LOADING_ALL_SPOTS
   };
 };
 
@@ -35,6 +42,7 @@ const receiveBookingErrors = errors => {
 };
 
 export const fetchBookings = () => dispatch => {
+  dispatch(startLoadingAllSpots());
   return ApiUtil.fetchBookings()
     .then(payload => dispatch(receiveBookings(payload)));
 };
@@ -61,6 +69,7 @@ export const editBooking = (booking) => dispatch => {
 };
 
 export const deleteBooking = id => dispatch => {
+  dispatch(startLoadingAllSpots());
   return ApiUtil.deleteBooking(id)
     .then(()=> dispatch(receiveDeleteBooking()));
 };

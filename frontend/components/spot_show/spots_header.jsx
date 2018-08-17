@@ -22,6 +22,8 @@ const SpotsHeader = () => (
         <h2>Vacation at your favorite HBO</h2><br/>
         <h2>shows locations</h2>
       </div>
+      
+
 
     </div>
   </div>

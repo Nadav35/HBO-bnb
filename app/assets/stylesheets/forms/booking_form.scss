@@ -1,20 +1,23 @@
 .booking-form {
   position:fixed;
   display: grid;
-  // flex-direction: column;
-  // justify-content: space-between;
+
   grid-gap: 0;
   top: 150px;
-  // left: 50%;
   right: 10%;
-  // margin-left: -300px;
-  width: 300px;
+  width: 400px;
   height: auto;
   padding: 20px;
   background: #fff;
-  // z-index: 3;
   border-radius: 5px;
   border: 1px solid #000;
+
+  span{
+    padding: 10px;
+    font-family: $playfair;
+    font-size: 20px;
+
+  }
 
   h1{
     font-size: 26px;
@@ -27,10 +30,22 @@
   .input {
     // margin-top: 40px;
     margin: 0 0 30px 0;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     padding: 5px 20px;
+
+    label{
+      font-family: $open-sans;
+      padding: 10px;
+    }
+
+
+    input{
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 100%;
+    }
   }
 
   .form-submit{

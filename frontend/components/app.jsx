@@ -14,6 +14,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import spotsIndexContainer from './spot_show/spots_index_container';
 import SearchContainer from './search/search_container';
 import FilteredSpotsContainer from './places_map/filtered_spots_container';
+import Footer from './navbar/footer.jsx';
 
 import Modal from './modal/modal';
 
@@ -31,6 +32,9 @@ const App = () => (
       <Route exact path ="/" component={SearchContainer} />
 
     </Switch>
+    <footer>
+      <Footer />
+    </footer>
   </div>
 );
 

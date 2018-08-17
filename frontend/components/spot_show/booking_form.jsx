@@ -6,12 +6,19 @@ class BookingForm extends React.Component {
   constructor(props) {
     super(props);
 
+
     this.state = {
       start_date: '',
       end_date: '',
       num_guests: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.price = this.props.spots[parseInt(props.match.params.spotId)].price;
+
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
   }
 
   update(property) {
@@ -22,7 +29,8 @@ class BookingForm extends React.Component {
     e.preventDefault();
     const booking = merge({}, this.state);
     const spotId = this.props.match.params.spotId;
-    this.props.createBooking(spotId, booking);
+    this.props.createBooking(spotId, booking)
+      .then(() => this.props.history.push(`/api/bookings/${this.props.currentUser.id}`));
   }
 
 
@@ -45,6 +53,7 @@ class BookingForm extends React.Component {
     return (
       <form className="booking-form" onSubmit={this.handleSubmit}>
         {this.getErrors()}
+        <span>${this.price} per night</span>
         <h1>Book this place</h1>
         <div className="input start_date">
           <label>Check In Date</label>
@@ -59,6 +68,7 @@ class BookingForm extends React.Component {
         <div className="input end">
           <label>Check Out Date</label>
           <input type="date"
+            min={this.state.start_date}
             onChange={this.update('end_date')}
             value={this.state.end_date}
             name="booking_end_date"

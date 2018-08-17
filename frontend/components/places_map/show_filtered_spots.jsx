@@ -33,6 +33,7 @@ const ShowFilteredSpots = ({ updateFilter, openModal,
               updateFilter={updateFilter}
               lat={lat}
               lng={lng}
+              anySpots={Object.values(spots).length > 0}
             />
           </div>
         </div>

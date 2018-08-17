@@ -5,9 +5,11 @@ import { createBooking } from '../../actions/booking_actions';
 import BookingForm from './booking_form';
 import { openModal } from '../../actions/modal_actions';
 
-const msp = ({ errors }) => {
+const msp = (state, ownProps) => {
   return {
-      errors: errors.booking
+      errors: state.errors.booking,
+      spots: state.entities.spots,
+      currentUser: state.session.currentUser
   };
 };
 

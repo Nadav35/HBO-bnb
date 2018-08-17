@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
+import LoadingIcon from '../spot_show/loading_icon';
 
 class BookingsShow extends React.Component {
   constructor(props) {
@@ -10,18 +11,21 @@ class BookingsShow extends React.Component {
 
   handleDelete(e, bookingId) {
     e.preventDefault();
-    this.props.deleteBooking(bookingId)
-      .then(this.props.history.push('/'));
+    this.props.deleteBooking(bookingId);
+
   }
-
-
-
 
   componentDidMount() {
     this.props.fetchBookings();
+
   }
 
   render() {
+
+    if (this.props.loading) { return <LoadingIcon />; }
+    if (this.props.bookings.length === 0 && Object.values(this.props.spots).length > 0) {
+      this.props.fetchBookings();
+    }
     const {
       currentUser,
       bookings,

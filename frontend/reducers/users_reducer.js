@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_SPOTS, RECEIVE_SPOT } from '../actions/spot_actions';
 import { RECEIVE_BOOKINGS } from '../actions/booking_actions';
+import { RECEIVE_REVIEW } from '../actions/review_actions';
 import merge from 'lodash/merge';
 
 const usersReducer = (state = {}, action) => {
@@ -16,9 +17,12 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_BOOKINGS:
       const users = action.payload.users;
       return merge({}, state, users);
+    case RECEIVE_REVIEW:
+      const newState = merge({}, state);
+      newState.reviewers[action.payload.reviewer.id] = action.payload.reviewer;
+      return newState;
     case RECEIVE_SPOT:
-      const user = { [action.payload.user.id]: action.payload.user};
-      return merge({}, state, user);
+      return merge({}, state, action.payload.users);
     default:
       return state;
   }

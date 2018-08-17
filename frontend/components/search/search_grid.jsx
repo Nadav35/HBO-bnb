@@ -11,6 +11,8 @@ class SearchGrid extends React.Component {
     this.onSuggestSelect = this.onSuggestSelect.bind(this);
   }
 
+
+
   update(property) {
     return e => this.setState({ [property]: e });
   }
@@ -31,7 +33,7 @@ class SearchGrid extends React.Component {
       <span className="search-box">
         <Geosuggest
           className="search-input"
-          placeholder="try Afghanistan"
+          placeholder="try Fargo"
           id="top-bar"
           onSuggestSelect={this.onSuggestSelect}
           onChange={this.update('spot')}

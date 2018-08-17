@@ -7,11 +7,13 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const msp = (state) => {
+  
 
   return {
     spots: Object.values(state.entities.spots),
     users: state.entities.users,
     currentUser: state.session.currentUser
+
   };
 };
 

@@ -13,23 +13,26 @@
  *= require_self
  */
 
- @import "base/reset.scss";
- @import "base/colors.scss";
- @import "base/fonts.scss";
+@import "base/reset.scss";
+@import "base/colors.scss";
+@import "base/fonts.scss";
 
- @import "base/layout.scss";
- @import "navbar/navbar.scss";
- @import "navbar/geo_suggest.scss";
+@import "base/layout.scss";
+@import "navbar/navbar.scss";
+@import "navbar/geo_suggest.scss";
+@import "navbar/footer.scss";
 
- @import 'forms/session_form.scss';
- @import 'forms/listing_form.scss';
- @import 'forms/booking_form.scss';
- @import 'forms/edit_booking_form.scss';
- @import 'forms/review_form.scss';
+@import 'forms/session_form.scss';
+@import 'forms/listing_form.scss';
+@import 'forms/booking_form.scss';
+@import 'forms/edit_booking_form.scss';
+@import 'forms/review_form.scss';
 
- @import 'spots/spots_index.scss';
- @import 'spots/filtered_spots.scss';
- @import 'spots/spot_show.scss';
-  @import 'spots/search.scss';
- @import 'api/bookings.scss';
- @import 'api/reviews.scss';
+@import 'spots/spots_index.scss';
+@import 'spots/filtered_spots.scss';
+@import 'spots/spot_show.scss';
+@import 'spots/search.scss';
+@import 'spots/loading_icon.scss';
+
+@import 'api/bookings.scss';
+@import 'api/reviews.scss';

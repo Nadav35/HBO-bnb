@@ -4,6 +4,7 @@ export const RECEIVE_SPOTS = 'RECEIVE_SPOTS';
 export const RECEIVE_SPOT = 'RECEIVE_SPOT';
 export const RECEIVE_SPOT_ERRORS = 'RECEIVE_SPOT_ERRORS';
 export const DELETE_SPOT = 'DELETE_SPOT';
+export const START_LOADING_ALL_SPOTS = 'START_LOADING_ALL_SPOTS';
 
 
 const receiveSpot = payload => {
@@ -33,7 +34,14 @@ const receiveSpotErrors = errors => {
   };
 };
 
+export const startLoadingAllSpots = () => {
+  return {
+    type: START_LOADING_ALL_SPOTS
+  };
+};
+
 export const fetchSpots = (filters) => dispatch => {
+  dispatch(startLoadingAllSpots());
   return ApiUtil.fetchSpots(filters)
     .then(payload => dispatch(receiveSpots(payload)));
 };

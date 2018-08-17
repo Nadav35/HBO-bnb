@@ -3,6 +3,7 @@ import React from 'react';
 import SpotsIndex from '../spot_show/spots_index';
 import PlacesMap from '../places_map/places_map';
 import SpotsHeader from '../spot_show/spots_header';
+import LoadingIcon from '../spot_show/loading_icon';
 
 import {
   fetchSpots,
@@ -12,7 +13,11 @@ import {
 import { openModal } from '../../actions/modal_actions';
 
 const Search = ({ fetchSpots, deleteSpot, openModal,
-  spots, users, currentUser, updateFilter}) => {
+  spots, users, currentUser, updateFilter, loading}) => {
+    {/*if (loading) { return <LoadingIcon />; }*/}
+
+
+
 
   return (
     <div className="user-pane">
@@ -29,6 +34,7 @@ const Search = ({ fetchSpots, deleteSpot, openModal,
             spots={spots}
             users={users}
             currentUser={currentUser}
+            loading={loading}
 
           />
 

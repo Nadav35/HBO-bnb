@@ -10,17 +10,19 @@ import {
 import SpotShow from './spot_show';
 
 const msp = (state, ownProps) => {
+
   const spot = state.entities.spots[ownProps.match.params.spotId];
-  const host = findHost(state.entities, spot);
+  // const host = findHost(state.entities, spot);
+  // const host = state.entities.users.user;
+  // const reviewers = state.entities.users.reviewers;
   const reviews = Object.values(state.entities.reviews);
   const users = state.entities.users;
   const currentUser = state.session.currentUser;
   return {
     spot,
-    host,
     reviews,
-    users,
-    currentUser
+    currentUser,
+    users
   };
 };
 

@@ -4,9 +4,9 @@ json.set! :spot do
   json.partial! '/api/spots/spot', spot: @spot
 end
 
-json.set! :user do
-  json.partial! '/api/users/user', user: @spot.owner
-end
+# json.set! :user do
+#   json.partial! '/api/users/user', user: @spot.owner
+# end
 
 json.set! :reviews do
   @spot.reviews.each do |review|
@@ -16,13 +16,29 @@ json.set! :reviews do
   end
 end
 
-json.set! :reviewers do
-  @spot.reviewers.each do |reviewer|
-    json.set! reviewer.id do
-      json.partial! '/api/users/user', user: reviewer
+arr = []
+@spot.reviewers.each do |reviewer|
+  # json.set! reviewer.id do
+  arr.push(reviewer) unless arr.include?(reviewer)
+    # json.partial! '/api/users/user', user: reviewer
+
+end
+
+arr.push(@spot.owner) unless arr.include?(@spot.owner)
+
+json.set! :users do
+  arr.each do |user|
+    json.set! user.id do
+      json.partial! '/api/users/user', user: user
     end
   end
 end
+
+
+
+
+
+
 
 
 

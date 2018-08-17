@@ -13,7 +13,8 @@ const msp = (state) => {
   return {
     spots: state.entities.spots,
     currentUser: state.session.currentUser,
-    bookings: formatBookings(state.entities.bookings)
+    bookings: formatBookings(state.entities.bookings),
+    loading: state.ui.loading
   };
 };
 

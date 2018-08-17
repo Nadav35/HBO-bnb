@@ -12,6 +12,7 @@ class Api::BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.booker_id = current_user.id
     @booking.spot_id = params[:spot_id]
+
     if @booking.save
       render 'api/bookings/show'
     else

@@ -9,6 +9,7 @@ import { RECEIVE_BOOKINGS } from '../actions/booking_actions';
 import { RECEIVE_REVIEW } from '../actions/review_actions';
 
 const spotsReducer = (state = {}, action) => {
+  
 
   Object.freeze(state);
   switch (action.type) {

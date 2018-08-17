@@ -3,31 +3,65 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .reviews-showpage{
   // background: red;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  justify-items: center;
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // align-items: center;
+  // justify-items: center;
+  text-align: center;
+  // border: 1px solid grey;
+  width: 60%;
+  padding: 50px;
+
+
 
   h1{
-    font-size: 30px;
-    font-family: sans;
+    font-size: 40px;
+    font-family: $medieval;
     font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 1px solid grey;
+    padding: 15px;
 
   }
 
   img{
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
   }
 
   .review {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 10px;
+    padding: 50px;
+    border-bottom: 1px solid grey;
+
+
+    p{
+      font-size: 20px;
+      font-family: $playfair;
+    }
 
     .reviewer-info{
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      img, p{
+        margin-right: 20px;
+      }
     }
+    .description{
+      text-align: left;
+
+      p{
+        color: grey;
+      }
+    }
+
+    // .reviewer-info{
+    //   display: grid;
+    //   grid-template-columns: 2fr 1fr 1fr;
+    // }
   }
 }

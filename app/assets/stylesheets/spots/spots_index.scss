@@ -1,28 +1,37 @@
 .top-container {
-  
+
+  // .bottom-trans{
+  //   text-align: center;
+  //   padding: 50px;
+  //
+  //
+  //   h1{
+  //     font-size: 50px;
+  //     color: rgb(72, 72, 72);
+  //     font-weight: 900;
+  //     // margin-bottom: 100px;
+  //     animation: heading4;
+  //     opacity: 0;
+  //     animation-delay: 10s;
+  //     animation-duration: 3s;
+  //     animation-fill-mode: forwards;
+  //     transition-property: transform;
+  //   }
+  //
+  //   @keyframes heading4 {
+  //     0%   {opacity: 0;}
+  //     100% {opacity: 1;}
+  //   }
+  //
+  // }
+
 
   .spots-container{
     grid-area: spots-container;
     // margin-top: 200px;
     text-align: center;
 
-    h1{
-      font-size: 50px;
-      color: rgb(72, 72, 72);
-      font-weight: 900;
-      margin-bottom: 100px;
-      animation: heading4;
-      opacity: 0;
-      animation-delay: 10s;
-      animation-duration: 3s;
-      animation-fill-mode: forwards;
-      transition-property: transform;
-    }
 
-    @keyframes heading4 {
-      0%   {opacity: 0;}
-      100% {opacity: 1;}
-    }
 
     .spots-index-item{
       box-shadow: $shadow;
