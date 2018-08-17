@@ -5,4 +5,4 @@ HBO-BnB is a full-stack web application, inspired by AirBnB and some of HBO's mo
 
 While i am overall happy with the end results and managed to implement all the features i wanted to within the 10 days timeframe that was allotted for the project, I will get back to it at a later time to add some more features.
 
-![splash gif](app/assets/images/screenshots/splash-gif.gif)
+![splash gif](https://media.giphy.com/media/mPRJnxaS2CNXPGIa8t/giphy.gif)
