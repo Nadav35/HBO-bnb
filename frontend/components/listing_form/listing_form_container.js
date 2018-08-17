@@ -7,11 +7,12 @@ import ListingForm from './listing_form';
 import { closeModal, openModal } from '../../actions/modal_actions';
 
 
-const msp = ({ errors }) => {
-  
+const msp = (state) => {
+
   return {
-    errors: errors.spot,
-    formType: 'New'
+    errors: state.errors.spot,
+    formType: 'New',
+    currentUser: state.session.currentUser
   };
 };
 

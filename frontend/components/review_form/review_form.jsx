@@ -25,8 +25,13 @@ class ReviewForm extends React.Component {
     this.props.createBooking(spotId, booking)
       .then(this.props.history.push('/'));*/}
     const review = merge({}, this.state);
-    const spotId = this.props.match.params.spotId;
-    this.props.createReview(spotId, review);
+    const spotId = parseInt(this.props.match.params.spotId);
+    this.props.createReview(spotId, review)
+      .then(this.setState( {
+        rating: 1,
+        description: ''
+      })
+    );
   }
 
   getErrors() {
@@ -62,6 +67,7 @@ class ReviewForm extends React.Component {
   }
 
   render() {
+
     return (
       <div className="review-container">
 

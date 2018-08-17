@@ -10,6 +10,7 @@ const msp = (state) => {
     errors: state.errors.spot,
     spotId: state.ui.payload.opArg,
     spot: state.entities.spots[state.ui.payload.opArg],
+    currentUser: state.session.currentUser,
     formType: 'Edit'
   };
 };

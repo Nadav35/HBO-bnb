@@ -31,6 +31,7 @@ export const deleteSpot = id => {
   });
 };
 export const editSpot = (spotId, formData) => {
+
   return $.ajax({
       method: 'PATCH',
       url: `/api/spots/${spotId}`,

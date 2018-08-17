@@ -6,8 +6,9 @@ import { createReview } from '../../actions/review_actions';
 import ReviewForm from './review_form';
 
 const msp = (state, ownProps) => {
+
   return {
-    errors: state.errors.session
+    errors: state.errors.reviews
   };
 };
 

@@ -50,6 +50,7 @@ class BookingForm extends React.Component {
 
 
   render() {
+
     return (
       <form className="booking-form" onSubmit={this.handleSubmit}>
         {this.getErrors()}

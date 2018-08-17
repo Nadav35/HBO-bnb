@@ -1,6 +1,7 @@
 import React from 'react';
 
 const FilteredTop = ({ currentUser, spots}) => {
+  const curUser = currentUser ? currentUser.username : ""
   if (spots.length === 0) {
     return (
       <div className="top-filter">
@@ -11,7 +12,7 @@ const FilteredTop = ({ currentUser, spots}) => {
   } else {
     return (
       <div className="found-spots">
-        <h1>Here are your search results, {currentUser.username}</h1>
+        <h1>Here are your search results {curUser}</h1>
       </div>
     );
   }

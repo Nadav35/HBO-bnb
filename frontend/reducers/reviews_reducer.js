@@ -6,6 +6,7 @@ import { RECEIVE_SPOT } from '../actions/spot_actions';
 import merge from 'lodash/merge';
 
 const reviewsReducer = (state = {}, action) => {
+
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_REVIEW:
@@ -14,7 +15,12 @@ const reviewsReducer = (state = {}, action) => {
     case DELETE_REVIEW:
       return {};
     case RECEIVE_SPOT:
-      return merge({}, state, action.payload.reviews);
+      if (action.payload.reviews) {
+        return action.payload.reviews;
+      } else {
+        return {};
+      }
+      break;
     default:
       return state;
   }

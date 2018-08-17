@@ -17,10 +17,11 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_BOOKINGS:
       const users = action.payload.users;
       return merge({}, state, users);
-    case RECEIVE_REVIEW:
-      const newState = merge({}, state);
-      newState.reviewers[action.payload.reviewer.id] = action.payload.reviewer;
-      return newState;
+    // case RECEIVE_REVIEW:
+    //
+    //   const newState = merge({}, state);
+    //   newState.reviewers[action.payload.reviewer.id] = action.payload.reviewer;
+    //   return newState;
     case RECEIVE_SPOT:
       return merge({}, state, action.payload.users);
     default:

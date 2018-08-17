@@ -19,6 +19,7 @@ class SearchGrid extends React.Component {
 
   onSuggestSelect(suggest) {
     if (suggest && suggest.placeId) {
+      this.setState( { spot: '' } );
       this.props.history.replace({
         pathname: '/search',
         search: `lat=${suggest.location.lat}&lng=${suggest.location.lng}`

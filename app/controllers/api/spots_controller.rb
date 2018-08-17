@@ -27,8 +27,10 @@ class Api::SpotsController < ApplicationController
   end
 
   def update
+
     @spot = Spot.find(params[:id])
     if @spot.update_attributes(spot_params)
+
 
       render :show
     else

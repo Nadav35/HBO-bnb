@@ -31,12 +31,15 @@ class BookingsShow extends React.Component {
       bookings,
       spots,
       openModal } = this.props;
+
+    const userMsg = bookings.length > 0 ?
+      <h2>These are your upcoming trips</h2> : <h2>You have no upcoming trips at the moment</h2>;
     return (
       <div className="main-bookings-container">
         <header className="welcome-header">
           <section className="greet-user">
             <h1>Hello there, {currentUser.username}</h1>
-            <h2>These are your upcoming trips</h2>
+            {userMsg}
           </section>
           <img src={currentUser.imgUrl} alt="user-photo"></img>
         </header>

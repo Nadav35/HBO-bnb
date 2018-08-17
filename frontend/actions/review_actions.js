@@ -34,16 +34,17 @@ export const receiveDeleteReview = () => {
 
 export const createReview = (spotId, review) => dispatch => {
   return ApiUtil.createReview(spotId, review)
-    .then(review => {
-      return dispatch(receiveReview(review));
-    });
+    .then(review => dispatch(receiveReview(review)
+  ), err => (
+    dispatch(receiveReviewErrors(err.responseJSON))
+  ));
 };
 
 export const editReview = review => dispatch => {
   return ApiUtil.editReview(review)
     .then(review => dispatch(receiveReview(review)
   ), err => (
-    dispatch(receiveBookingErrors(err.responseJSON))
+    dispatch(receiveReviewErrors(err.responseJSON))
   ));
 };
 

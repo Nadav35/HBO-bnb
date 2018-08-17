@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ReviewShow = ({ avgRating, review, reviewer }) => {
+const ReviewShow = ({ avgRating, review, reviewer,
+  deleteReview }) => {
 
   return (
     <div className="review">
@@ -20,6 +21,7 @@ const ReviewShow = ({ avgRating, review, reviewer }) => {
       </div>
       <div className="description">
         <p>{review.description}</p>
+        {deleteReview}
       </div>
     </div>
   );

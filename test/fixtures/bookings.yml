@@ -3,8 +3,8 @@
 # Table name: bookings
 #
 #  id         :bigint(8)        not null, primary key
-#  start_date :datetime         not null
-#  end_date   :datetime         not null
+#  start_date :date             not null
+#  end_date   :date             not null
 #  num_guests :integer          not null
 #  spot_id    :integer          not null
 #  booker_id  :integer          not null

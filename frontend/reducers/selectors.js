@@ -5,6 +5,7 @@ export const findHost = (entities, spot) => {
 };
 // Sun Aug 12 2018 17:00:00 GMT-0700 (Pacific Daylight Time)
 export const formatBookings = (bookings) => {
+
   let newBookings;
   const months = ["January", "February", "March",
     "April", "May", "June", "July", "August",

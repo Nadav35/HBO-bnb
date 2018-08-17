@@ -7,9 +7,9 @@ class EditBookingForm extends React.Component {
     super(props);
 
     this.state = {
-      start_date: props.booking.startDate,
-      end_date: props.booking.endDate,
-      num_guests: props.booking.numGuests,
+      start_date: '',
+      end_date: '',
+      num_guests: '',
       id: props.booking.id,
       booker_id: props.booking.bookerId,
       spot_id: props.booking.spotId
@@ -72,6 +72,7 @@ class EditBookingForm extends React.Component {
           <input type="date"
             onChange={this.update('end_date')}
             value={this.state.end_date}
+            min={this.state.start_date}
             name="booking_end_date"
             id="booking_end_date">
           </input>

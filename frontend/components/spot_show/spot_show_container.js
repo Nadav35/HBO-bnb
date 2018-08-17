@@ -6,10 +6,12 @@ import {
   editSpot,
   deleteSpot }
     from '../../actions/spot_actions';
+import { deleteReview } from '../../actions/review_actions';
 
 import SpotShow from './spot_show';
 
 const msp = (state, ownProps) => {
+
 
   const spot = state.entities.spots[ownProps.match.params.spotId];
   // const host = findHost(state.entities, spot);
@@ -30,7 +32,8 @@ const mdp = dispatch => {
   return {
     fetchSpot: id => dispatch(fetchSpot(id)),
     editSpot: spot => dispatch(editSpot(spot)),
-    deleteSpot: id => dispatch(deleteSpot(id))
+    deleteSpot: id => dispatch(deleteSpot(id)),
+    deleteReview: id => dispatch(deleteReview(id))
   };
 
 };

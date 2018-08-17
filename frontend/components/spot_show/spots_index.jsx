@@ -8,18 +8,14 @@ import LoadingIcon from './loading_icon';
 class SpotsIndex extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount() {
-
     if (this.props.fetchSpots) {
       this.props.fetchSpots();
     }
     window.scrollTo(0,0);
   }
-
-
 
   getDeleteButton(ownerId, spotId) {
     if (this.props.currentUser &&
@@ -51,8 +47,6 @@ class SpotsIndex extends React.Component {
   }
 
   render() {
-
-
     {/*if (this.props.loading) { return <LoadingIcon />; }*/}
     if (!this.props.spots) return (
       <h1>Sorry, no spots were found!!</h1>
@@ -64,14 +58,8 @@ class SpotsIndex extends React.Component {
       users = this.props.users;
     }
 
-
-
-
-
     return (
         <div className="top-container">
-
-
           <div className="spots-container">
             <ul>
               {this.props.spots.map((spot, idx) => {
@@ -86,8 +74,6 @@ class SpotsIndex extends React.Component {
                     <span className="spot-location">{spot.location}</span>
                     <span className="spot-title">{spot.title}</span>
                     <span className="spot-price">${spot.price} per night</span>
-
-
                     <div className="listing-buttons">
                       {this.getDeleteButton(spot.ownerId, spot.id)}
                       {this.getEditButton(spot.ownerId, spot.id)}

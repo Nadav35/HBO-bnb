@@ -13,6 +13,7 @@
 
 class Review < ApplicationRecord
   validates :rating, :description, presence: true
+  validates :reviewer_id, uniqueness: {scope: :spot_id, message: "already left a review for this spot"}
 
   after_initialize :ensure_description
 

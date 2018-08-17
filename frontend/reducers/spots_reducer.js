@@ -9,7 +9,6 @@ import { RECEIVE_BOOKINGS } from '../actions/booking_actions';
 import { RECEIVE_REVIEW } from '../actions/review_actions';
 
 const spotsReducer = (state = {}, action) => {
-  
 
   Object.freeze(state);
   switch (action.type) {
@@ -28,7 +27,7 @@ const spotsReducer = (state = {}, action) => {
       return {};
     case RECEIVE_REVIEW:
       const newState = merge({}, state);
-      newState[action.payload.review.spotId].reviewIds.push(action.payload.review.id);
+      // newState[action.payload.review.spotId].reviewIds.push(action.payload.review.id);
       newState[action.payload.review.spotId].average_rating = action.payload.average_rating;
       return newState;
     default:

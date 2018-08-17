@@ -10,10 +10,11 @@ import {
 from '../../actions/booking_actions';
 
 const msp = (state) => {
+
   return {
     spots: state.entities.spots,
     currentUser: state.session.currentUser,
-    bookings: formatBookings(state.entities.bookings),
+    bookings: Object.values(state.entities.bookings),
     loading: state.ui.loading
   };
 };
