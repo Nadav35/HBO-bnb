@@ -21,11 +21,7 @@ class BookingsShow extends React.Component {
   }
 
   render() {
-
     if (this.props.loading) { return <LoadingIcon />; }
-    if (this.props.bookings.length === 0 && Object.values(this.props.spots).length > 0) {
-      this.props.fetchBookings();
-    }
     const {
       currentUser,
       bookings,
@@ -68,9 +64,6 @@ class BookingsShow extends React.Component {
                   </button>
 
                 </div>
-
-
-
               </li>
 
             ))}

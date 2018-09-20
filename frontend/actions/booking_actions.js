@@ -19,9 +19,10 @@ export const startLoadingAllSpots = () => {
   };
 };
 
-export const receiveDeleteBooking = () => {
+export const receiveDeleteBooking = (booking) => {
   return {
-    type: DELETE_BOOKING
+    type: DELETE_BOOKING, 
+    booking
   };
 };
 
@@ -31,8 +32,6 @@ const receiveBookings = payload => {
     payload
   };
 };
-
-
 
 const receiveBookingErrors = errors => {
   return {
@@ -71,5 +70,5 @@ export const editBooking = (booking) => dispatch => {
 export const deleteBooking = id => dispatch => {
   dispatch(startLoadingAllSpots());
   return ApiUtil.deleteBooking(id)
-    .then(()=> dispatch(receiveDeleteBooking()));
+    .then((booking)=> dispatch(receiveDeleteBooking(booking)));
 };

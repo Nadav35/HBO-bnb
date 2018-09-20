@@ -1,3 +1,5 @@
+import { fetchSpots } from './spot_actions';
+
 export const UPDATE_FILTER = 'UPDATE_FILTER';
 
 

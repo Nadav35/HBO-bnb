@@ -3,8 +3,6 @@ import { logout, login, signup, clearErrors } from '../../actions/session_action
 import { openModal } from '../../actions/modal_actions';
 import NavbarComponent from './navbar_component';
 
-
-
 const msp = ({ session }) => ({
     currentUser: session.currentUser
 });

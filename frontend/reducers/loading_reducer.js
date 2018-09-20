@@ -21,7 +21,6 @@ const loadingReducer = (state = initialState, action) => {
     case START_LOADING_ALL_SPOTS:
       return true;
 
-
     default:
       return initialState;
   }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
-// import spotsDetail from './spot_detail';
 import { openModal } from '../../actions/modal_actions';
 import SpotsHeader from './spots_header';
 import LoadingIcon from './loading_icon';
@@ -23,7 +22,7 @@ class SpotsIndex extends React.Component {
         return (
           <button className="btn"
             onClick={() => this.props.deleteSpot(spotId)
-              .then(this.props.fetchSpots())}>
+              }>
             Delete Listing
           </button>
         );
@@ -47,7 +46,7 @@ class SpotsIndex extends React.Component {
   }
 
   render() {
-    {/*if (this.props.loading) { return <LoadingIcon />; }*/}
+    if (this.props.loading) { return <LoadingIcon />; }
     if (!this.props.spots) return (
       <h1>Sorry, no spots were found!!</h1>
     );
@@ -59,31 +58,30 @@ class SpotsIndex extends React.Component {
     }
 
     return (
-        <div className="top-container">
-          <div className="spots-container">
-            <ul>
-              {this.props.spots.map((spot, idx) => {
-                return (
-                  <li key={idx} className="spots-index-item">
-                    <Link to={`/api/spots/${spot.id}`}>
-                      <img src={spot.imgUrl} alt="spot" />
-                    </Link>
-                    <span className="host-img">
-                      <img src={users[spot.ownerId].imgUrl}></img>
-                    </span>
-                    <span className="spot-location">{spot.location}</span>
-                    <span className="spot-title">{spot.title}</span>
-                    <span className="spot-price">${spot.price} per night</span>
-                    <div className="listing-buttons">
-                      {this.getDeleteButton(spot.ownerId, spot.id)}
-                      {this.getEditButton(spot.ownerId, spot.id)}
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+      <div className="top-container">
+        <div className="spots-container">
+          <ul>
+            {this.props.spots.map((spot, idx) => {
+              return (
+                <li key={idx} className="spots-index-item">
+                  <Link to={`/api/spots/${spot.id}`}>
+                    <img src={spot.imgUrl} alt="spot" />
+                  </Link>
+                  <span className="host-img">
+                    <img src={users[spot.ownerId].imgUrl}></img>
+                  </span>
+                  <span className="spot-location">{spot.location}</span>
+                  <span className="spot-price">${spot.price} per night - Free cancellation</span>
+                  <div className="listing-buttons">
+                    {this.getDeleteButton(spot.ownerId, spot.id)}
+                    {this.getEditButton(spot.ownerId, spot.id)}
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
+      </div>
     );
   }
 }

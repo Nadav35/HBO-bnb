@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
 Spot.delete_all
+Review.delete_all
 
 fileUser = File.open('app/assets/images/shows/big_love/bill.jpg')
 user = User.create!(
@@ -407,24 +408,199 @@ spot15 = Spot.create!(
 )
 spot15.photo.attach(io: fileSpot15, filename: "pris.jpg")
 
-# 8.times do
-#   Spot.create!(description: Faker::SiliconValley.quote,
-#     lng: Faker::Number.normal(50, 80),
-#     lat: Faker::Number.normal(50, 80),
-#     location: Faker::WorldCup.city,
-#     title: Faker::Coffee.notes,
-#     price: Faker::Number.between(80,299),
-#     owner_id: user1.id)
-#   end
-#
-#
-#
-# 8.times do
-#   Spot.create!(description: Faker::SiliconValley.quote,
-#     lng: Faker::Number.normal(50, 80),
-#     lat: Faker::Number.normal(50, 80),
-#     location: Faker::WorldCup.city,
-#     title: Faker::Coffee.notes,
-#     price: Faker::Number.between(80,299),
-#     owner_id: user.id)
-#   end
+review = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot.id
+)
+review1 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot1.id
+)
+review2 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot2.id
+)
+review3 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot3.id
+)
+review4 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot4.id
+)
+review5 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot5.id
+)
+review6 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot6.id
+)
+review7 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot7.id
+)
+review8 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot8.id
+)
+review9 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot9.id
+)
+review10 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot10.id
+)
+review11 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot11.id
+)
+review12 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot12.id
+)
+review13 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot13.id
+)
+review14 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot14.id
+)
+
+review15 = Review.create!(
+  rating: rand(1..5),
+  description: "pretty, pretty, pretty good",
+  reviewer_id: user2.id,
+  spot_id: spot15.id
+)
+
+review16 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot.id
+)
+review17 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot1.id
+)
+review18 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot2.id
+)
+review19 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot3.id
+)
+review20 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot4.id
+)
+review21 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot5.id
+)
+review22 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot6.id
+)
+review23 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot7.id
+)
+review24 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot8.id
+)
+review25 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot9.id
+)
+review26 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot10.id
+)
+review27 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot11.id
+)
+review28 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot12.id
+)
+review29 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot13.id
+
+)
+review30 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot14.id
+)
+
+review31 = Review.create!(
+  rating: rand(1..5),
+  description: Faker::SiliconValley.quote,
+  reviewer_id: user7.id,
+  spot_id: spot15.id
+)

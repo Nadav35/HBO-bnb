@@ -21,8 +21,6 @@ class NavbarComponent extends React.Component {
         .then(this.props.history.push('/'));
     }
 
-
-
     render() {
       const leftNav = () => (
         <nav className="left-nav">
@@ -39,7 +37,6 @@ class NavbarComponent extends React.Component {
         <nav className="right-nav">
           <ul>
             <li><button onClick={this.loginDemoUser}>Demo</button></li>
-            <li><button>Do stuff</button></li>
             <li><button onClick={() => this.props.openModal('signup')}>Sign Up</button></li>
             <li><button onClick={() => this.props.openModal('login')}>Log In</button></li>
           </ul>
@@ -54,7 +51,6 @@ class NavbarComponent extends React.Component {
               <li><button>My trips</button></li>
             </Link>
             <li><button onClick={() => this.props.openModal('create_listing')}>Become a host</button></li>
-            <li><button>Earn Credit</button></li>
             <li><button className="switch-button" onClick={this.logoutUser}>Log Out</button></li>
             <img src={this.props.currentUser.imgUrl}></img>
             <p>Hello, {this.props.currentUser.username}</p>
@@ -66,13 +62,10 @@ class NavbarComponent extends React.Component {
         this.props.currentUser ? rightNavLogged() : rightNavNotLogged()
       );
 
-
       return (
-
         <div className="main-nav">
           {leftNav()}
           {Greeting()}
-
         </div>
       );
     }
