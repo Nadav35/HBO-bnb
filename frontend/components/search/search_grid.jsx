@@ -11,8 +11,6 @@ class SearchGrid extends React.Component {
     this.onSuggestSelect = this.onSuggestSelect.bind(this);
   }
 
-
-
   update(property) {
     return e => this.setState({ [property]: e });
   }
@@ -28,7 +26,6 @@ class SearchGrid extends React.Component {
   }
 
 
-
   render() {
     return (
       <span className="search-box">
@@ -39,7 +36,6 @@ class SearchGrid extends React.Component {
           onSuggestSelect={this.onSuggestSelect}
           onChange={this.update('spot')}
         />
-
       </span>
     );
 

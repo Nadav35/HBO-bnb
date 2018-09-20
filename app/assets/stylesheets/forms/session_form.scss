@@ -3,16 +3,6 @@
 .login-form-container {
   display: block;
 
-  // .modal-screen{
-  //   position: fixed;
-  //   background: rgba(0, 0, 0, 0.7);
-  //   top: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-  //   z-index: 2;
-  // }
-
   .login-form-box {
     position: relative;
     top: 150px;
@@ -22,7 +12,6 @@
     height: auto;
     padding: 20px;
     background: #fff;
-    // z-index: 3;
     border-radius: 5px;
     border: 1px solid #000;
 
@@ -33,7 +22,6 @@
     }
 
     .input {
-      // margin-top: 40px;
       margin: 0 0 30px 0;
       border: 1px solid #ccc;
       display: flex;
@@ -64,9 +52,7 @@
   }
 
   .switch-button{
-    // background: lightblue;
     color: rgb(0, 132, 137);
-    // width: 100%;
     font: inherit;
     text-align: left;
     text-decoration: none;
@@ -82,12 +68,6 @@
       color: rgb(0, 132, 137);
     }
   }
-
-  // .session-errors li{
-  //   color: red;
-  //   padding: 5px;
-  //
-  // }
 
   .fa-window-close{
     font-size: 20px;

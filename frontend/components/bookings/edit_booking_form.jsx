@@ -23,8 +23,6 @@ class EditBookingForm extends React.Component {
 
   componentDidMount() {
     this.props.clearErrors();
-
-
   }
 
   handleSubmit(e) {

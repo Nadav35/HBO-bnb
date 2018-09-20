@@ -13,7 +13,6 @@ const msp = ({ errors }) => {
 };
 
 const mdp = dispatch => {
-  // 
   return {
     processForm: (user) => dispatch(signup(user)),
     clearErrors: () => dispatch(clearErrors()),

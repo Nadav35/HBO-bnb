@@ -44,8 +44,6 @@ class ListingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const spot = merge({}, this.state);
-    // this.props.createSpot(spot).then(this.props.closeModal);
     const formData = new FormData();
     formData.append('spot[title]', this.state.title);
     formData.append('spot[description]', this.state.description);
@@ -74,7 +72,6 @@ class ListingForm extends React.Component {
       fileReader.readAsDataURL(file);
     }
   }
-
 
   getErrors() {
     return (
@@ -163,7 +160,6 @@ class ListingForm extends React.Component {
           </div>
 
         </form>
-
 
       </div>
     );

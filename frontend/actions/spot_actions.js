@@ -21,9 +21,10 @@ const receiveSpots = payload => {
   };
 };
 
-const receiveDeleteSpot = () => {
+const receiveDeleteSpot = (spot) => {
   return {
-    type: DELETE_SPOT
+    type: DELETE_SPOT,
+    spot
   };
 };
 
@@ -69,5 +70,5 @@ export const createSpot = spot => dispatch => {
 
 export const deleteSpot = id => dispatch => {
   return ApiUtil.deleteSpot(id)
-    .then(spot => dispatch(receiveDeleteSpot()));
+    .then(spot => dispatch(receiveDeleteSpot(spot)));
 };

@@ -22,7 +22,9 @@ const bookingsReducer = (state = {}, action) => {
     }
     break;
     case DELETE_BOOKING:
-      return {};
+      let updatedBookings = merge({}, state);
+      delete updatedBookings[action.booking.id];
+      return updatedBookings;
 
     default:
       return state;

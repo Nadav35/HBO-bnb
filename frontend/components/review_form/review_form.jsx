@@ -20,10 +20,6 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    {/*const booking = merge({}, this.state);
-    const spotId = this.props.match.params.spotId;
-    this.props.createBooking(spotId, booking)
-      .then(this.props.history.push('/'));*/}
     const review = merge({}, this.state);
     const spotId = parseInt(this.props.match.params.spotId);
     this.props.createReview(spotId, review)

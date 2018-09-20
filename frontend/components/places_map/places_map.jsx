@@ -68,6 +68,7 @@ class PlacesMap extends React.Component {
       };
       this.props.updateFilter('bounds', bounds);
     });
+    
     google.maps.event.addListener(this.map, 'click', (event) => {
       const coords = getCoordsObj(event.latLng);
       this.handleClick(coords);
@@ -78,17 +79,12 @@ class PlacesMap extends React.Component {
     this.props.history.push(`/api/spots/${spot.id}`);
   }
 
-  handleClick(coords) {
-
-  }
 
   componentDidUpdate() {
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 
   render() {
-
-
       return (
         <div className="map-container"
           ref={map => this.mapNode = map}>

@@ -40,7 +40,7 @@ class Api::BookingsController < ApplicationController
   def destroy
     booking = Booking.find(params[:id])
     booking.destroy
-
+    render json: booking
   end
 
   private

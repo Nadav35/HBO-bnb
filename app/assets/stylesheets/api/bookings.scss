@@ -11,26 +11,17 @@
   width: 80%;
   min-height: 800px;
 
-
-
   .welcome-header{
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 2fr 1fr;
 
-
-
-
     img {
-      // max-width: 50%;
       max-width: 100%;
-
     }
 
     .greet-user{
       padding: 20px;
-
-
 
       h1{
         font-size: 40px;
@@ -47,7 +38,6 @@
   .bookings-container ul{
     margin-top: 100px;
     display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
 
@@ -57,7 +47,6 @@
       flex-direction: column;
       text-align: center;
       justify-content: space-between;
-      // width: 70%;
       background: lightgrey;
       padding: 15px;
       box-shadow: $shadow;
@@ -88,7 +77,6 @@
 
         }
 
-
       }
 
       a{
@@ -115,6 +103,5 @@
       }
     }
   }
-
 
 }

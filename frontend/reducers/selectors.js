@@ -3,7 +3,6 @@ import merge from 'lodash/merge';
 export const findHost = (entities, spot) => {
   return spot ? entities.users[entities.spots[spot.id].ownerId] : null;
 };
-// Sun Aug 12 2018 17:00:00 GMT-0700 (Pacific Daylight Time)
 export const formatBookings = (bookings) => {
 
   let newBookings;

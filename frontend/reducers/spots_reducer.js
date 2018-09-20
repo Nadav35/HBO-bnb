@@ -24,10 +24,11 @@ const spotsReducer = (state = {}, action) => {
       const newSpot = { [action.payload.spot.id]: action.payload.spot };
       return merge({}, state, newSpot);
     case DELETE_SPOT:
-      return {};
+      let updatedSpots = merge({}, state);
+      delete updatedSpots[action.spot.id];
+      return updatedSpots;
     case RECEIVE_REVIEW:
       const newState = merge({}, state);
-      // newState[action.payload.review.spotId].reviewIds.push(action.payload.review.id);
       newState[action.payload.review.spotId].average_rating = action.payload.average_rating;
       return newState;
     default:

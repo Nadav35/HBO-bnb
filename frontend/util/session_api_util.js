@@ -1,5 +1,4 @@
 export const signup = (formData) => {
-  // 
   return $.ajax({
     url: '/api/users',
     method: 'POST',
