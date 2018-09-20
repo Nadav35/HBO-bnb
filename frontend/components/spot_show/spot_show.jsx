@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
-
-
 import { ProtectedRoute } from '../../util/route_util';
 import BookingFormContainer from './booking_form_container';
 import BookingForm from './booking_form';
@@ -15,7 +13,6 @@ class SpotShow extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.spotId !== nextProps.match.params.spotId) {
-
       this.props.fetchSpot(nextProps.match.params.spotId);
     }
   }
@@ -61,7 +58,7 @@ class SpotShow extends React.Component {
   }
 
   render() {
-    if (!this.props.spot) return null; // put some loading magic
+    if (!this.props.spot) return null; 
     const component = this.props.currentUser ?
       <BookingFormContainer
         /> : "";

@@ -14,10 +14,6 @@ import { openModal } from '../../actions/modal_actions';
 
 const Search = ({ fetchSpots, deleteSpot, openModal,
   spots, users, currentUser, updateFilter, loading}) => {
-    {/*if (loading) { return <LoadingIcon />; }*/}
-
-
-
 
   return (
     <div className="user-pane">
@@ -47,8 +43,6 @@ const Search = ({ fetchSpots, deleteSpot, openModal,
           />
         </div>
       </div>
-
-
 
     </div>
   );

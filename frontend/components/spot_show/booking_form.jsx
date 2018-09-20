@@ -5,8 +5,6 @@ import merge from 'lodash/merge';
 class BookingForm extends React.Component {
   constructor(props) {
     super(props);
-
-
     this.state = {
       start_date: '',
       end_date: '',
@@ -33,8 +31,6 @@ class BookingForm extends React.Component {
       .then(() => this.props.history.push(`/api/bookings/${this.props.currentUser.id}`));
   }
 
-
-
   getErrors() {
     return (
       <ul className="session-errors">
@@ -47,10 +43,7 @@ class BookingForm extends React.Component {
     );
   }
 
-
-
   render() {
-
     return (
       <form className="booking-form" onSubmit={this.handleSubmit}>
         {this.getErrors()}

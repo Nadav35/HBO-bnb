@@ -5,7 +5,6 @@ import merge from 'lodash/merge';
 class Sessionform extends React.Component {
   constructor(props) {
     super(props);
-    // 
     if (this.props.formType === 'Sign up') {
       this.state = {
         email: '',
@@ -48,12 +47,6 @@ class Sessionform extends React.Component {
       this.props.processForm(user).then(this.props.closeModal);
     }
   }
-
-  // removeView(e) {
-  //   e.preventDefault();
-  //   let item = document.getElementById('modal-form-container');
-  //   item.classList.add('hide');
-  // }
 
   getErrors() {
     return (
@@ -161,10 +154,6 @@ class Sessionform extends React.Component {
           </div>
 
         </form>
-        {/*<div
-          className="modal-screen js-modal-close"
-          onClick={this.props.closeModal}>
-        </div>*/}
       </div>
     );
   }

@@ -42,9 +42,7 @@ class Api::SpotsController < ApplicationController
   def destroy
     @spot = Spot.find(params[:id])
     @spot.destroy
-
-
-
+    render json: @spot
   end
 
   private

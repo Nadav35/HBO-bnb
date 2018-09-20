@@ -24,13 +24,6 @@ export const receiveDeleteReview = () => {
   };
 };
 
-// export const createReview = (spotId, review) => {
-//   return ApiUtil.createReview(spotId, review)
-//     .then(review => dispatch(receiveReview(review)
-//   ), err => (
-//       dispatch(receiveReviewErrors(err.responseJSON))
-//     ));
-// };
 
 export const createReview = (spotId, review) => dispatch => {
   return ApiUtil.createReview(spotId, review)

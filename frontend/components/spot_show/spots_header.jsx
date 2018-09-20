@@ -5,26 +5,19 @@ const SpotsHeader = () => (
     <header className="spots-header">
 
       <div className="photo left-photo">
-        <img src={window.tv} />;
+        <img src={window.tv} />
+        <h1>Do you love TV shows?</h1>
+        <h2>Do you also need a vaction?</h2>
       </div>
 
       <div className="photo right-photo">
         <img src={window.vacation}></img>
+        <h1>Welcome to HBO-BnB</h1>
+        <h2>Vacation at your favorite HBO shows locations</h2>
       </div>
     </header>
-    <div className="mid-trans">
-      <div className="left-trans">
-        <h1>Do you love TV shows?</h1>
-        <h2>Do you also need a vaction?</h2>
-      </div>
-      <div className="right-trans">
-        <h1>Welcome to HBO-BnB</h1>
-        <h2>Vacation at your favorite HBO</h2><br/>
-        <h2>shows locations</h2>
-      </div>
-      
-
-
+    <div className="homes-title">
+      <h1>Homes around the world</h1>
     </div>
   </div>
 );
