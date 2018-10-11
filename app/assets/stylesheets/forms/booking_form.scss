@@ -1,12 +1,12 @@
 .booking-form {
-  position:fixed;
+  position:sticky;
   display: grid;
 
   grid-gap: 0;
-  top: 150px;
-  right: 5%;
+  top: 0;
+  // right: 5%;
   width: 400px;
-  height: auto;
+  // height: auto;
   padding: 20px;
   background: #fff;
   border-radius: 5px;

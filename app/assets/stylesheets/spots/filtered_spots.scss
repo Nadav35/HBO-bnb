@@ -35,6 +35,9 @@
       .map-container{
         width: 500px;
         height: 500px;
+        // Had to add !important because position attr. was being overwritten by component
+        position: sticky !important;
+        top: 0;
       }
     }
   }

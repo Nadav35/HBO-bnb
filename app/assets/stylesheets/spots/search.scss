@@ -15,12 +15,14 @@
 
         .map-container{
           width: 500px;
-          height: 700px;
+          height: 600px;
+          // Had to add !important because position attr. was being overwritten by component
+          position: sticky !important;
+          top: 0;
 
         }
       }
     }
-
 
     .top {
       grid-area: top;
@@ -67,13 +69,13 @@
 
         h1{
           font-size: 40px;
-          color: #75D1FF;
+          color: dimgrey;
 
         }
 
         h2{
           font-size: 30px;
-          color: #1966FF;
+          color: black;
         }
 
         .photo{
