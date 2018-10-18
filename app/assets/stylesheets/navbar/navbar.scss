@@ -1,19 +1,18 @@
-.main-nav{
-    display: grid;
+.main-nav {
+    display: flex;
     border-bottom: 1px solid lightgrey;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 120px;
+    justify-content: space-between;
 
     .left-nav {
       display: flex;
       justify-content: flex-start;
+      padding: 0.6rem 1.3rem;
 
-      .search-grid{
-        // width: 100%;
-        width: 500px;
+      .search-grid {
+        width: 400px;
       }
 
-      img{
+      img {
         border-radius: 50%;
         width: 70px;
         height: 70px;
@@ -23,74 +22,57 @@
       }
 
     }
-    
-    .right-nav button{
-      display: block;
-      padding: 0.1rem;
-      width: 100px;
-      font-weight: 800;
-      text-align: center;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 14px;
-      box-shadow: var(--shadow);
-      height: 50px;
 
-    }
-
-
-    .right-nav button:hover{
-      text-decoration: underline;
-    }
-
-    .right-nav ul {
+    .right-nav {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-gap: 20px;
-      padding: 0;
-      margin-right: 60px;
-      align-items: center;
+      margin-right: 30px;
 
-    }
+      button {
+        padding: 0.6rem 1.3rem;
+        width: 100%;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 14px;
+        box-shadow: var(--shadow);
+        height: 80px;
+      }
 
-    .right-nav{
-      display: flex;
-      justify-content: space-between;
+      li {
+        border-bottom: 2px solid transparent;
+        width: 118px;
+      }
 
-      img{
+      li:hover {
+        border-bottom: 2px solid rgb(118, 118, 118);
+      }
+
+      .right-not-logged {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        
+      }
+
+      .right-logged {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        grid-gap: 0;
+
+        img {
         border-radius: 50%;
         width: 50px;
         height: 50px;
         align-self: center;
         object-fit: cover;
 
+        }
+
+        p {
+          font-size: 14px;
+          text-shadow: $shadow;
+
+        }
       }
-
-      p{
-        font-size: 18px;
-        text-shadow: $shadow;
-
-      }
-
-    }
-
-
-    .header-name{
-      padding: 15px;
-      font-family: $open-sans;
-      font-size: 20px;
-      margin-top: 18px;
-    }
-
-    .fas {
-      margin-right: 15px;
-    }
-
-    .geo-search{
-      display: flex;
-      border: 1px solid lightgrey;
-      padding: 5px 20px;
-      width: 400px;
-      box-shadow: $shadow;
-      margin-left: 20px;
     }
 }

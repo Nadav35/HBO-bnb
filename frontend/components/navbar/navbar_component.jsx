@@ -35,10 +35,10 @@ class NavbarComponent extends React.Component {
 
       const rightNavNotLogged = () => (
         <nav className="right-nav">
-          <ul>
+          <ul className="right-not-logged">
             <li><button onClick={this.loginDemoUser}>Demo</button></li>
-            <li><button onClick={() => this.props.openModal('signup')}>Sign Up</button></li>
-            <li><button onClick={() => this.props.openModal('login')}>Log In</button></li>
+            <li><button onClick={() => this.props.openModal('signup')}>Sign up</button></li>
+            <li><button onClick={() => this.props.openModal('login')}>Log in</button></li>
           </ul>
 
         </nav>
@@ -46,14 +46,16 @@ class NavbarComponent extends React.Component {
 
       const rightNavLogged = () => (
         <nav className="right-nav">
-          <ul>
+          <ul className="right-logged">
             <Link to={`/api/bookings/${this.props.currentUser.id}`}>
               <li><button>My trips</button></li>
             </Link>
             <li><button onClick={() => this.props.openModal('create_listing')}>Become a host</button></li>
             <li><button className="switch-button" onClick={this.logoutUser}>Log Out</button></li>
-            <img src={this.props.currentUser.imgUrl}></img>
-            <p>Hello, {this.props.currentUser.username}</p>
+            <li>
+              <img src={this.props.currentUser.imgUrl}></img>
+              <p>Hello, {this.props.currentUser.username}</p>
+            </li>
           </ul>
         </nav>
       );

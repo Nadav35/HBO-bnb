@@ -31,7 +31,7 @@ class SearchGrid extends React.Component {
       <span className="search-box">
         <Geosuggest
           className="search-input"
-          placeholder="try Fargo"
+          placeholder="Try Fargo"
           id="top-bar"
           onSuggestSelect={this.onSuggestSelect}
           onChange={this.update('spot')}
