@@ -1,76 +1,77 @@
 .top-container {
 
   .spots-container{
-    grid-area: spots-container;
-    text-align: center;
-
-    .spots-index-item{
+    // grid-area: spots-container;
+    // text-align: center;
 
-      li a:hover{
-        box-shadow: 1px 3px 12px rgba(0,0,0,0.75);
-        transition: all 0.3s ease;
-
-      }
+    h1 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 20px;
     }
+
+    
 
     .spot-location{
       font-family: $roboto;
-      font-size: 23px;
-      color: rgb(57, 87, 106);
+      font-size: 16px;
+      color: rgb(72, 72, 72);
       margin-top: 20px;
-      margin-bottom: 20px;
-      font-weight: 700;
+      margin-bottom: 5px;
+      font-weight: 800;
     }
 
-    .spot-title{
-      font-size: 16px;
-      line-height: 22px;
-      letter-spacing: normal;
-      font-family: $roboto;
-      color: rgb(72, 72, 72);
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
+    // .spot-title{
+    //   font-size: 16px;
+    //   line-height: 22px;
+    //   letter-spacing: normal;
+    //   font-family: $roboto;
+    //   color: rgb(72, 72, 72);
+    //   font-weight: 800;
+    //   margin-bottom: 15px;
+    // }
 
     .spot-price{
-      font-size: 16px;
-      font-weight: 500;
-      font-family: $do_hye;
-      color: grey;
+      font-size: 14px;
+      font-weight: normal;
+      font-family: $roboto;
+      color: rgb(72, 72, 72);
+
     }
 
     ul {
-      width: 95%;
-      margin: auto;
+      // margin: auto;
       display: grid;
-      grid-gap: 30px;
+      grid-gap: 20px;
       grid-template-columns: 1fr 1fr 1fr;
       margin-bottom: 80px;
+      margin-right: 15px;
 
       li {
-        padding: 0.8rem;
+        // padding: 0.8rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        
           img {
             width: 100%;
-            height: 200px;
-            box-shadow: $shadow;
+            height: 165px;
+            object-fit: cover;
 
           }
           .host-img{
             display: flex;
             justify-content: center;
-            height: 50px;
-            padding: 5px;
+            height: 20px;
+            // padding: 5px;
             
           }
 
           .host-img img{
             top: -40px;
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
+            width: 75px;
+            height: 75px;
             object-fit: cover;
             position: relative;
           }

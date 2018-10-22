@@ -60,6 +60,7 @@ class SpotsIndex extends React.Component {
     return (
       <div className="top-container">
         <div className="spots-container">
+          <h1>Homes around the U.S</h1>
           <ul>
             {this.props.spots.map((spot, idx) => {
               return (

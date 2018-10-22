@@ -9,16 +9,21 @@
         grid-area: main-container;
         display: flex;
         justify-content: space-between;
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
 
 
-      .right-half{
+      .right-half {
 
         .map-container{
-          width: 500px;
-          height: 600px;
+
+          width: 400px;
+          height: 500px;
           // Had to add !important because position attr. was being overwritten by component
           position: sticky !important;
           top: 0;
+          margin-top: 45px;
 
         }
       }
@@ -29,7 +34,7 @@
 
       .item-list {
         width: 1000px;
-        height: 900px;
+        height: auto;
         margin-left: auto;
         margin-right: auto;
         margin-top: 50px;
@@ -98,7 +103,8 @@
 
         .airbnb-plus {
           width: 100%;
-          height: 800px;
+          height: auto;
+          margin-bottom: 50px;
           line-height: 10px;
 
           .plus-pic {
@@ -131,6 +137,75 @@
           }
 
 
+        }
+
+        .your-trip {
+          width: 100%;
+          height: auto;
+          line-height: 10px;
+          margin-top: 75px;
+          margin-bottom: 60px;
+          
+
+          .trip-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 15px;
+
+            .trip-div {
+              line-height: 20px;
+
+              .trip-body {
+                width: 85%;
+
+                h4 {
+                margin-top: 5px;
+                font-size: 17px;
+                letter-spacing: 0.2px;
+                color: #727272;
+                font-weight: normal;
+                }
+              }
+
+              
+
+              .family-pic {
+                background: url('family.jpg');
+              
+              }
+            
+            .work-pic {
+              background: url('work.jpg');
+              
+              }
+
+            .pic {
+              background-size: cover;
+              background-position: center;
+              height: 317px;
+              width: 495px;
+              border-radius: 3px;
+              margin-bottom: 15px;
+              }
+
+              span {
+                font-size: 12px;
+                font-weight: 800;
+              }
+
+              .fam-brown {
+                color: rgb(128, 45, 14);
+              }
+
+              .work-blue {
+                color: rgb(23, 41, 81);
+              }
+            }
+
+            
+
+            
+          }
         }
 
       }
