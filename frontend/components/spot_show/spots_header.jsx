@@ -1,24 +1,39 @@
 import React from 'react';
 
 const SpotsHeader = () => (
-  <div className="header-transitions">
-    <header className="spots-header">
-
-      <div className="photo left-photo">
-        <img src={window.tv} />
-        <h1>Do you love TV shows?</h1>
-        <h2>Do you also need a vaction?</h2>
+  <div className="item-list">
+    <div className="explore">
+      <h1>Explore Airbnb</h1>
+      <div className="explore-list">
+        <ul>
+          <li>
+            <div className="pic homes-pic"></div>
+            <span className="explore-text">Homes</span>
+          </li>
+          <li>
+            <div className="pic experiences-pic"></div>
+            <span className="explore-text">Experiences</span>
+          </li>
+          <li>
+            <div className="pic restaurants-pic"></div>
+            <span className="explore-text">Restaurants</span>
+          </li>
+        </ul>
       </div>
-
-      <div className="photo right-photo">
-        <img src={window.vacation}></img>
-        <h1>Welcome to HBO-BnB</h1>
-        <h2>Vacation at your favorite HBO shows locations</h2>
-      </div>
-    </header>
-    <div className="homes-title">
-      <h1>Homes around the world</h1>
     </div>
+
+    <div className="airbnb-plus">
+      <h1>Introducing Airbnb Plus</h1>
+      <h4>A new selection of homes verified for quality & comfort</h4>
+      <div className="plus-pic">
+        <button>
+          <span>EXPLORE HOMES ></span>
+        </button>
+      </div>
+    </div>
+
+
+      
   </div>
 );
 
