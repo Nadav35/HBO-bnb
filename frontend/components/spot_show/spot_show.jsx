@@ -80,6 +80,11 @@ class SpotShow extends React.Component {
               </div>
               <div className="user-profile">
                 <h1>Your host</h1>
+                <div className="stars" data-stars="1">
+                  <svg height="25" width="23" className="star_rating" data-rating="1">
+                    <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78"  />
+                  </svg>
+                </div>
                 <img
                   src={host.imgUrl} alt="profile-pic">
                 </img>
