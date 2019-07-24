@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: __dirname,
@@ -20,9 +21,14 @@ module.exports = {
           query: {
             presets: ['env', 'react']
           }
-        },
+        }
       }
     ]
   },
   devtool: 'source-map'
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     favicon: 'app/assets/images/favicon.ico'
+  //   })
+  // ]
 };

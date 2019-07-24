@@ -13,43 +13,41 @@ class SpotsIndex extends React.Component {
     if (this.props.fetchSpots) {
       this.props.fetchSpots();
     }
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }
 
   getDeleteButton(ownerId, spotId) {
-    if (this.props.currentUser &&
-      this.props.currentUser.id === ownerId) {
-        return (
-          <button className="btn"
-            onClick={() => this.props.deleteSpot(spotId)
-              }>
-            Delete Listing
-          </button>
-        );
-      } else {
-        return "";
-      }
+    if (this.props.currentUser && this.props.currentUser.id === ownerId) {
+      return (
+        <button className="btn" onClick={() => this.props.deleteSpot(spotId)}>
+          Delete Listing
+        </button>
+      );
+    } else {
+      return '';
+    }
   }
 
   getEditButton(ownerId, spotId) {
-    if (this.props.currentUser &&
-      this.props.currentUser.id === ownerId) {
-        return (
-          <button className="btn"
-            onClick={() => this.props.openModal('edit_spot', spotId)}>
-            Edit Listing
-          </button>
-        );
-      } else {
-        return "";
-      }
+    if (this.props.currentUser && this.props.currentUser.id === ownerId) {
+      return (
+        <button
+          className="btn"
+          onClick={() => this.props.openModal('edit_spot', spotId)}
+        >
+          Edit Listing
+        </button>
+      );
+    } else {
+      return '';
+    }
   }
 
   render() {
-    if (this.props.loading) { return <LoadingIcon />; }
-    if (!this.props.spots) return (
-      <h1>Sorry, no spots were found!!</h1>
-    );
+    if (this.props.loading) {
+      return <LoadingIcon />;
+    }
+    if (!this.props.spots) return <h1>Sorry, no spots were found!!</h1>;
     let users;
     if (this.props.users.users) {
       users = this.props.users.users;
@@ -59,7 +57,7 @@ class SpotsIndex extends React.Component {
 
     return (
       <div className="top-container">
-        <div className="spots-container">
+        <div className="spots-container" id="scroll-homes">
           <h1>Homes around the U.S</h1>
           <ul>
             {this.props.spots.map((spot, idx) => {
@@ -69,10 +67,12 @@ class SpotsIndex extends React.Component {
                     <img src={spot.imgUrl} alt="spot" />
                   </Link>
                   <span className="host-img">
-                    <img src={users[spot.ownerId].imgUrl}></img>
+                    <img src={users[spot.ownerId].imgUrl} />
                   </span>
                   <span className="spot-location">{spot.location}</span>
-                  <span className="spot-price">${spot.price} per night - Free cancellation</span>
+                  <span className="spot-price">
+                    ${spot.price} per night - Free cancellation
+                  </span>
                   <div className="listing-buttons">
                     {this.getDeleteButton(spot.ownerId, spot.id)}
                     {this.getEditButton(spot.ownerId, spot.id)}

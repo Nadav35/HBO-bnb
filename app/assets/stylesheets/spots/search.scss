@@ -1,183 +1,178 @@
-.user-pane{
+.user-pane {
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
     'top'
     'main-container';
 
-    .main-container{
-        grid-area: main-container;
-        display: flex;
-        justify-content: space-between;
-        width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
+  .main-container {
+    grid-area: main-container;
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 
-
-      .right-half {
-
-        .map-container{
-
-          width: 400px;
-          height: 500px;
-          // Had to add !important because position attr. was being overwritten by component
-          position: sticky !important;
-          top: 0;
-          margin-top: 45px;
-
-        }
+    .right-half {
+      .map-container {
+        width: 400px;
+        height: 500px;
+        // Had to add !important because position attr. was being overwritten by component
+        position: sticky !important;
+        top: 50px;
+        margin-top: 45px;
       }
     }
+  }
 
-    .top {
-      grid-area: top;
+  .top {
+    grid-area: top;
 
-      .item-list {
-        width: 1000px;
-        height: auto;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50px;
-        
+    .item-list {
+      width: 1000px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
 
-        h1 {
-          font-size: 22px;
-          font-weight: 800;
-        }
+      h1 {
+        font-size: 22px;
+        font-weight: 800;
+      }
 
-        h4 {
-          font-size: 16px;
-          font-family: Roboto;
-          color: rgb(72, 72, 72);
-          font-weight: normal;
-          
-        }
+      h4 {
+        font-size: 16px;
+        font-family: Roboto;
+        color: rgb(72, 72, 72);
+        font-weight: normal;
+      }
 
-        .explore {
-          width: 100%;
-          margin-bottom: 60px;
+      .explore {
+        width: 100%;
+        margin-bottom: 60px;
 
-          .explore-list ul{
-            margin-top: 20px;
+        .explore-list ul {
+          margin-top: 20px;
+          display: grid;
+          grid-gap: 15px;
+          grid-template-columns: 25% 25% 25%;
+
+          li {
             display: grid;
-            grid-gap: 15px;
-            grid-template-columns: 25% 25% 25%;
+            grid-template-columns: 96px 1fr;
+            grid-gap: 10px;
+            align-content: center;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
 
-            li {
-              display: grid;
-              grid-template-columns: 96px 1fr;
-              grid-gap: 10px;
-              align-content: center;
-              box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
-              border: 1px solid rgba(0, 0, 0, 0.1);
-              border-radius: 3px;
-              
-              .explore-text {
-                line-height: 70px;
-                font-size: 17px;
-                font-weight: 700;
-                text-align: left;
+            .explore-text {
+              line-height: 70px;
+              font-size: 28px;
+              font-weight: 700;
+              text-align: left;
+            }
+
+            i {
+              font-size: 80px;
+
+              &.fa-linkedin {
+                color: #0077b5;
               }
             }
-            
-            .homes-pic {
-              background: image_url('homes.jpg');
-            }
-
-            .experiences-pic {
-              background: image_url('experiences.jpg');
-            }
-
-            .restaurants-pic {
-              background: image_url('restaurants.jpg');
-            }
-
-            .pic {
-              background-size: cover;
-              background-position: center;
-              height: 72px;
-              width: 100%;
-            }
           }
+
+          // .homes-pic {
+          //   background: image_url('homes.jpg');
+          // }
+
+          // .experiences-pic {
+          //   background: image_url('experiences.jpg');
+          // }
+
+          // .restaurants-pic {
+          //   background: image_url('restaurants.jpg');
+          // }
+
+          // .pic {
+          //   background-size: cover;
+          //   background-position: center;
+          //   height: 72px;
+          //   width: 100%;
+          // }
         }
+      }
 
-        .airbnb-plus {
-          width: 100%;
-          height: auto;
-          margin-bottom: 50px;
-          line-height: 10px;
+      .airbnb-plus {
+        width: 100%;
+        height: auto;
+        margin-bottom: 50px;
+        line-height: 10px;
 
-          .plus-pic {
-            max-width: 100%;
-            display: block;
-            height: 300px;
-            background: image_url('plus.jpg');
-            position: relative;
-            background-size: cover;
-            background-position: center;
+        .plus-pic {
+          max-width: 100%;
+          display: block;
+          height: 300px;
+          background: image_url('plus.jpg');
+          position: relative;
+          background-size: cover;
+          background-position: center;
+          border-radius: 3px;
+          overflow: hidden;
+
+          button {
+            width: 180px;
+            height: 50px;
+            background: white;
+            color: #484848;
+            position: absolute;
+            left: 50%;
+            margin-left: -90px;
+            top: 65%;
+            margin-top: 0;
+
             border-radius: 3px;
-            overflow: hidden;
-
-            button {
-              width: 180px;
-              height: 50px;
-              background: white;
-              color: #484848;
-              position: absolute;
-              left: 50%;
-              margin-left: -90px;
-              top: 65%;
-              margin-top: 0;
-              
-              border-radius: 3px;
-              font-size: 14px;
-              text-align: center;
-              font-weight: 600;
-            }
+            font-size: 14px;
+            text-align: center;
+            font-weight: 600;
           }
-
-
         }
+      }
 
-        .your-trip {
-          width: 100%;
-          height: auto;
-          line-height: 10px;
-          margin-top: 75px;
-          margin-bottom: 60px;
-          
+      .your-trip {
+        width: 100%;
+        height: auto;
+        line-height: 10px;
+        margin-top: 75px;
+        margin-bottom: 60px;
 
-          .trip-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 15px;
+        .trip-wrapper {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 15px;
 
-            .trip-div {
-              line-height: 20px;
+          .trip-div {
+            line-height: 20px;
 
-              .trip-body {
-                width: 85%;
+            .trip-body {
+              width: 85%;
 
-                h4 {
+              h4 {
                 margin-top: 5px;
                 font-size: 17px;
                 letter-spacing: 0.2px;
                 color: #727272;
                 font-weight: normal;
-                }
               }
+            }
 
-              
+            .family-pic {
+              background: image_url('family.jpg');
+            }
 
-              .family-pic {
-                background: image_url('family.jpg');
-              
-              }
-            
             .work-pic {
               background: image_url('work.jpg');
-              
-              }
+            }
 
             .pic {
               background-size: cover;
@@ -186,28 +181,23 @@
               width: 495px;
               border-radius: 3px;
               margin-bottom: 15px;
-              }
-
-              span {
-                font-size: 12px;
-                font-weight: 800;
-              }
-
-              .fam-brown {
-                color: rgb(128, 45, 14);
-              }
-
-              .work-blue {
-                color: rgb(23, 41, 81);
-              }
             }
 
-            
+            span {
+              font-size: 12px;
+              font-weight: 800;
+            }
 
-            
+            .fam-brown {
+              color: rgb(128, 45, 14);
+            }
+
+            .work-blue {
+              color: rgb(23, 41, 81);
+            }
           }
         }
-
       }
+    }
   }
 }
