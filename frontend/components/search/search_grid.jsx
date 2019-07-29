@@ -3,7 +3,7 @@ import Geosuggest from 'react-geosuggest';
 import { Link, withRouter } from 'react-router-dom';
 
 class SearchGrid extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       spot: ''
@@ -17,7 +17,7 @@ class SearchGrid extends React.Component {
 
   onSuggestSelect(suggest) {
     if (suggest && suggest.placeId) {
-      this.setState( { spot: '' } );
+      this.setState({ spot: '' });
       this.props.history.replace({
         pathname: '/search',
         search: `lat=${suggest.location.lat}&lng=${suggest.location.lng}`
@@ -25,8 +25,8 @@ class SearchGrid extends React.Component {
     }
   }
 
-
   render() {
+    
     return (
       <span className="search-box">
         <Geosuggest
@@ -38,7 +38,6 @@ class SearchGrid extends React.Component {
         />
       </span>
     );
-
   }
 }
 

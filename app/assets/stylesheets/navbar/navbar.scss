@@ -1,78 +1,82 @@
 .main-nav {
+  display: flex;
+  border-bottom: 1px solid lightgrey;
+  justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+  background: #fff;
+  z-index: 2;
+
+  .left-nav {
     display: flex;
-    border-bottom: 1px solid lightgrey;
-    justify-content: space-between;
+    justify-content: flex-start;
+    padding: 0.6rem 1.3rem;
 
-    .left-nav {
-      display: flex;
-      justify-content: flex-start;
+    .search-grid {
+      width: 400px;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      padding: 8px;
+      margin-right: 30px;
+      object-fit: cover;
+    }
+
+  }
+
+  .right-nav {
+    display: grid;
+    margin-right: 30px;
+
+    button {
       padding: 0.6rem 1.3rem;
+      width: 100%;
+      white-space: nowrap;
+      text-align: center;
+      font-size: 14px;
+      box-shadow: var(--shadow);
+      height: 80px;
+    }
 
-      .search-grid {
-        width: 400px;
-      }
+    li {
+      border-bottom: 2px solid transparent;
+      width: 118px;
+    }
 
-      img {
-        border-radius: 50%;
-        width: 70px;
-        height: 70px;
-        padding: 8px;
-        margin-right: 30px;
-        object-fit: cover;
-      }
+    li:hover {
+      border-bottom: 2px solid rgb(118, 118, 118);
+    }
+
+    .right-not-logged {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
 
     }
 
-    .right-nav {
+    .right-logged {
       display: grid;
-      margin-right: 30px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      align-items: center;
+      grid-gap: 0;
 
-      button {
-        padding: 0.6rem 1.3rem;
-        width: 100%;
-        white-space: nowrap;
-        text-align: center;
-        font-size: 14px;
-        box-shadow: var(--shadow);
-        height: 80px;
-      }
-
-      li {
-        border-bottom: 2px solid transparent;
-        width: 118px;
-      }
-
-      li:hover {
-        border-bottom: 2px solid rgb(118, 118, 118);
-      }
-
-      .right-not-logged {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-        
-      }
-
-      .right-logged {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        align-items: center;
-        grid-gap: 0;
-
-        img {
+      img {
         border-radius: 50%;
         width: 50px;
         height: 50px;
         align-self: center;
         object-fit: cover;
 
-        }
+      }
 
-        p {
-          font-size: 14px;
-          text-shadow: $shadow;
+      p {
+        font-size: 14px;
+        text-shadow: $shadow;
 
-        }
       }
     }
+  }
 }

@@ -8,12 +8,12 @@ import LoadingIcon from '../spot_show/loading_icon';
 import {
   fetchSpots,
   deleteSpot
-  } from '../../actions/spot_actions';
+} from '../../actions/spot_actions';
 
 import { openModal } from '../../actions/modal_actions';
 
 const Search = ({ fetchSpots, deleteSpot, openModal,
-  spots, users, currentUser, updateFilter, loading}) => {
+  spots, users, currentUser, updateFilter, loading }) => {
 
   return (
     <div className="user-pane">

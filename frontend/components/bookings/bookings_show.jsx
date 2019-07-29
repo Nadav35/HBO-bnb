@@ -57,10 +57,10 @@ class BookingsShow extends React.Component {
                 <div className="booking-buttons">
                   <button
                     onClick={() => openModal('edit_booking', booking.id)}
-                    className="btn">Edit Booking
+                    className="btn btn-danger">Edit Booking
                   </button>
                   <button onClick={(e) => this.handleDelete(e, booking.id)}
-                    className="btn">Delete Booking
+                    className="btn btn-danger">Delete Booking
                   </button>
 
                 </div>

@@ -18,17 +18,17 @@ class ListingForm extends React.Component {
         price: ''
       };
     } else {
-        this.state = {
-          title: '',
-          description: '',
-          lng: '',
-          lat: '',
-          location: '',
-          price: '',
-          photoFile: null,
-          photoUrl: null
-        };
-      }
+      this.state = {
+        title: '',
+        description: '',
+        lng: '',
+        lat: '',
+        location: '',
+        price: '',
+        photoFile: null,
+        photoUrl: null
+      };
+    }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
@@ -38,7 +38,7 @@ class ListingForm extends React.Component {
     return e => this.setState({ [property]: e.target.value });
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.clearErrors();
   }
 
@@ -66,7 +66,7 @@ class ListingForm extends React.Component {
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
 
-      this.setState({photoFile: file, photoUrl: fileReader.result});
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -76,8 +76,8 @@ class ListingForm extends React.Component {
   getErrors() {
     return (
       <ul className="session-errors">
-        {this.props.errors.map((error, idx ) => (
-          <li key = {`error-${idx}`}>
+        {this.props.errors.map((error, idx) => (
+          <li key={`error-${idx}`}>
             {error}
           </li>
         ))}
@@ -88,21 +88,22 @@ class ListingForm extends React.Component {
   render() {
     return (
       <div className="new-listing-container">
-        <form className="listing-form-box" onSubmit={this.handleSubmit}>
+        <form className="listing-form-box form" onSubmit={this.handleSubmit}>
           <i className="fas fa-window-close"
             onClick={this.props.closeModal}>
           </i>
           {this.getErrors()}
-          <h1>{this.props.formType} Listing</h1>
-          <div className="input title">
+          <h1 className="text-primary large">{this.props.formType} Listing</h1>
+          <div className="form-group">
             <input value={this.state.title}
               onChange={this.update('title')}
-              placeholder="Enter a title">
+              placeholder="Enter a title"
+              type="text">
             </input>
             <i className="fas fa-edit"></i>
 
           </div>
-          <div className="input description">
+          <div className="form-group">
             <textarea
               cols="15"
               rows="2"
@@ -110,43 +111,47 @@ class ListingForm extends React.Component {
               onChange={this.update('description')}
               placeholder="Give a brief description"
             />
-          <i className="fas fa-pencil-alt"></i>
+            <i className="fas fa-pencil-alt"></i>
 
           </div>
-          <div className="input lng">
+          <div className="form-group">
             <input value={this.state.lng}
               onChange={this.update('lng')}
-              placeholder="enter longitude">
+              placeholder="enter longitude"
+              type="text">
             </input>
             <i className="fas fa-atlas"></i>
 
           </div>
-          <div className="input lat">
+          <div className="form-group">
             <input value={this.state.lat}
               onChange={this.update('lat')}
-              placeholder="enter latitude">
+              placeholder="enter latitude"
+              type="text">
             </input>
             <i className="fas fa-atlas"></i>
 
           </div>
-          <div className="input location">
+          <div className="form-group">
             <input value={this.state.location}
               onChange={this.update('location')}
-              placeholder="Enter your city">
+              placeholder="Enter your city"
+              type="text">
             </input>
             <i className="fas fa-building"></i>
 
           </div>
-          <div className="input price">
+          <div className="form-group">
             <input value={this.state.price}
               onChange={this.update('price')}
-              placeholder="How much per night??">
+              placeholder="How much per night??"
+              type="text">
             </input>
             <i className="fas fa-money-check-alt"></i>
 
           </div>
 
-          <div className="input listing-photo">
+          <div className="form-group">
             <input type="file"
               onChange={this.handleFile}>
             </input>
@@ -155,7 +160,7 @@ class ListingForm extends React.Component {
           </div>
 
           <div className="form-submit">
-            <button className="submit-button">submit</button>
+            <input type="submit" className="btn btn-primary"></input>
 
           </div>
 

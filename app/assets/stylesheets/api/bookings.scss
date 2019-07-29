@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.main-bookings-container{
+.main-bookings-container {
   background: white;
   margin: 30px 50px;
   line-height: 1.4;
@@ -11,76 +11,78 @@
   width: 80%;
   min-height: 800px;
 
-  .welcome-header{
+  .welcome-header {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 2fr 1fr;
+    margin-top: 100px;
 
     img {
       max-width: 100%;
     }
 
-    .greet-user{
+    .greet-user {
       padding: 20px;
 
-      h1{
+      h1 {
         font-size: 40px;
 
       }
 
-      h2{
+      h2 {
         font-size: 30px;
 
       }
     }
   }
 
-  .bookings-container ul{
+  .bookings-container ul {
     margin-top: 100px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
 
 
-    .booking-box{
+    .booking-box {
       display: flex;
       flex-direction: column;
       text-align: center;
       justify-content: space-between;
-      background: lightgrey;
+      background: #fff;
       padding: 15px;
       box-shadow: $shadow;
 
-      img{
+      img {
         display: block;
+        height: 200px;
       }
 
-      h2{
+      h2 {
         font-size: 22px;
         font-family: $open-sans;
 
       }
 
-      h3{
+      h3 {
         font-size: 18px;
         color: #AF002A;
 
       }
 
-      .booking-dates{
+      .booking-dates {
         display: flex;
         justify-content: space-between;
         padding: 10px;
 
-        .date-info{
+        .date-info {
           font-weight: 700;
 
         }
 
       }
 
-      a{
-        background: #ddd;
+      a {
+        background: #fff;
         display: block;
         padding: 8px;
         text-align: center;
@@ -90,14 +92,14 @@
         box-shadow: $shadow;
       }
 
-      .booking-buttons{
+      .booking-buttons {
         display: flex;
         justify-content: space-between;
         padding: 13px;
 
-        button{
-          padding: 4px 8px;
-          background-color: #333;
+        button {
+          // padding: 4px 8px;
+          // background-color: #333;
           color: #fff;
         }
       }

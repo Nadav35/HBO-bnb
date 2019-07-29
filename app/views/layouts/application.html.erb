@@ -10,18 +10,15 @@
     <%= javascript_include_tag 'application' %>
     <meta name=“viewport” content=“width=device-width” />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <script type="text/javascript">
       window.sad_face = "<%= image_url('sad_face.jpg') %>"
-    </script>
+    </script> 
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBprjSP0uMWyFEVuCMRYTorOGeyHYGwSfE"></script>
     
     <script type="text/javascript">
       window.logo = "<%= image_url('peter.png') %>"
     </script>
+    <%= favicon_link_tag asset_path('peter.png') %>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Do+Hyeon|Kirang+Haerang|MedievalSharp|Playfair+Display|Roboto|Roboto+Condensed" rel="stylesheet">
   </head>
 

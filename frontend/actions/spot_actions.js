@@ -6,7 +6,6 @@ export const RECEIVE_SPOT_ERRORS = 'RECEIVE_SPOT_ERRORS';
 export const DELETE_SPOT = 'DELETE_SPOT';
 export const START_LOADING_ALL_SPOTS = 'START_LOADING_ALL_SPOTS';
 
-
 const receiveSpot = payload => {
   return {
     type: RECEIVE_SPOT,
@@ -21,7 +20,7 @@ const receiveSpots = payload => {
   };
 };
 
-const receiveDeleteSpot = (spot) => {
+const receiveDeleteSpot = spot => {
   return {
     type: DELETE_SPOT,
     spot
@@ -41,34 +40,32 @@ export const startLoadingAllSpots = () => {
   };
 };
 
-export const fetchSpots = (filters) => dispatch => {
+export const fetchSpots = filters => dispatch => {
+  // debugger
   dispatch(startLoadingAllSpots());
-  return ApiUtil.fetchSpots(filters)
-    .then(payload => dispatch(receiveSpots(payload)));
+  return ApiUtil.fetchSpots(filters).then(payload =>
+    dispatch(receiveSpots(payload))
+  );
 };
 
 export const fetchSpot = id => dispatch => {
-  return ApiUtil.fetchSpot(id)
-    .then(spot => dispatch(receiveSpot(spot)));
+  return ApiUtil.fetchSpot(id).then(spot => dispatch(receiveSpot(spot)));
 };
 
 export const editSpot = (spotId, spot) => dispatch => {
-  return ApiUtil.editSpot(spotId, spot)
-    .then(spot => dispatch(receiveSpot(spot)
-  ), err => (
-    dispatch(receiveSpotErrors(err.responseJSON))
-  ));
+  return ApiUtil.editSpot(spotId, spot).then(
+    spot => dispatch(receiveSpot(spot)),
+    err => dispatch(receiveSpotErrors(err.responseJSON))
+  );
 };
 
 export const createSpot = spot => dispatch => {
-  return ApiUtil.createSpot(spot)
-    .then(spot => dispatch(receiveSpot(spot)
-  ), err => (
-    dispatch(receiveSpotErrors(err.responseJSON))
-  ));
+  return ApiUtil.createSpot(spot).then(
+    spot => dispatch(receiveSpot(spot)),
+    err => dispatch(receiveSpotErrors(err.responseJSON))
+  );
 };
 
 export const deleteSpot = id => dispatch => {
-  return ApiUtil.deleteSpot(id)
-    .then(spot => dispatch(receiveDeleteSpot(spot)));
+  return ApiUtil.deleteSpot(id).then(spot => dispatch(receiveDeleteSpot(spot)));
 };

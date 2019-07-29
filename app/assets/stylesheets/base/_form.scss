@@ -1,0 +1,32 @@
+.form {
+  &-group {
+    margin: 1.2rem 0;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    align-items: center;
+  }
+
+  &-group:hover,
+  &-group:focus {
+    box-shadow: $shadow;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='date'],
+  input[type='file'],
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    // border: 1px solid #ccc;
+  }
+
+  input[type='submit'] {
+    font: inherit;
+  }
+}

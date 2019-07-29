@@ -4,9 +4,9 @@ class Api::SpotsController < ApplicationController
     # @spots = Spot.all
     # @spots = spots.includes(:owner)
 
-
+    # debugger
     @spots = bounds ? Spot.in_bounds(bounds) : Spot.all
-    #
+    # debugger
     render :index
 
   end

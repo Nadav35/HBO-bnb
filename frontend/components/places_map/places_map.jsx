@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Link, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import MarkerManager from '../../util/marker_manager';
 
@@ -15,45 +15,53 @@ const mapOptions = {
 class PlacesMap extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      lat: new URLSearchParams(this.props.location.search).get('lat'),
+      lng: new URLSearchParams(this.props.location.search).get('lng')
+    };
+
   }
 
   componentDidMount() {
-    if (this.props.lat) {
-      this.map = new google.maps.Map(this.mapNode,
-      {
+    debugger;
+    if (this.state.lat) {
+      this.map = new google.maps.Map(this.mapNode, {
         center: {
-          lat: parseInt(this.props.lat),
-          lng: parseInt(this.props.lng)
+          lat: parseInt(this.state.lat),
+          lng: parseInt(this.state.lng)
         },
         zoom: 8
       });
       const bounds = this.getBounds();
       this.props.updateFilter('bounds', bounds);
+      // debugger;
+
     } else {
       this.map = new google.maps.Map(this.mapNode, mapOptions);
     }
+    // debugger;
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.spots);
     this.registerListeners();
-
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.lat !== nextProps.lat || this.props.lng !== nextProps.lng){
+    debugger;
+    if (this.props.lat !== nextProps.lat || this.props.lng !== nextProps.lng) {
+      // debugger;
       this.map.setCenter(new google.maps.LatLng(nextProps.lat, nextProps.lng));
       const bounds = this.getBounds();
       this.props.updateFilter('bounds', bounds);
-
     }
   }
 
   getBounds() {
     let bounds;
     if (this.map.getBounds()) {
-      const {north, south, east, west } = this.map.getBounds().toJSON();
+      const { north, south, east, west } = this.map.getBounds().toJSON();
       bounds = {
-        northEast: { lat: north, lng: east},
-        southWest: {lat: south, lng: west}
+        northEast: { lat: north, lng: east },
+        southWest: { lat: south, lng: west }
       };
     }
     return bounds;
@@ -61,15 +69,15 @@ class PlacesMap extends React.Component {
 
   registerListeners() {
     google.maps.event.addListener(this.map, 'drag', () => {
-      const {north, south, east, west } = this.map.getBounds().toJSON();
+      const { north, south, east, west } = this.map.getBounds().toJSON();
       const bounds = {
-        northEast: { lat: north, lng: east},
-        southWest: {lat: south, lng: west}
+        northEast: { lat: north, lng: east },
+        southWest: { lat: south, lng: west }
       };
       this.props.updateFilter('bounds', bounds);
     });
-    
-    google.maps.event.addListener(this.map, 'click', (event) => {
+
+    google.maps.event.addListener(this.map, 'click', event => {
       const coords = getCoordsObj(event.latLng);
       this.handleClick(coords);
     });
@@ -79,18 +87,13 @@ class PlacesMap extends React.Component {
     this.props.history.push(`/api/spots/${spot.id}`);
   }
 
-
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    debugger;
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 
   render() {
-      return (
-        <div className="map-container"
-          ref={map => this.mapNode = map}>
-        </div>
-      );
-
+    return <div className="map-container" ref={map => (this.mapNode = map)} />;
   }
 }
 

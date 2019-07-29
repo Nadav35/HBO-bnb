@@ -38,7 +38,7 @@ class Sessionform extends React.Component {
       formData.append('user[username]', this.state.username);
       formData.append('user[email]', this.state.email);
       formData.append('user[password]', this.state.password);
-      if (this.state.photoFile){
+      if (this.state.photoFile) {
         formData.append('user[photo]', this.state.photoFile);
       }
       this.props.processForm(formData).then(this.props.closeModal);
@@ -51,8 +51,8 @@ class Sessionform extends React.Component {
   getErrors() {
     return (
       <ul className="session-errors">
-        {this.props.errors.map((error, idx ) => (
-          <li key = {`error-${idx}`}>
+        {this.props.errors.map((error, idx) => (
+          <li key={`error-${idx}`}>
             {error}
           </li>
         ))}
@@ -62,12 +62,12 @@ class Sessionform extends React.Component {
 
   emailInput() {
     return (
-      <div className="input email">
+      <div className="form-group">
         <input value={this.state.email}
           type="text"
           placeholder="Email address"
           onChange={this.update('email')}
-          />
+        />
         <i className="fas fa-envelope-square"></i>
       </div>
     );
@@ -75,7 +75,7 @@ class Sessionform extends React.Component {
 
   fileInput() {
     return (
-      <div className="input file">
+      <div className="form-group">
         <input type="file"
           onChange={this.handleFile}>
         </input>
@@ -88,14 +88,14 @@ class Sessionform extends React.Component {
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
 
-      this.setState({photoFile: file, photoUrl: fileReader.result});
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
     };
     if (file) {
       fileReader.readAsDataURL(file);
     }
   }
 
-  formFooter(){
+  formFooter() {
     if (this.props.formType === 'Sign up') {
       return (
         <React.Fragment>
@@ -118,36 +118,37 @@ class Sessionform extends React.Component {
     const emailInp = this.props.formType === 'Sign up' ? this.emailInput() : null;
     return (
       <div className="login-form-container">
-        <form className="login-form-box" onSubmit={this.handleSubmit}>
+        <form className="login-form-box form" onSubmit={this.handleSubmit}>
           <i className="fas fa-window-close"
             onClick={this.props.closeModal}>
           </i>
           {this.getErrors()}
-          <h1>{this.props.formType} to continue</h1>
+          <h1 className="text-primary large">{this.props.formType} to continue</h1>
           {emailInp}
-          <div className="input username">
+          <div className="form-group">
             <input value={this.state.username}
               type="text"
               placeholder="Username"
               onChange={this.update('username')}
-              />
+            />
             <i className="far fa-user"></i>
 
           </div>
 
-          <div className="input password">
+          <div className="form-group">
             <input value={this.state.password}
               type="password"
               placeholder="Create a password"
               onChange={this.update('password')}
-              />
+            />
             <i className="fas fa-lock"></i>
 
           </div>
           {fileInp}
 
           <div className="form-submit">
-            <button className="submit-button">{this.props.formType}</button>
+            <input className="btn btn-primary"
+              type="submit"></input>
             <div className="form1">
               {this.formFooter()}
             </div>
