@@ -15,20 +15,16 @@ const mapOptions = {
 class PlacesMap extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      lat: new URLSearchParams(this.props.location.search).get('lat'),
-      lng: new URLSearchParams(this.props.location.search).get('lng')
-    };
 
   }
 
   componentDidMount() {
-    debugger;
-    if (this.state.lat) {
+    // debugger;
+    if (this.props.lat) {
       this.map = new google.maps.Map(this.mapNode, {
         center: {
-          lat: parseInt(this.state.lat),
-          lng: parseInt(this.state.lng)
+          lat: parseInt(this.props.lat),
+          lng: parseInt(this.props.lng)
         },
         zoom: 8
       });
@@ -46,7 +42,7 @@ class PlacesMap extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger;
+    // debugger;
     if (this.props.lat !== nextProps.lat || this.props.lng !== nextProps.lng) {
       // debugger;
       this.map.setCenter(new google.maps.LatLng(nextProps.lat, nextProps.lng));
@@ -88,7 +84,7 @@ class PlacesMap extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    debugger;
+    // debugger;
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 

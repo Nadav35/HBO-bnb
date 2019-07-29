@@ -19,8 +19,8 @@ const msp = (state, ownProps) => {
     spots: Object.values(state.entities.spots),
     users: state.entities.users,
     currentUser: state.session.currentUser,
-    // lat: new URLSearchParams(ownProps.location.search).get('lat'),
-    // lng: new URLSearchParams(ownProps.location.search).get('lng'),
+    lat: new URLSearchParams(ownProps.location.search).get('lat'),
+    lng: new URLSearchParams(ownProps.location.search).get('lng'),
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
   };
 };
