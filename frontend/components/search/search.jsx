@@ -40,6 +40,7 @@ const Search = ({ fetchSpots, deleteSpot, openModal,
           <PlacesMap
             spots={spots}
             updateFilter={updateFilter}
+
           />
         </div>
       </div>

@@ -26,9 +26,9 @@ const App = () => (
       <Route exact path ="/" component={SearchContainer} />
 
     </Switch>
-    <footer>
+    {/* <footer>
       <Footer />
-    </footer>
+    </footer> */}
   </div>
 );
 

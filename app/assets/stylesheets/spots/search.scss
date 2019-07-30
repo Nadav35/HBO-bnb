@@ -2,8 +2,9 @@
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
+    'main-container'
     'top'
-    'main-container';
+  ;
 
   .main-container {
     grid-area: main-container;
@@ -12,6 +13,7 @@
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 150px;
 
     .right-half {
       .map-container {
@@ -112,6 +114,7 @@
         height: auto;
         margin-bottom: 50px;
         line-height: 10px;
+        display: none;
 
         .plus-pic {
           max-width: 100%;
