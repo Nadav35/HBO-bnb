@@ -15,6 +15,7 @@ import {
 } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
+  // debugger
   return {
     spots: Object.values(state.entities.spots),
     users: state.entities.users,

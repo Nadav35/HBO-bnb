@@ -13,8 +13,9 @@
 
     h1 {
       font-size: 50px;
-      font-family: $kirang;
+      // font-family: $kirang;
       font-weight: 900;
+      margin-top: 150px;
     }
 
     img {
@@ -27,6 +28,11 @@
     grid-area: container-filters;
     display: flex;
     justify-content: space-between;
+    margin: 50px;
+
+    .left-filtered {
+      width: 60%;
+    }
 
     .right-filtered {
       .map-container {
@@ -34,7 +40,8 @@
         height: 500px;
         // Had to add !important because position attr. was being overwritten by component
         position: sticky !important;
-        top: 50px;
+        top: 150px;
+        margin-top: 50px;
       }
     }
   }

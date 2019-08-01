@@ -1,12 +1,12 @@
-.review-container{
+.review-container {
   padding: 20px;
   display: grid;
   max-width: 60%;
   margin-top: 50px;
-  margin-bottom: 500px;
+  margin-bottom: 100px;
   justify-items: center;
 
-  h1{
+  h1 {
     font-size: 26px;
     line-height: 1.4;
     margin-bottom: 10px;
@@ -14,7 +14,7 @@
     font-family: $playfair;
   }
 
-  .review-form{
+  .review-form {
     background: white;
     display: grid;
     grid-gap: 10px;
@@ -27,7 +27,7 @@
     border-radius: 5px;
     border: 1px solid #000;
 
-    .review-rating{
+    .review-rating {
       display: flex;
       justify-content: flex-start;
     }
@@ -40,11 +40,11 @@
       padding: 5px 20px;
     }
 
-    .form-submit{
+    .form-submit {
       margin: 0 0 30px 0;
     }
 
-    .submit-button{
+    .submit-button {
       background: blue;
       color: white;
       width: 100%;

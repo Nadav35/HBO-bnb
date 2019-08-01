@@ -13,7 +13,8 @@ import {
 import { openModal } from '../../actions/modal_actions';
 
 const Search = ({ fetchSpots, deleteSpot, openModal,
-  spots, users, currentUser, updateFilter, loading }) => {
+  spots, users, currentUser, updateFilter, loading, lat, lng }) => {
+  // debugger;
 
   return (
     <div className="user-pane">
@@ -40,6 +41,8 @@ const Search = ({ fetchSpots, deleteSpot, openModal,
           <PlacesMap
             spots={spots}
             updateFilter={updateFilter}
+            lat={lat}
+            lng={lng}
 
           />
         </div>

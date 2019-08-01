@@ -20,21 +20,22 @@ class PlacesMap extends React.Component {
 
   componentDidMount() {
     // debugger;
-    if (this.props.lat) {
-      this.map = new google.maps.Map(this.mapNode, {
-        center: {
-          lat: parseInt(this.props.lat),
-          lng: parseInt(this.props.lng)
-        },
-        zoom: 8
-      });
-      const bounds = this.getBounds();
-      this.props.updateFilter('bounds', bounds);
-      // debugger;
+    // if (this.props.lat) {
+    //   this.map = new google.maps.Map(this.mapNode, {
+    //     center: {
+    //       lat: parseInt(this.props.lat),
+    //       lng: parseInt(this.props.lng)
+    //     },
+    //     zoom: 8
+    //   });
+    //   const bounds = this.getBounds();
+    //   this.props.updateFilter('bounds', bounds);
+    //   // debugger;
 
-    } else {
-      this.map = new google.maps.Map(this.mapNode, mapOptions);
-    }
+    // } else {
+    //   this.map = new google.maps.Map(this.mapNode, mapOptions);
+    // }
+    this.map = new google.maps.Map(this.mapNode, mapOptions);
     // debugger;
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.spots);

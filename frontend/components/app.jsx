@@ -23,12 +23,12 @@ const App = () => (
       <Route path="/api/spots/:spotId" component={SpotShowContainer} />
       <Route path="/api/bookings/:userId" component={BookingsIndexContainer} />
       <Route path="/search" component={FilteredSpotsContainer} />
-      <Route exact path ="/" component={SearchContainer} />
+      <Route exact path="/" component={SearchContainer} />
 
     </Switch>
-    {/* <footer>
+    <footer>
       <Footer />
-    </footer> */}
+    </footer>
   </div>
 );
 

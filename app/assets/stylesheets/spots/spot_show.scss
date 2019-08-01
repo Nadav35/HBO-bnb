@@ -17,14 +17,16 @@
 
   .single-spot-header {
     height: 70%;
-    margin-top: 50px;
+    // margin-top: 50px;
 
-    margin-bottom: 80px;
+    // margin-bottom: 80px;
+    margin: 50px 100px 0 100px;
 
     img {
       max-height: 100%;
       width: 50%;
       box-shadow: $shadow;
+      margin-bottom: 50px;
     }
   }
 
@@ -35,6 +37,7 @@
     justify-content: space-between;
     flex-direction: column;
     box-shadow: $shadow;
+    margin-left: 2em;
 
     .detail-container {
       display: flex;

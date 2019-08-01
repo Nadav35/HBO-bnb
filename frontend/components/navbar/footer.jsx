@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
- const Footer = () => {
-   return (
-     <div className="footer">
+const Footer = () => {
+  return (
+    <div className="footer">
       <div className="footer-wrapper">
-       <div className="footer-div">
-        <h4>Airbnb</h4>
+        <div className="footer-div">
+          <p className="copyright">&copy; 2019 Nadav Noy. All rights reserved.</p>
+          {/* <h4>Airbnb</h4>
         <ul>
           <li>Careers</li>
           <li>Press</li>
@@ -55,11 +56,11 @@ import { Link } from 'react-router-dom';
             <li>Terms</li>
             <li>Privacy</li>
             <li>Site Map</li>
-          </ul>
+          </ul> */}
         </div>
 
 
-       {/* <div className="footer-info">
+        {/* <div className="footer-info">
          <h1>LinkedIn:</h1>
          <a href="https://www.linkedin.com/in/nadav-noy">
            <i className="fab fa-linkedin"></i>
@@ -72,9 +73,9 @@ import { Link } from 'react-router-dom';
             <i className="fab fa-github"></i>
           </a>
         </div> */}
-       </div>
-     </div>
-   );
- };
+      </div>
+    </div>
+  );
+};
 
- export default Footer;
+export default Footer;
