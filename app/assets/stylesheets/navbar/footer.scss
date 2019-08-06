@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  border-top: 1px solid rgb(235, 235, 235);
+  // border-top: 1px solid rgb(235, 235, 235);
   // border-bottom: 1px solid rgb(235, 235, 235);
   // margin-top: 50px;
   // margin-bottom: 75px;
@@ -23,7 +23,6 @@
       h4 {
         font-family: sans-serif;
         // margin-top: 40px;
-
       }
 
       ul li {
@@ -40,23 +39,17 @@
     }
 
     .info-footer {
-
       .my-refs {
         display: flex;
         justify-content: flex-start;
         // margin-top: 18px;
         margin-bottom: 10px;
 
-
         a {
           font-size: 25px;
           // margin-right: 25px;
-
         }
-
       }
     }
-
-
   }
 }

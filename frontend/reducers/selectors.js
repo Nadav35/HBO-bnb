@@ -8,7 +8,8 @@ export const formatBookings = (bookings) => {
   let newBookings;
   const months = ["January", "February", "March",
     "April", "May", "June", "July", "August",
-    "September", "October", "Novemeber", "December"];
+    "September", "October", "November", "December"
+  ];
   if (Object.values(bookings).length === 0) {
     return [];
   } else {

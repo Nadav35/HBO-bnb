@@ -1,9 +1,9 @@
 .booking-form {
-  position:sticky;
+  position: sticky;
   display: grid;
 
   grid-gap: 0;
-  top: 0;
+  top: 150px;
   // right: 5%;
   width: 400px;
   // height: auto;
@@ -12,14 +12,14 @@
   border-radius: 5px;
   border: 1px solid #000;
 
-  span{
+  span {
     padding: 10px;
     font-family: $playfair;
     font-size: 20px;
 
   }
 
-  h1{
+  h1 {
     font-size: 26px;
     line-height: 1.4;
     margin-bottom: 10px;
@@ -33,24 +33,24 @@
     justify-content: space-between;
     padding: 5px 20px;
 
-    label{
+    label {
       font-family: $open-sans;
       padding: 10px;
     }
 
 
-    input{
+    input {
       border: 1px solid #ccc;
       padding: 10px;
       width: 100%;
     }
   }
 
-  .form-submit{
+  .form-submit {
     margin: 0 0 30px 0;
   }
 
-  .submit-button{
+  .submit-button {
     background: rgb(255, 90, 95);
     color: white;
     width: 100%;

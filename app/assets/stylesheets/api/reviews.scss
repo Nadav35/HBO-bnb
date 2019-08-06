@@ -1,63 +1,104 @@
 // Place all the styles related to the api/reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.reviews-showpage{
-  text-align: center;
-  width: 60%;
-  padding: 50px;
 
-  h1{
-    font-size: 40px;
-    font-family: $medieval;
-    font-weight: 700;
-    margin-bottom: 20px;
-    border-bottom: 1px solid grey;
-    padding: 15px;
+.review-list-item {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
 
-  }
+  .review-top {
+    display: flex;
+    align-items: center;
+    // padding-bottom: 20px;
+    // border-bottom: 1px solid #ccc;
+    margin-top: 20px;
 
-  img{
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-  }
-
-  .review {
-    display: grid;
-    grid-gap: 10px;
-    padding: 50px;
-    border-bottom: 1px solid grey;
-
-
-    p{
-      font-size: 20px;
-      font-family: $playfair;
+    img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
     }
 
-    .reviewer-info{
+    ul {
       display: flex;
       justify-content: flex-start;
-      align-items: center;
+      margin-left: 10px;
 
-      img, p{
-        margin-right: 20px;
-      }
-    }
-    .description{
-      display: flex;
-      justify-content: space-between;
+      li {
+        margin-right: 3px;
 
-      p{
-        color: grey;
       }
 
-      .delete-review-btn{
-        background-color: #333;
-        color: #fff;
-        padding: 4px 8px;
-        box-shadow: $shadow;
-
+      i {
+        color: #008489;
       }
     }
   }
+
+  .review-bottom {
+    margin-top: 20px;
+  }
 }
+
+// .reviews-showpage{
+//   text-align: center;
+//   width: 60%;
+//   padding: 50px;
+
+//   h1{
+//     font-size: 40px;
+//     font-family: $medieval;
+//     font-weight: 700;
+//     margin-bottom: 20px;
+//     border-bottom: 1px solid grey;
+//     padding: 15px;
+
+//   }
+
+//   img{
+//     border-radius: 50%;
+//     width: 50px;
+//     height: 50px;
+//   }
+
+//   .review {
+//     display: grid;
+//     grid-gap: 10px;
+//     padding: 50px;
+//     border-bottom: 1px solid grey;
+
+
+//     p{
+//       font-size: 20px;
+//       font-family: $playfair;
+//     }
+
+//     .reviewer-info{
+//       display: flex;
+//       justify-content: flex-start;
+//       align-items: center;
+
+//       img, p{
+//         margin-right: 20px;
+//       }
+//     }
+//     .description{
+//       display: flex;
+//       justify-content: space-between;
+
+//       p{
+//         color: grey;
+//       }
+
+//       .delete-review-btn{
+//         background-color: #333;
+//         color: #fff;
+//         padding: 4px 8px;
+//         box-shadow: $shadow;
+
+//       }
+//     }
+//   }
+// }
