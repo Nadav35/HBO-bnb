@@ -57,7 +57,6 @@ class PlacesMap extends React.Component {
     // debugger;
     if (this.props.lat !== prevProps.lat || this.props.lng !== prevProps.lng) {
       if (this.props.lat) {
-        console.log('here');
 
         this.map.setCenter(new google.maps.LatLng(this.props.lat, this.props.lng));
         this.map.setZoom(7);
@@ -74,7 +73,6 @@ class PlacesMap extends React.Component {
     } else {
       if (this.props.spots.length > 0 && this.props.spots.length !== prevProps.spots.length) {
         this.setMarkers();
-        console.log('here2');
 
       }
     }
