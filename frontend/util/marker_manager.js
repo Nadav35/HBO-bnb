@@ -1,4 +1,3 @@
-
 export default class MarkerManager {
   constructor(map) {
     this.map = map;
@@ -6,6 +5,7 @@ export default class MarkerManager {
   }
 
   updateMarkers(spots) {
+    // debugger
     const spotsObjects = {};
     spots.forEach(spot => spotsObjects[spot.id] = spot);
 
@@ -25,7 +25,7 @@ export default class MarkerManager {
     //
   }
 
-  createMarkerFromSpot(spot){
+  createMarkerFromSpot(spot) {
     const latLng = new google.maps.LatLng(spot.lat, spot.lng);
     const marker = new google.maps.Marker({
       position: latLng,

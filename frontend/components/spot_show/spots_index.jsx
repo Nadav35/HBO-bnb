@@ -48,18 +48,27 @@ class SpotsIndex extends React.Component {
     if (this.props.loading) {
       return <LoadingIcon />;
     }
-    if (!this.props.spots) return <h1>Sorry, no spots were found!!</h1>;
+    // if (!this.props.spots) return;
     let users;
     if (this.props.users.users) {
       users = this.props.users.users;
     } else {
       users = this.props.users;
     }
-
+    let homes;
+    if (this.props.spots.length > 0) {
+      if (this.props.place) {
+        homes = `Explore ${this.props.place}`;
+      } else {
+        homes = 'Explore the U.S';
+      }
+    } else {
+      homes = `No locations were found in ${this.props.place}`;
+    }
     return (
       <div className="top-container">
         <div className="spots-container" id="scroll-homes">
-          <h1>Homes around the U.S</h1>
+          <h1>{homes}</h1>
           <ul>
             {this.props.spots.map((spot, idx) => {
               return (

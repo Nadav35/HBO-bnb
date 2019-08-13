@@ -14,26 +14,41 @@ const SpotsHeader = () => (
 
     <div className="explore">
       <h1>Where to find me</h1>
+
       <div className="explore-list">
         <ul>
-          <li>
-            <a href="https://www.linkedin.com/in/nadav-noy">
+
+          <a href="https://www.linkedin.com/in/nadav-noy" target="_blank">
+            <li>
               <i className="fab fa-linkedin" />
-            </a>
-            <span className="explore-text">LinkedIn</span>
-          </li>
-          <li>
-            <a href="https://github.com/Nadav35">
+              <span className="explore-text">LinkedIn</span>
+            </li>
+          </a>
+
+
+          <a href="https://github.com/Nadav35" target="_blank">
+            <li>
               <i className="fab fa-github" />
-            </a>
-            <span className="explore-text">GitHub</span>
-          </li>
-          <li>
-            <a href="https://angel.co/nadav-noy">
+              <span className="explore-text">GitHub</span>
+            </li>
+          </a>
+
+
+          <a href="https://angel.co/nadav-noy" target="_blank">
+            <li>
               <i className="fab fa-angellist" />
-            </a>
-            <span className="explore-text">AngelList</span>
-          </li>
+              <span className="explore-text">AngelList</span>
+            </li>
+          </a>
+
+
+          <a href="https://nadav35.github.io/" target="_blank">
+            <li>
+              <i className="fas fa-briefcase"></i>
+              <span className="explore-text">Portfolio</span>
+            </li>
+          </a>
+
         </ul>
       </div>
     </div>
@@ -64,7 +79,7 @@ const SpotsHeader = () => (
         </div>
       </div>
     </div>
-  </div>
+  </div >
 );
 
 export default SpotsHeader;

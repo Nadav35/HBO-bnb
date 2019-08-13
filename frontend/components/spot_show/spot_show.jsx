@@ -23,15 +23,22 @@ class SpotShow extends React.Component {
     window.scrollTo(0, 0);
   }
 
-  getRating(avgRating) {
-    let temp = [];
-    for (let i = 0; i < avgRating; i++) {
-      temp.push(i);
+  getRating(ratingKeys) {
+    let totalRatings = 0;
+    let tempArray;
+    if (Array.isArray(ratingKeys)) {
+      ratingKeys.forEach(review => {
+        totalRatings += review.rating;
+      });
+      const ratingAvg = Math.floor(totalRatings / ratingKeys.length);
+      tempArray = new Array(ratingAvg).fill(0);
+    } else {
+      tempArray = new Array(ratingKeys).fill(0);
     }
     return (
       <ul>
-        {temp.map(val => {
-          return <li><i className="fas fa-star" /></li>;
+        {tempArray.map((val, idx) => {
+          return <li key={`${idx}`}><i className="fas fa-star" /></li>;
         })}
       </ul>
     );
@@ -87,8 +94,14 @@ class SpotShow extends React.Component {
       this.props.spot.ownerId,
       this.props.spot.price
     );
+    let rating;
+    if (this.props.reviews.length > 0) {
 
-    const rating = this.getRating(Object.keys(this.props.reviews).length);
+      rating = this.getRating(this.props.reviews);
+    } else {
+      console.log('hello');
+      rating = '';
+    }
 
     return (
       <div className="single-spot-show">
@@ -123,7 +136,7 @@ class SpotShow extends React.Component {
             </div>
             <div className="place-details">
               <div className="place-type">
-                <i class="fas fa-home"></i>
+                <i className="fas fa-home"></i>
                 <p>{locationInfo.homeType}</p>
               </div>
               <div className="place-accommodations">
@@ -139,19 +152,19 @@ class SpotShow extends React.Component {
             <div className="amenities">
               <h1>Amenities</h1>
               <div className="amenity-list-item">
-                <i class="fas fa-hot-tub"></i>
+                <i className="fas fa-hot-tub"></i>
                 <span>Jacuzzi</span>
               </div>
               <div className="amenity-list-item">
-                <i class="fas fa-swimming-pool"></i>
+                <i className="fas fa-swimming-pool"></i>
                 <span>Heated Swimming Pool</span>
               </div>
               <div className="amenity-list-item">
-                <i class="fas fa-wifi"></i>
+                <i className="fas fa-wifi"></i>
                 <span>Wifi</span>
               </div>
               <div className="amenity-list-item">
-                <i class="fas fa-tv"></i>
+                <i className="fas fa-tv"></i>
                 <span>Cable TV</span>
               </div>
             </div>

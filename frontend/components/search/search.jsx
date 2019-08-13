@@ -13,7 +13,7 @@ import {
 import { openModal } from '../../actions/modal_actions';
 
 const Search = ({ fetchSpots, deleteSpot, openModal,
-  spots, users, currentUser, updateFilter, loading, lat, lng }) => {
+  spots, users, currentUser, updateFilter, loading, lat, lng, place }) => {
   // debugger;
 
   return (
@@ -25,13 +25,14 @@ const Search = ({ fetchSpots, deleteSpot, openModal,
       <div className="main-container">
         <div className="left-half">
           <SpotsIndex
-            fetchSpots={fetchSpots}
             deleteSpot={deleteSpot}
             openModal={openModal}
             spots={spots}
             users={users}
             currentUser={currentUser}
             loading={loading}
+            fetchSpots={fetchSpots}
+            place={place}
 
           />
 
@@ -39,6 +40,7 @@ const Search = ({ fetchSpots, deleteSpot, openModal,
 
         <div className="right-half">
           <PlacesMap
+            fetchSpots={fetchSpots}
             spots={spots}
             updateFilter={updateFilter}
             lat={lat}

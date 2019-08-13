@@ -22,7 +22,8 @@ const msp = (state, ownProps) => {
     currentUser: state.session.currentUser,
     loading: state.ui.loading,
     lat: new URLSearchParams(ownProps.location.search).get('lat'),
-    lng: new URLSearchParams(ownProps.location.search).get('lng')
+    lng: new URLSearchParams(ownProps.location.search).get('lng'),
+    place: new URLSearchParams(ownProps.location.search).get('place')
   };
 };
 

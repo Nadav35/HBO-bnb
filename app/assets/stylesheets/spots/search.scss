@@ -57,7 +57,11 @@
           margin-top: 20px;
           display: grid;
           grid-gap: 15px;
-          grid-template-columns: 25% 25% 25%;
+          grid-template-columns: 25% 25% 25% 25%;
+
+          a:hover {
+            box-shadow: $shadow;
+          }
 
           li {
             display: grid;
@@ -81,11 +85,13 @@
               &.fa-linkedin {
                 color: #0077b5;
               }
+
+              &.fa-briefcase {
+                color: #858;
+              }
             }
 
-            i:hover {
-              box-shadow: $shadow;
-            }
+
           }
 
           // .homes-pic {
