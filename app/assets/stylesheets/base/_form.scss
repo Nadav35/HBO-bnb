@@ -5,6 +5,10 @@
     justify-content: space-between;
     border: 1px solid #ccc;
     align-items: center;
+
+    i {
+      padding: 10px;
+    }
   }
 
   &-group:hover,

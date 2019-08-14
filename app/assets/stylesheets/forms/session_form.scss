@@ -37,8 +37,10 @@
     }
   }
 
-  .form-submit {
+  .form-submit input[type='submit'] {
+    margin-bottom: 10px;
     // margin: 0 0 30px 0;
+
   }
 
   .submit-button {
